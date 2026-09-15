@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: seriph
 title: Your Open Source Standard Is Just Another Lock-In
 info: |
   Simon Schrottner · Thomas Schuetz — 25 min debate
@@ -9,11 +9,21 @@ drawings:
   persist: false
 transition: fade
 mdc: true
+layout: center
 ---
 
-<!-- Holding slide. Nothing on screen while the hallway conversation starts. -->
+<!--
+Holding slide. Nothing on screen while the hallway conversation starts.
+Drawn as SVG rather than an emoji so it renders identically on any machine.
+-->
 
-<div class="opacity-20 text-sm">🎙</div>
+<div class="flex justify-center opacity-15">
+  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+    <rect x="9" y="2" width="6" height="11" rx="3" />
+    <path d="M5 11a7 7 0 0 0 14 0" />
+    <path d="M12 18v3" />
+  </svg>
+</div>
 
 <!--
 OPENING — both on stage, lapel mics.
@@ -27,17 +37,7 @@ layout: center
 
 # "Never locked in again."
 
-<div class="grid grid-cols-3 gap-8 mt-12 text-2xl">
-  <div class="border-2 rounded-xl p-8">
-    <div class="text-5xl mb-4">☸</div>Kubernetes<div class="text-sm opacity-60 mt-2">conformant distribution</div>
-  </div>
-  <div class="border-2 rounded-xl p-8">
-    <div class="text-5xl mb-4">🔭</div>OpenTelemetry<div class="text-sm opacity-60 mt-2">traces · metrics · logs</div>
-  </div>
-  <div class="border-2 rounded-xl p-8">
-    <div class="text-5xl mb-4">🚩</div>OpenFeature<div class="text-sm opacity-60 mt-2">vendor-neutral flags</div>
-  </div>
-</div>
+<StandardsStack active="all" class="mt-12" />
 
 <div class="mt-10 opacity-60">everything CNCF · everything portable</div>
 
@@ -98,27 +98,17 @@ THOMAS: "Fine. Start with the one I'm most sure about."
 layout: center
 ---
 
-<div class="grid grid-cols-3 gap-8 text-2xl stack">
-  <div class="box on"><div class="text-5xl mb-4">☸</div>Kubernetes<div class="text-sm opacity-60 mt-2">conformant distribution</div></div>
-  <div class="box"><div class="text-5xl mb-4">🔭</div>OpenTelemetry<div class="text-sm opacity-60 mt-2">traces · metrics · logs</div></div>
-  <div class="box"><div class="text-5xl mb-4">🚩</div>OpenFeature<div class="text-sm opacity-60 mt-2">vendor-neutral flags</div></div>
-</div>
-
-<style>
-.stack .box { border: 2px solid currentColor; border-radius: .75rem; padding: 2rem; opacity: .25; transition: opacity .4s; }
-.stack .box.on { opacity: 1; }
-</style>
+<StandardsStack active="kubernetes" />
 
 <!--
 Topic switch — no words needed. THOMAS just says: "Kubernetes."
-TODO: replace emoji with real logos (drop SVGs in public/logos/ and use <img>).
 -->
 
 ---
 layout: two-cols
 ---
 
-<div class="tag">☸ Kubernetes</div>
+<Tag project="kubernetes" label="Kubernetes" />
 
 # Moved in an afternoon
 
@@ -197,41 +187,29 @@ SIMON: "…all CKA certified. Who did they get that from?" — THOMAS: "I may ha
 layout: center
 ---
 
-<div class="grid grid-cols-3 gap-8 text-2xl stack">
-  <div class="box"><div class="text-5xl mb-4">☸</div>Kubernetes<div class="text-sm opacity-60 mt-2">conformant distribution</div></div>
-  <div class="box on"><div class="text-5xl mb-4">🔭</div>OpenTelemetry<div class="text-sm opacity-60 mt-2">traces · metrics · logs</div></div>
-  <div class="box"><div class="text-5xl mb-4">🚩</div>OpenFeature<div class="text-sm opacity-60 mt-2">vendor-neutral flags</div></div>
-</div>
-
-<style>
-.stack .box { border: 2px solid currentColor; border-radius: .75rem; padding: 2rem; opacity: .25; transition: opacity .4s; }
-.stack .box.on { opacity: 1; }
-</style>
+<StandardsStack active="opentelemetry" />
 
 <!--
 SIMON: "So then we instrumented it."
-TODO: replace emoji with real logos (drop SVGs in public/logos/ and use <img>).
 -->
 
 ---
 layout: center
 ---
 
-<div class="tag">🔭 OpenTelemetry</div>
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 # How long consensus takes
 
-```mermaid {scale: 0.7}
-timeline
-    2016 : OpenTracing
-    2018 : OpenCensus
-    2019 : merge → OpenTelemetry
-    2021 : tracing stable
-    2022 : metrics stable
-    2023 : logs stable
-         : HTTP semconv stable
-         : http.method → http.request.method
-```
+<div class="timeline text-lg mt-8">
+  <div class="year">2016</div><div class="event">OpenTracing</div>
+  <div class="year">2018</div><div class="event">OpenCensus</div>
+  <div class="year">2019</div><div class="event">merge → OpenTelemetry</div>
+  <div class="year">2021</div><div class="event">tracing stable</div>
+  <div class="year">2022</div><div class="event">metrics stable</div>
+  <div class="year">2023</div><div class="event">logs stable</div>
+  <div class="year"></div><div class="event cont">HTTP semconv stable<div class="note"><code>http.method</code> → <code>http.request.method</code></div></div>
+</div>
 
 <!--
 TODO: verify dates against OTel spec release history before final.
@@ -258,7 +236,7 @@ THOMAS: "Vendors. In a public room, with public notes, and a PR you could have c
 layout: two-cols
 ---
 
-<div class="tag">🔭 OpenTelemetry</div>
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 # What you keep
 
@@ -334,27 +312,17 @@ SIMON: "Good deal. I'd take it. I'd just like the two migrations on the bill."
 layout: center
 ---
 
-<div class="grid grid-cols-3 gap-8 text-2xl stack">
-  <div class="box"><div class="text-5xl mb-4">☸</div>Kubernetes<div class="text-sm opacity-60 mt-2">conformant distribution</div></div>
-  <div class="box"><div class="text-5xl mb-4">🔭</div>OpenTelemetry<div class="text-sm opacity-60 mt-2">traces · metrics · logs</div></div>
-  <div class="box on"><div class="text-5xl mb-4">🚩</div>OpenFeature<div class="text-sm opacity-60 mt-2">vendor-neutral flags</div></div>
-</div>
-
-<style>
-.stack .box { border: 2px solid currentColor; border-radius: .75rem; padding: 2rem; opacity: .25; transition: opacity .4s; }
-.stack .box.on { opacity: 1; }
-</style>
+<StandardsStack active="openfeature" />
 
 <!--
 THOMAS: "Flags were supposed to be the easy part."
-TODO: replace emoji with real logos (drop SVGs in public/logos/ and use <img>).
 -->
 
 ---
 layout: two-cols
 ---
 
-<div class="tag">🚩 OpenFeature</div>
+<Tag project="openfeature" label="OpenFeature" />
 
 # Portable
 
@@ -434,7 +402,7 @@ SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked
 layout: center
 ---
 
-<div class="tag">🚩 OpenFeature</div>
+<Tag project="openfeature" label="OpenFeature" />
 
 # Who paid the engineers?
 

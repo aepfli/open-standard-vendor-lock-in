@@ -2,8 +2,56 @@
   position: absolute;
   top: 1.2rem;
   right: 1.6rem;
-  font-size: .85rem;
-  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  opacity: .5;
+  opacity: .6;
 }
+
+/* Seriph sets serif headings; keep the data-heavy slides in the sans stack so
+   numbers and identifiers stay legible from the back of the room. */
+.slidev-layout table,
+.slidev-layout code {
+  font-family: var(--slidev-code-font-family);
+}
+
+/* Timeline used on the "how long consensus takes" slide. Replaces a mermaid
+   timeline that overflowed the 980px canvas. */
+.timeline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+}
+
+.timeline .year {
+  font-variant-numeric: tabular-nums;
+  opacity: .5;
+  padding: 0 1.5rem .9rem 0;
+}
+
+/* Adjacent rows share the border, so it reads as one continuous rail. */
+.timeline .event {
+  position: relative;
+  border-left: 1px solid currentColor;
+  padding: 0 0 .9rem 1.5rem;
+}
+
+.timeline .event::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: .45em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* A step with no year of its own: no dot, no repeated date. */
+.timeline .event.cont::before { display: none; }
+.timeline .event .note { font-size: .85em; opacity: .55; }
+
+.timeline .event:last-child { padding-bottom: 0; }
