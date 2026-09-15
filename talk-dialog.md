@@ -271,25 +271,34 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Fine. Then there's one line still missing, and it's the one that decides it.
 
-`[SLIDE: click 5 — the Currency row appears across both columns.]`
+`[SLIDE: click 5 — the Currency row appears and the three charges above it grey out. Their column only.]`
 
 **SIMON:** Nothing on this invoice is in euros. The currency is what your people had to learn, and would have to learn again. Two hundred engineers who *think* in this stack. Nobody budgets for it. And somebody in this room — *(looks at Thomas)* — sells it.
 
-**THOMAS:** Guilty. And I'll take it, because look at what each column is paid in. Theirs: money, and tool knowledge. The console, the query language, their approval workflow. Non-convertible — worthless the day the contract ends. Yours: engineering time, and domain knowledge. What a span is. How a flag evaluates. What a Deployment does. Convertible — it spends at the next vendor, the next job, the next company that acquires you.
+**THOMAS:** Guilty. And I'll take it, because look at what each column is actually paid in. Theirs: money, and tool knowledge. The console, the query language, their approval workflow. Non-convertible — worthless the day the contract ends.
+
+`[SLIDE: click 6 — the community column's currency lands beside it.]`
+
+**THOMAS:** Yours: engineering time, and domain knowledge. What a span is. How a flag evaluates. What a Deployment does. Convertible — it spends at the next vendor, the next job, the next company that acquires you.
 
 **SIMON:** So the invoice is the same size either way.
 
 **THOMAS:** The invoice is the same size. The currency is not.
 
+`[SLIDE: a real job ad — requirements list: Kubernetes, OpenTelemetry. No vendor product named.]`
+
+**THOMAS:** If you have to be paid in something — and you do — be paid in a currency you can exchange.
+
+
 ---
 
-## Act IV — What did you get for it? (~3 min)
+## Act IV — What does it buy a vendor? (~3 min)
 
 *Both turn back to the screen. The three boxes from the opening are up again.*
 
-`[SLIDE: act map — all three lit. "What did you get for it?"]`
+`[SLIDE: act map — all three lit. "What does it buy a vendor?"]`
 
-**THOMAS:** That's the bill. Now I want the other half of the page, because nobody ever writes it down. *(to Simon)* You held a thought for me.
+**THOMAS:** That's the bill, and that's what your people keep. Now the seat nobody in this room is sitting in. *(to Simon)* You held a thought for me.
 
 **SIMON:** I did. Somebody walks through the door.
 
@@ -313,10 +322,6 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** And it costs you something — which is the line I'd have put on the invoice if you'd let me finish it first. The entry cost fell, and the moat moved *up*. Nobody competes on collecting the data any more, so everybody competes above the standard. The pipeline. The storage. The query language. The AI feature they announced last quarter. You didn't escape the moat. You moved house.
 
-`[SLIDE: a real job ad — requirements list: Kubernetes, OpenTelemetry. No vendor product named.]`
-
-**THOMAS:** If you have to be paid in something — and you do — be paid in a currency you can exchange.
-
 ---
 
 ## The turn + takeaways (~2.5 min)
@@ -339,7 +344,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** Two. Contribution is self-interest. If you're not in the room, someone else's priorities shape the standard you depend on. That "join the working group" answer Simon hated giving? It was the right answer.
 
-**SIMON:** Three. A standard is only as good as the community behind it. A standard nobody maintains is just slower lock-in.
+**SIMON:** Three — and this is the one I'd have got wrong a year ago. You're locked in either way; we settled that. The answer you don't want is *nobody*. A standard with no community left keeps every constraint it ever had and loses the only thing that made them worth paying. No room to join, and nobody to call.
 
 **THOMAS:** Homework. Pick one standard you depend on. This week, find out who actually controls its roadmap. Not the logo. The chart.
 
@@ -373,6 +378,10 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
   making the presenter click through lines the room reads in a second. What still clicks:
   the punchline under a list, the "After" column arriving after "Before", "To whom.", and
   the three takeaways, which step because Simon and Thomas take one each.
+- The three takeaways are deliberately the three answers to "to whom": find out who (1),
+  be part of the who (2), and the one bad answer is nobody (3). Takeaway 3 used to read
+  "a standard nobody maintains is just slower lock-in", which argued against the turn — it
+  treated lock-in as the thing to avoid one slide after conceding it is universal.
 - **Structure:** every act now asks the same three questions — what do you get, what does
   it cost, who owns it — and the slides carry an on-screen rail showing which is live. Say
   the three out loud once in act I so the audience has the frame; after that let the rail

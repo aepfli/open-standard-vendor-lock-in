@@ -57,6 +57,12 @@ and users have genuine choice rather than the illusion of it.
 3. **Open standards are only as good as the community behind them.** A standard nobody
    maintains is just slower lock-in.
 
+> **Delivered wording differs on #3.** "Slower lock-in" treats lock-in as the thing to
+> avoid, which argues against the talk's own turn — by that point the deck has conceded
+> lock-in is universal and the only question is *to whom*. On stage it lands as "the answer
+> you don't want is *nobody*", which makes the same claim (a standard is only as good as its
+> community) without contradicting the thesis.
+
 ## Coverage check
 
 Where each promised argument currently lands in the deck. See `README.md` for the full

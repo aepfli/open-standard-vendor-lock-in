@@ -18,7 +18,7 @@ each close carries a single idea.
 | **Act I** | Portability | what do you get? | Kubernetes |
 | **Act II** | Progress | how does it move? | OpenTelemetry |
 | **Act III** | Ownership | who owns it? | OpenFeature |
-| **Act IV** | Return | what did you get for it? | *all three* |
+| **Act IV** | Return | what does it buy a vendor? | *all three* |
 
 **Act I — Portability · what do you get? · Kubernetes**
 - *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl` — moved in an afternoon.
@@ -79,10 +79,13 @@ three-act structure, so it lands here rather than later.
   same three line items: exit fees, forced upgrades, enterprise tier. There was never a
   column marked zero. The one row the vendor genuinely wins is said plainly — escalation is
   fast, *if what you need is already on their roadmap*
-- *The Currency row.* Theirs is money + tool knowledge, **non-convertible**. Yours is
+- *The Currency row.* The three charges grey out as it lands — the amounts are no longer
+  the point. Theirs first: money + tool knowledge, **non-convertible**. Then yours:
   engineering time + domain knowledge, **convertible**. Same size invoice, different currency
+- *The job ad* — the proof of that claim, so it sits beside it. Kubernetes and
+  OpenTelemetry named as requirements; no vendor product named at all
 
-**Act IV — Return · what did you get for it? · all three**
+**Act IV — Return · what does it buy a vendor? · all three**
 
 Opens on the same three boxes as the opening claim slide, lit again twenty minutes later
 and now framed as a question. It has no standard of its own — the rail shows all three.
@@ -93,8 +96,6 @@ only act that is not a prosecution. Thomas owns it.
   affordable, and that is the only reason the door is worth anything. Deliberately generic:
   the pattern is on the slide, the OpenTelemetry and OpenFeature specifics are in Thomas's
   mouth. Simon takes the last word — the moat did not vanish, it moved up
-- *The job ad* — what you walk out with. Kubernetes and OpenTelemetry named as
-  requirements; no vendor product named at all
 
 **The turn**
 
@@ -103,7 +104,7 @@ only act that is not a prosecution. Thomas owns it.
 **Takeaways**
 - Evaluate the governance, not just the spec
 - Contribution is self-interest
-- A standard nobody maintains is just slower lock-in
+- The answer you don't want is *nobody* — an unmaintained standard keeps every constraint and loses the counterparty
 - Homework: pick one standard you depend on and find out who controls its roadmap — not
   the logo, the chart
 

@@ -526,16 +526,34 @@ SIMON does not get to enjoy the last row: "OpenTracing. That's the first line on
 -->
 ---
 layout: center
-clicks: 5
+clicks: 6
 ---
 
-<Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks >= 5" />
+<Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks - 4" />
 
 <!--
 Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
 Click 2 — currency stamp. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it."
 THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the invoice."
 Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
+-->
+---
+layout: center
+---
+
+<div class="border rounded-xl p-8 max-w-2xl mx-auto text-left font-mono text-lg leading-relaxed shadow">
+<div class="opacity-50 text-sm mb-2">Senior Platform Engineer — [Company]</div>
+<div class="font-bold mb-3">Requirements</div>
+<div>✓ Kubernetes</div>
+<div>✓ OpenTelemetry</div>
+<div>✓ Feature flag platforms (OpenFeature)</div>
+<div class="opacity-40 line-through">✗ [Vendor Product™]</div>
+</div>
+
+<!--
+TODO: use a real, anonymised job ad screenshot if possible.
+THOMAS: "Knowledge locked into a vendor console dies the day the contract ends. Knowledge locked into a standard goes with the person."
+"If you have to be locked into something — and you do — be locked into what your people can carry."
 -->
 
 ---
@@ -544,13 +562,13 @@ layout: center
 
 <Ask active="all" />
 
-# What did you get for it?
+# What does it buy a vendor?
 
 <StandardsStack active="all" class="mt-12" />
 
 <!--
 ACT IV. The same three boxes Thomas put up twenty minutes ago under "never locked in again" — lit again, and this time it is a question.
-The bill is already on the table. This act is the other half of the page: what the money bought. A market with more than one supplier in it, and knowledge that leaves with the people.
+The bill is already on the table, and the job ad has already shown what the people keep. This act is the one seat nobody in the room occupies: the vendor's. What the standard bought a supplier is the right to exist at all — and that is the only reason the customer has anywhere to go.
 No single standard owns this act, which is why all three are lit and the rail shows all three questions.
 THOMAS owns it. It is the only act that is not a prosecution.
 -->
@@ -600,26 +618,6 @@ SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone d
 
 
 
----
-layout: center
----
-
-<Ask active="all" />
-
-<div class="border rounded-xl p-8 max-w-2xl mx-auto text-left font-mono text-lg leading-relaxed shadow">
-<div class="opacity-50 text-sm mb-2">Senior Platform Engineer — [Company]</div>
-<div class="font-bold mb-3">Requirements</div>
-<div>✓ Kubernetes</div>
-<div>✓ OpenTelemetry</div>
-<div>✓ Feature flag platforms (OpenFeature)</div>
-<div class="opacity-40 line-through">✗ [Vendor Product™]</div>
-</div>
-
-<!--
-TODO: use a real, anonymised job ad screenshot if possible.
-THOMAS: "Knowledge locked into a vendor console dies the day the contract ends. Knowledge locked into a standard goes with the person."
-"If you have to be locked into something — and you do — be locked into what your people can carry."
--->
 
 ---
 layout: statement
@@ -646,7 +644,7 @@ layout: center
 
 **2.** Contribution is self-interest.
 
-**3.** A standard nobody maintains is just slower lock-in.
+**3.** The answer you don't want is *nobody*.
 
 </v-clicks>
 </div>

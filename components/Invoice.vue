@@ -13,7 +13,9 @@ defineProps({
   // The second column. Until this is set the bill looks like a bill; after it,
   // it looks like a choice.
   vendor: { type: Boolean, default: false },
-  currency: { type: Boolean, default: false },
+  // Reading the currency: 0 hidden, 1 the vendor's, 2 both. The charges above
+  // grey out while it lands, because the amounts are no longer the point.
+  currency: { type: Number, default: 0 },
   // Amounts are held back until the exit test. During the acts each close
   // should carry exactly one new idea — the line item — not a line item and a
   // price and a letterhead all at once.
@@ -61,7 +63,7 @@ const CURRENCY = {
 </script>
 
 <template>
-  <div class="invoice" :class="{ compare: vendor }">
+  <div class="invoice" :class="{ compare: vendor, settling: currency > 0 }">
     <div class="head">
       <span class="claim">"Never locked in again."</span>
       <span class="doc">invoice</span>
@@ -92,15 +94,19 @@ const CURRENCY = {
       </div>
     </div>
 
-    <div v-if="currency" class="grid line total">
+    <div v-if="currency > 0" class="grid line total">
       <div class="item">Currency</div>
       <div v-if="vendor" class="cell">
-        {{ CURRENCY.vendor }}
-        <div class="verdict">{{ CURRENCY.vendorNote }}</div>
+        <template v-if="currency >= 1">
+          {{ CURRENCY.vendor }}
+          <div class="verdict">{{ CURRENCY.vendorNote }}</div>
+        </template>
       </div>
       <div class="cell">
-        {{ CURRENCY.community }}
-        <div class="verdict">{{ CURRENCY.communityNote }}</div>
+        <template v-if="currency >= 2">
+          {{ CURRENCY.community }}
+          <div class="verdict">{{ CURRENCY.communityNote }}</div>
+        </template>
       </div>
     </div>
   </div>
@@ -192,6 +198,9 @@ const CURRENCY = {
   font-variant-numeric: tabular-nums;
   opacity: .6;
 }
+
+/* Once the currency lands, the amounts are no longer the point. */
+.invoice.settling .line:not(.total) { opacity: .35; }
 
 .total {
   border-top: 3px solid currentColor;
