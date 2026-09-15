@@ -75,11 +75,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** All of that moved in an afternoon. Deployments, Services, RBAC, the Helm charts, every kubectl command. Your conformance suite tested every one of them.
 
-`[SLIDE: "Took six weeks" — Simon's. Six lines, small, one per click.]`
+`[SLIDE: "Took six weeks" — Simon's. Six lines, small, all at once. One click at the end for "certified by nothing".]`
 
-**SIMON:** *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
+**SIMON:** Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
 
-`[SLIDE: the invoice — first line item: "Migration · the operational layer conformance didn't cover". No amount yet, and the `from:` field still blank.]`
+`[SLIDE: the invoice — first line item: "Migrating · the operational layer conformance didn't cover". No amount yet, and the `from:` field still blank.]`
 
 **SIMON:** Conformance certifies the slide before that one. And nobody lives on that slide.
 
@@ -115,9 +115,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** And slow isn't the only price. A spec doesn't hold the best idea in the room. It holds the one nobody objected to.
 
-`[SLIDE: "The intersection, not the union" — four lines, one per click. Last one is the signal this customer actually wanted.]`
+`[SLIDE: "The intersection, not the union" — four lines. The last is the signal this customer actually wanted. One click at the end for "paid in capability, not in weeks".]`
 
-**SIMON:** *(clicks)* What everyone could agree to. Not what any one of them does best. What a vendor calls a differentiator, a committee calls out of scope. *(last click — name the real one)* And that's paid in capability, not in weeks. Nobody puts that on a slide.
+**SIMON:** What everyone could agree to. Not what any one of them does best. What a vendor calls a differentiator, a committee calls out of scope. *(land on the last line — name the real one)* *(click)* And that's paid in capability, not in weeks. Nobody puts that on a slide.
 
 **THOMAS:** The intersection *is* the portable part. That's not a side effect, that's the product. A spec that tried to cover the union would still be in draft — and you know that better than anyone, because your own project scoped small on purpose. You'll tell them so yourself in about four minutes.
 
@@ -125,9 +125,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** And here's the thing nobody says out loud: leaving the proprietary agent has a feature list too.
 
-`[SLIDE: "What it cost to leave the agent" — six lines, one per click]`
+`[SLIDE: "What it cost to leave the agent" — six lines, all at once]`
 
-**SIMON:** The agent did auto-discovery for free. [RUM was better. Profiling was years ahead.] Sampling and cost controls lived on the vendor's side and just worked. We rebuilt half of that ourselves before the first trace showed up. That's the migration *onto* the standard. Then came the migrations *within* it. The customer instrumented in [2021]. Early adopters, doing the right thing. Then metrics changed under them. Then the semantic conventions for HTTP stabilised — which is great — except stabilising meant *renaming*. `http.method` became `http.request.method`.
+**SIMON:** Go down that list. The agent did auto-discovery for free. [RUM was better. Profiling was years ahead.] Sampling and cost controls lived on the vendor's side and just worked. We rebuilt half of that ourselves before the first trace showed up. That's the migration *onto* the standard. Then came the migrations *within* it. The customer instrumented in [2021]. Early adopters, doing the right thing. Then metrics changed under them. Then the semantic conventions for HTTP stabilised — which is great — except stabilising meant *renaming*. `http.method` became `http.request.method`.
 
 `[SLIDE: the rename, full screen — `http.method` → `http.request.method`]`
 
@@ -151,7 +151,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ---
 
-## Round 3 — OpenFeature (~6.5 min)
+## Round 3 — OpenFeature (~5 min)
 
 `[SLIDE: act map — OpenFeature lit. OWNERSHIP · "who owns it?"]`
 
@@ -165,9 +165,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** And look at what we standardised. The evaluation API. The SDKs. The provider swap is one line.
 
-`[SLIDE: "Everything that isn't code" — six lines, one per click]`
+`[SLIDE: "Everything that isn't code" — six lines, all at once. One click at the end for "we standardised the code and left the data where it was".]`
 
-**SIMON:** *(clicks)* And what we didn't: the flag definitions. The targeting rules. The segments. The experiment data. The audit history and the approval workflow the customer's compliance team signed off on. Every one of those is still in the vendor's format. We standardised the code and left the data exactly where it was.
+**SIMON:** And what we didn't: the flag definitions. The targeting rules. The segments. The experiment data. The audit history and the approval workflow the customer's compliance team signed off on. Every one of those is still in the vendor's format. We standardised the code and left the data exactly where it was.
 
 **THOMAS:** You standardised the thing that touches every line of code. The rest is an export job.
 
@@ -181,7 +181,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** It slows down. Every change is now a multi-vendor negotiation. Every SDK has to agree. The customer wanted [a feature: e.g. evaluation context that changes at runtime / a specific hook behaviour] — and the honest answer I had to give them was: "join the working group." I'm a maintainer and I couldn't just *do* it for them.
 
-*(last click on that slide is the "join the working group" line — stay on it)*
+*(the "join the working group" line is the last one on that slide — stay on it)*
 
 **THOMAS:** Simon. That's not a failure. That's the thing becoming load-bearing. You *want* the spec to be slow once there are a thousand production systems on it. The alternative is a fast spec that breaks a thousand systems.
 
@@ -189,31 +189,71 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** So the complaint is…?
 
-**SIMON:** The complaint is what it *looked like* while it was fast. *(shifts — this is the spike, ~90 s)* Because here's the part I don't usually put on a slide. For the longest time, OpenFeature was open on paper and one company's roadmap in practice.
+**SIMON:** The complaint is what it *looked like* while it was fast. *(shifts — this is the spike, ~90 s)* Because here's the part I don't usually put on a slide. Look at who writes the code.
 
-`[SLIDE: CNCF DevStats — contributions by company over time for OpenFeature. One colour dominates the early years.]`
+`[SLIDE: CNCF DevStats — contributions by company over time for OpenFeature. One contributor carries most of the commits.]`
 
-**SIMON:** Look at that chart. That's not a conspiracy, that's just who paid the engineers. And when one company pays the engineers, the spec grows in the direction that company's product needs. Not maliciously. Naturally. The bus factor was a *parking* factor.
+**SIMON:** One company has carried most of OpenFeature's commits since the beginning. Now — I want to be precise, because this is a real project and a real company, and the easy version of this sentence is wrong. That is not capture. The spec is written by a multi-vendor group and always has been. Nobody in that room can merge what the others won't take.
 
-**THOMAS:** Is it still like that?
+`[SLIDE: click — "and the spec still isn't theirs"]`
 
-**SIMON:** No. It took real work and real time and it's genuinely a multi-vendor project now. But there are standards out there that never made that transition. They have the licence, they have the foundation logo, they have the door — and nobody ever walked through it, so they fossilised around one company's use case. That is a proprietary standard with extra steps.
+**SIMON:** The spec still isn't theirs. *(beat)* But capacity is not neutral. When one company pays most of the engineers, the things that get built first are the things that company needed first. Not maliciously. Naturally. The bus factor was a *parking* factor.
 
-**THOMAS:** Here's what I'll say to that. The difference between what you just described and an actual proprietary standard is that *you could have changed it*. You did change it. The door was real. Nobody can padlock it — not the founder, not the foundation.
+**THOMAS:** So the spec was never theirs.
+
+**SIMON:** The spec was never theirs. The roadmap's *pace* was. *(beat)* And if you want the version where it actually goes wrong, I don't have to make one up.
+
+`[SLIDE: NATS — 2018 donated to the CNCF · 2025 the donor announces BUSL for future releases and asks for the trademark back · the CNCF petitions the USPTO · settled in weeks, trademarks to the Linux Foundation]`
+
+**SIMON:** NATS. Donated to the CNCF in 2018. Last year the company that donated it announced future releases would be Business Source Licence — and asked for the trademark back. Not a fork. The name. The domain. The repositories.
+
+**THOMAS:** And?
+
+**SIMON:** And the CNCF filed a petition with the US trademark office against the company that gave them the project.
+
+**THOMAS:** *(carefully)* How did it end?
+
+**SIMON:** Settled in weeks. Both NATS trademarks assigned to the Linux Foundation. The relicence never landed — the project stays Apache-2.0, in the foundation. And they stayed free to sell whatever they like on top of it.
+
+*(beat)*
+
+**THOMAS:** You just made my argument for me.
+
+**SIMON:** I made half of it. Somebody *did* try. That's the half nobody puts on a slide — it isn't a thought experiment, it happened, last year, to a CNCF project, and if you had built on NATS you found out from a mailing list.
+
+**THOMAS:** And it took *weeks* to fail. Because the trademark sat with a foundation instead of with a vendor. That's not paperwork, Simon, that's the whole product. You keep saying "the door was real" like it's a slogan — that is the door, and somebody leaned on it, in public, and it held.
 
 **SIMON:** If someone walks through.
 
-**THOMAS:** Somebody does. And the reason they can afford to is the standard.
+**THOMAS:** Somebody does. Hold that thought — it's the whole of the next section.
 
-`[SLIDE: "Before the standard" / "After" — left column showing: an agent per language, maintained forever, table stakes to enter at all]`
+`[SLIDE: the invoice — third line item lands: "Steering · contribution, and it is optional"]`
+
+**SIMON:** And that's the third line. Migrating — the operational layer conformance never covered. Keeping up — re-instrumenting every time the spec moves. Steering — contribution, and there is no other door. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
+
+**THOMAS:** And every line on it is from us. The community. Your own project is on that list.
+
+**SIMON:** Every line. That's the honest version of everything I've said today, and I'm not going to soften it: open standards send invoices.
+
+---
+
+## Act IV — Is there anywhere to go? (~4 min)
+
+*Both turn back to the screen. The three boxes from the opening are up again.*
+
+`[SLIDE: act map — all three lit. "Is there anywhere to go?"]`
+
+**THOMAS:** Three acts, and all three of them priced *staying*. Now price leaving. Because leaving isn't a property of the spec — it's a property of there being somewhere to go. And that's the thought I asked you to hold.
+
+`[SLIDE: Before | the standard | After — left column showing: an agent per language, maintained forever, table stakes to enter at all]`
 
 **THOMAS:** Before OpenTelemetry, if you wanted to sell observability you didn't start by building a product. You started by writing an agent. Java. Then Python, Go, Node, Ruby, .NET — and then you maintained all of them, forever, every time one of those languages shipped a new version. That wasn't a feature anybody bought. That was the moat. And it's exactly why that category was the same four companies for a decade.
 
-`[SLIDE: right column, clicks — one wire format / a startup ships a backend, not twelve agents / the category has new names in it]`
+`[SLIDE: click — the whole "After" column arrives: one wire format / a startup ships a backend, not twelve agents / the category has new names in it]`
 
-**THOMAS:** Now there's one wire format. *(clicks)* A four-person company ships a backend instead of twelve agents. *(clicks)* And look at who's selling observability today — names that did not exist when you were writing your first agent. Same shape with OpenFeature: a provider is an adapter, not a platform. That's a week of work, not a company-year.
+**THOMAS:** *(click)* Now there's one wire format. A four-person company ships a backend instead of twelve agents. And look at who's selling observability today — names that did not exist when you were writing your first agent. Same shape with OpenFeature: a provider is an adapter, not a platform. That's a week of work, not a company-year.
 
-**THOMAS:** So — yes. One company behind the door. But the standard is what makes the *second* company affordable. That's not a nice side effect, that's the whole mechanism. Your ability to leave was never a property of the spec. It's a property of there being somewhere to go.
+**THOMAS:** So — yes. One company behind the door. But the standard is what makes the *second* company affordable. That's not a nice side effect, that's the whole mechanism.
 
 *(beat)*
 
@@ -222,22 +262,6 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 **THOMAS:** I'll take it.
 
 **SIMON:** And it costs you something. The entry cost fell — and the moat moved *up*. Nobody competes on collecting the data any more, so everybody competes above the standard. The pipeline. The storage. The query language. The AI feature they announced last quarter. Which is exactly where the next invoice comes from.
-
-**SIMON:** Hold that thought.
-
----
-
-## Round 4 — The exit test (~3.5 min)
-
-**SIMON:** So the customer asked what it would cost to leave. All of it. Let's add it up.
-
-`[SLIDE: the invoice — third line item lands: "Influence · contribution, and it is optional"]`
-
-**SIMON:** Three lines. Migration — the operational layer conformance never covered. Keeping up — re-instrumenting every time the spec moves. Influence — contribution, and there is no other door. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
-
-**THOMAS:** And every line on it is from us. The community. Your own project is on that list.
-
-**SIMON:** Every line. That's the honest version of everything I've said today, and I'm not going to soften it: open standards send invoices.
 
 **THOMAS:** Now do the graveyard.
 
@@ -267,7 +291,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 `[SLIDE: click 1 — the "from: a vendor" column appears beside it. Same three line items.]`
 
-**THOMAS:** Same bill. Different letterhead. Migration: exit fees, data export, and a rewrite — because there is no conformance suite to tell you what carries over. Keeping up: forced upgrades, deprecations, and repricing, on their schedule, not yours. Influence: enterprise tier, escalation, and waiting.
+**THOMAS:** Same bill. Different letterhead. Migrating: exit fees, data export, and a rewrite — because there is no conformance suite to tell you what carries over. Keeping up: forced upgrades, deprecations, and repricing, on their schedule, not yours. Steering: enterprise tier, escalation, and waiting.
 
 **SIMON:** You've made my argument. Both columns have numbers in them.
 
@@ -331,6 +355,16 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
   the talk, but it is also the thing most likely to be screenshotted out of context at
   minute twelve. Two safeguards, both already in the script: Thomas argues back in every
   round, and he promises the second column in the opening. Do not cut that promise.
+- **Act IV** ("is there anywhere to go?") is the old exit test, named. It opens on the same
+  three boxes as the opening claim slide — lit again, twenty minutes later, now as a
+  question. It has no standard of its own, which is why all three are lit and the rail shows
+  all three questions: the act is about the market, not about any one project.
+- The market-structure beat moved out of round 3 into act IV, where it is the first
+  argument rather than a coda. Round 3 now ends on its own invoice line.
+- **Clicks are structural only.** Bullet lists land whole — the per-line stepping was
+  making the presenter click through lines the room reads in a second. What still clicks:
+  the punchline under a list, the "After" column arriving after "Before", "To whom.", and
+  the three takeaways, which step because Simon and Thomas take one each.
 - **Structure:** every act now asks the same three questions — what do you get, what does
   it cost, who owns it — and the slides carry an on-screen rail showing which is live. Say
   the three out loud once in act I so the audience has the frame; after that let the rail

@@ -20,9 +20,12 @@ defineProps({
   amounts: { type: Boolean, default: false },
 })
 
+// Only the Steering row carries qualifiers, and it carries one on each side —
+// the vendor's honest advantage and the community's. The other two rows stay a
+// single line per column so the comparison reads evenly.
 const LINES = [
   {
-    item: 'Migration',
+    item: 'Migrating',
     vendor: 'exit fees · data export · rewrite',
     community: "the operational layer conformance didn't cover",
     amount: '6 weeks · the platform team',
@@ -30,15 +33,11 @@ const LINES = [
   {
     item: 'Keeping up',
     vendor: 'forced upgrades · deprecations · repricing',
-    vendorNote: 'on their schedule, at their price',
     community: 're-instrumenting when the spec moves',
-    // Act II argues two costs: the churn of following it, and the ceiling on
-    // where it will go. The row bills both.
-    communityNote: "and waiting for what consensus hasn't reached",
     amount: '2 migrations · everyone with a dashboard',
   },
   {
-    item: 'Influence',
+    item: 'Steering',
     vendor: 'enterprise tier · escalation · waiting',
     // The one line the vendor genuinely wins, stated plainly so the comparison
     // is not a strawman.
@@ -80,11 +79,11 @@ const CURRENCY = {
       <div class="item">{{ l.item }}</div>
       <div v-if="vendor" class="cell">
         {{ l.vendor }}
-        <div v-if="l.vendorNote" class="note">{{ l.vendorNote }}</div>
+        <div v-if="amounts && l.vendorNote" class="note">{{ l.vendorNote }}</div>
       </div>
       <div class="cell">
         {{ l.community }}
-        <div v-if="l.communityNote" class="note">{{ l.communityNote }}</div>
+        <div v-if="amounts && l.communityNote" class="note">{{ l.communityNote }}</div>
         <div v-if="amounts" class="amt">{{ l.amount }}</div>
       </div>
     </div>

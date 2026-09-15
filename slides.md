@@ -144,7 +144,6 @@ layout: center
 # Took six weeks
 
 <div class="costs">
-<v-clicks>
 
 - StorageClasses
 - LoadBalancer annotations
@@ -153,7 +152,6 @@ layout: center
 - Ingress class · cert issuer · DNS controller
 - Managed control-plane defaults
 
-</v-clicks>
 </div>
 
 <div v-click class="mt-8 text-sm opacity-60">certified by nothing</div>
@@ -254,14 +252,12 @@ layout: center
 # The intersection, not the union
 
 <div class="costs">
-<v-clicks>
 
 - A spec holds what everyone could agree to
 - Not what any one of them does best
 - What a vendor calls a differentiator, a committee calls out of scope
 - \[ the signal your team actually wanted \]
 
-</v-clicks>
 </div>
 
 <div v-click class="mt-8 text-sm opacity-60">paid in capability, not in weeks</div>
@@ -286,7 +282,6 @@ layout: center
 # What it cost to leave the agent
 
 <div class="costs">
-<v-clicks>
 
 - Auto-discovery
 - [ RUM / browser / mobile ]
@@ -295,7 +290,6 @@ layout: center
 - Two forced re-instrumentations
 - Dashboards rebuilt twice
 
-</v-clicks>
 </div>
 
 <!--
@@ -384,7 +378,6 @@ layout: center
 # Everything that isn't code
 
 <div class="costs">
-<v-clicks>
 
 - Flag definitions
 - Targeting rules · segments
@@ -393,7 +386,6 @@ layout: center
 - Provider-specific hooks
 - The feature you wanted → "join the working group"
 
-</v-clicks>
 </div>
 
 <div v-click class="mt-8 text-sm opacity-60">we standardised the code and left the data where it was</div>
@@ -414,6 +406,7 @@ THOMAS: "You standardised the thing that touches every line of code. The rest is
 
 ---
 layout: center
+clicks: 1
 ---
 
 <Ask active="own" />
@@ -425,55 +418,42 @@ layout: center
   [ CNCF DevStats — OpenFeature contributions by company, over time ]
 </div>
 
-<div class="mt-4 text-sm opacity-50">devstats.cncf.io · companies contributing · one colour dominates the early years</div>
+<div class="mt-4 text-sm opacity-50">devstats.cncf.io · companies contributing · one contributor carries most of the commits</div>
+
+<div v-click class="mt-4 text-lg">and the spec still isn't theirs</div>
 
 <!--
-TODO: screenshot from devstats.cncf.io, OpenFeature, "Companies contributing" stacked chart.
-SIMON: "Open on paper, one company's roadmap in practice. Not a conspiracy — just who paid the engineers. The bus factor was a parking factor."
-"There are standards that never made that transition. Proprietary with extra steps."
-THOMAS: "The door was real. Nobody can padlock it." SIMON: "If someone walks through."
+TODO: screenshot from devstats.cncf.io, OpenFeature, "Companies contributing" stacked chart. The chart names the company; decide before the talk whether to say the name out loud.
+ACCURACY — do not overstate this, it is a real project and a real company. OpenFeature is NOT owned or controlled by its largest contributor. The spec is a collaborative, multi-vendor effort and has been. What the chart shows is concentration of *work*, not concentration of *control*.
+SIMON makes the precise version: one company has carried most of the commits since the beginning. That is not capture — nobody there can merge what the other vendors will not take.
+Click: "and the spec still isn't theirs." Say it plainly. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
+Then the actual complaint, which is narrower and true: capacity is not neutral. When one company pays most of the engineers, the things built first are the things that company needed first. Not maliciously — naturally. The bus factor was a parking factor.
+SIMON: "The spec was never theirs. The roadmap's *pace* was."
 -->
 
 ---
-layout: two-cols
+layout: center
 ---
 
-# Before the standard
+<Ask active="own" />
 
-<div class="mt-4 text-lg">
+# When it does go wrong
 
-- an agent per language
-- maintained forever
-- table stakes to enter at all
-
+<div class="timeline text-lg mt-8">
+  <div class="year">2018</div><div class="event">NATS is donated to the CNCF</div>
+  <div class="year">2025</div><div class="event">the donor announces future releases will be Business Source Licence<div class="note">and asks for the trademark back — the name, the domain, the repositories</div></div>
+  <div class="year"></div><div class="event cont">the CNCF petitions the US trademark office</div>
+  <div class="year"></div><div class="event cont">settled in weeks — both NATS trademarks assigned to the Linux Foundation<div class="note">the relicence never lands. NATS stays Apache-2.0, in the foundation, and Synadia stays free to sell on top of it.</div></div>
 </div>
-
-<div class="mt-6 text-sm opacity-60">the moat <b>was</b> the instrumentation</div>
-
-::right::
-
-# After
-
-<div class="mt-4 text-lg">
-
-<v-clicks>
-
-- one wire format
-- a startup ships a backend, not twelve agents
-- the category has new names in it
-
-</v-clicks>
-
-</div>
-
-<div v-click class="mt-6 text-sm opacity-60">the moat moved <b>up</b></div>
 
 <!--
-Pays off "if someone walks through" — the held thought from the DevStats slide.
-THOMAS takes the LEFT column: the door matters because somebody can afford to build on the other side of it. Before OTel, shipping an observability product meant writing and maintaining an agent for every language. That moat is what kept the category to a handful of incumbents.
-Clicks the RIGHT column one at a time. Name real ones on the third click — the point is that the names are new.
-SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
+Sources, all public: CNCF blog "Protecting NATS and the integrity of open source" (1 May 2025); The Register, 2 May 2025; The New Stack. NATS accepted to the CNCF 2018-03-15 per cncf/landscape. Re-check before the talk.
+This slide replaces a vague insinuation ("there are standards that never made that transition") with a documented case, and it is the only place in the talk where the failure mode is not hypothetical.
+SIMON gets the first half: somebody actually tried. Not a fork — the name, the domain, the repos. The risk is not theoretical and it happened this year to a CNCF project.
+THOMAS gets the second half, and it is the strongest thing he says all talk: it took weeks to fail, because the trademark sat with a foundation instead of with a vendor. That is what governance is FOR. The door could not be padlocked, and we found that out in public, the hard way.
+Do not let Simon win this slide. He raises it and then loses it — that is the point, and it is why he can be honest about his own project on the slide before.
 -->
+
 
 ---
 layout: center
@@ -490,8 +470,67 @@ SIMON: hands-up moment — "who's migrated off something in the last year? Keep 
 -->
 
 ---
+layout: center
+---
+
+<Ask active="all" />
+
+# Is there anywhere to go?
+
+<StandardsStack active="all" class="mt-12" />
+
+<!--
+ACT IV. The same three boxes Thomas put up twenty minutes ago under "never locked in again" — lit again, and this time it is a question.
+Everything so far priced staying. This act prices leaving, and leaving needs somewhere to go.
+No single standard owns this act, which is why all three are lit and the rail shows all three questions.
+-->
+
+---
 layout: two-cols
 ---
+
+<Ask active="all" />
+<ColumnDivider label="the standard" />
+
+# Before
+
+<div class="mt-4 text-lg">
+
+- an agent per language
+- maintained forever
+- table stakes to enter at all
+
+</div>
+
+<div class="mt-6 text-sm opacity-60">the moat <b>was</b> the instrumentation</div>
+
+::right::
+
+# After
+
+<div v-click class="mt-4 text-lg">
+
+- one wire format
+- a startup ships a backend, not twelve agents
+- the category has new names in it
+
+</div>
+
+<div v-click class="mt-6 text-sm opacity-60">the moat moved <b>up</b></div>
+
+<!--
+Opens act IV, and pays off "if someone walks through" — the held thought from the end of act III.
+THOMAS takes the LEFT column: the door matters because somebody can afford to build on the other side of it. Before OTel, shipping an observability product meant writing and maintaining an agent for every language. That moat is what kept the category to a handful of incumbents.
+Clicks the RIGHT column one at a time. Name real ones on the third click — the point is that the names are new.
+SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
+-->
+
+---
+layout: two-cols
+---
+
+<Ask active="all" />
+<ColumnDivider />
 
 # Archived
 
@@ -548,6 +587,8 @@ layout: center
 clicks: 2
 ---
 
+<Ask active="all" />
+
 <Invoice :rows="3" amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
 
 <!--
@@ -561,6 +602,8 @@ Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a fla
 ---
 layout: center
 ---
+
+<Ask active="all" />
 
 <div class="border rounded-xl p-8 max-w-2xl mx-auto text-left font-mono text-lg leading-relaxed shadow">
 <div class="opacity-50 text-sm mb-2">Senior Platform Engineer — [Company]</div>

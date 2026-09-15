@@ -112,7 +112,14 @@
 
 /* Slidev's two-cols layout is a bare `grid grid-cols-2` with no gutter, so
    right-aligned content in the left column runs straight into the right
-   column's text. Give every two-column slide a gap. */
+   column's text. Give every two-column slide a gap, centre each column's
+   heading over its own content, and make the layout a positioning context for
+   <ColumnDivider>. */
 .slidev-layout.two-columns {
-  column-gap: 3rem;
+  position: relative;
+  column-gap: 4rem;
+}
+
+.slidev-layout.two-columns h1 {
+  text-align: center;
 }

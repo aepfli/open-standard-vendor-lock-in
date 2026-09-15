@@ -2,6 +2,9 @@
 // Act indicator. Each act answers exactly one of the three questions, so this
 // stays fixed for the whole act — it tells the audience which question the
 // slide in front of them is in service of, not what the slide itself is.
+//
+// The exception is the final act, which is about all three at once: `all`
+// lights every question.
 defineProps({
   active: { type: String, required: true },
 })
@@ -19,7 +22,7 @@ const QUESTIONS = [
       v-for="(q, i) in QUESTIONS"
       :key="q.key"
       class="ask-q"
-      :class="{ on: q.key === active }"
+      :class="{ on: active === 'all' || q.key === active }"
     >
       <span class="ask-n">{{ i + 1 }}</span>{{ q.label }}
     </span>
