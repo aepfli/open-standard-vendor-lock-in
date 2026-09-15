@@ -416,7 +416,50 @@ layout: center
 TODO: screenshot from devstats.cncf.io, OpenFeature, "Companies contributing" stacked chart.
 SIMON: "Open on paper, one company's roadmap in practice. Not a conspiracy — just who paid the engineers. The bus factor was a parking factor."
 "There are standards that never made that transition. Proprietary with extra steps."
-THOMAS: "The door was real. Nobody can padlock it." SIMON: "If someone walks through." — "Hold that thought."
+THOMAS: "The door was real. Nobody can padlock it." SIMON: "If someone walks through."
+-->
+
+---
+layout: two-cols
+---
+
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# Before the standard
+
+<div class="mt-4 text-lg">
+
+- an agent per language
+- maintained forever
+- table stakes to enter at all
+
+</div>
+
+<div class="mt-6 text-sm opacity-60">the moat <b>was</b> the instrumentation</div>
+
+::right::
+
+# After
+
+<div class="mt-4 text-lg">
+
+<v-clicks>
+
+- one wire format
+- a startup ships a backend, not twelve agents
+- the category has new names in it
+
+</v-clicks>
+
+</div>
+
+<div v-click class="mt-6 text-sm opacity-60">the moat moved <b>up</b></div>
+
+<!--
+Pays off "if someone walks through" — the held thought from the DevStats slide.
+THOMAS takes the LEFT column: the door matters because somebody can afford to build on the other side of it. Before OTel, shipping an observability product meant writing and maintaining an agent for every language. That moat is what kept the category to a handful of incumbents.
+Clicks the RIGHT column one at a time. Name real ones on the third click — the point is that the names are new.
+SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
 -->
 
 ---

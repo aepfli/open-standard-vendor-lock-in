@@ -117,7 +117,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ---
 
-## Round 3 — OpenFeature (~5 min)
+## Round 3 — OpenFeature (~6.5 min)
 
 **THOMAS:** Flags were supposed to be the easy part.
 
@@ -165,7 +165,25 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** If someone walks through.
 
-**THOMAS:** If someone walks through.
+**THOMAS:** Somebody does. And the reason they can afford to is the standard.
+
+`[SLIDE: before / after the standard — left column: an agent per language, maintained forever, table stakes to enter at all]`
+
+**THOMAS:** Before OpenTelemetry, if you wanted to sell observability you didn't start by building a product. You started by writing an agent. Java. Then Python, Go, Node, Ruby, .NET — and then you maintained all of them, forever, every time one of those languages shipped a new version. That wasn't a feature anybody bought. That was the moat. And it's exactly why that category was the same four companies for a decade.
+
+`[SLIDE: right column, clicks — one wire format / a startup ships a backend, not twelve agents / the category has new names in it]`
+
+**THOMAS:** Now there's one wire format. *(clicks)* A four-person company ships a backend instead of twelve agents. *(clicks)* And look at who's selling observability today — names that did not exist when you were writing your first agent. Same shape with OpenFeature: a provider is an adapter, not a platform. That's a week of work, not a company-year.
+
+**THOMAS:** So — yes. One company behind the door. But the standard is what makes the *second* company affordable. That's not a nice side effect, that's the whole mechanism. Your ability to leave was never a property of the spec. It's a property of there being somewhere to go.
+
+*(beat)*
+
+**SIMON:** That's the best argument you've made today.
+
+**THOMAS:** I'll take it.
+
+**SIMON:** And it costs you something. The entry cost fell — and the moat moved *up*. Nobody competes on collecting the data any more, so everybody competes above the standard. The pipeline. The storage. The query language. The AI feature they announced last quarter. Which is exactly where the next invoice comes from.
 
 **SIMON:** Hold that thought.
 
@@ -251,4 +269,6 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 - Lines to test for laughs: "I may have sold them the training" / "parking factor" / "which corpse is easier to exhume" / "nothing on this invoice is in euros".
 - Amounts on the final invoice are placeholders — replace with the customer's real numbers; the currency reveal only works if the amounts are specific. Cut any that don't land in rehearsal.
 - Word count is now over the limit after the side-by-side additions; rehearse first, then cut. Candidates: Thomas's second counter in round 1, the "show me the export" beat.
+- The market-structure beat at the end of round 3 (the "before / after the standard" slide) adds ~90 s to the longest round. It is Thomas's strongest card and it pays off "if someone walks through", which used to dangle — but if the talk runs long, the cheapest cut in that beat is Thomas's OpenFeature aside ("a provider is an adapter"), not the OTel agent story, which is the evidence.
+- Name real vendors on the third click of that slide, or cut the click. "The category has new names in it" only lands if the names are said out loud.
 - Balance check: each round now has Simon's losses on screen and Thomas's gains on screen. Neither should get the last word every round — swap who closes round 2 if it still feels one-sided.
