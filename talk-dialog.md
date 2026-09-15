@@ -1,4 +1,4 @@
-# Your Open Source Standard Is Just Another Lock-In — Dialog draft v0.3
+# Your Open Source Standard Is Just Another Lock-In — Dialog draft v0.6
 
 **Simon** = practitioner, OpenFeature maintainer, argues lock-in is real
 **Thomas** = trainer, argues community standards are the way out
@@ -41,9 +41,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Let's define the crime first. Lock-in isn't a yes or no. It's a cost.
 
-`[SLIDE: the ledger — empty. Two columns: TOOLS · PEOPLE. Header: "Cost of exit"]`
+`[SLIDE: the invoice — empty. Header: "Never locked in again." Rows have an amount column, blank.]`
 
-**SIMON:** Every time we say "we're not locked in," what we mean is "leaving is cheap." So let's actually price it. Every layer of that beautiful architecture of yours. Tools on the left — what you have to rewrite. People on the right — what you have to relearn.
+**SIMON:** You said "never locked in again." I'm going to keep the invoice for that sentence. Every layer of that beautiful architecture of yours — what it costs to leave, and what it costs to stay.
 
 **THOMAS:** Fine. Start with the one I'm most sure about.
 
@@ -65,7 +65,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** The left column moved in an afternoon. Deployments, Services, RBAC, the Helm charts, every kubectl command. Your conformance suite tested every one of them. *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
 
-`[SLIDE: the ledger — first row appears under TOOLS: "Portable API. Non-portable operations."]`
+`[SLIDE: the ledger — first row: "Portable API. Non-portable operations."]`
 
 **SIMON:** Conformance certifies the floor. And nobody lives on the floor.
 
@@ -75,7 +75,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** That's a people problem, not a standard problem.
 
-**SIMON:** Funny you say that. *(nods at the PEOPLE column)* We'll come back to that. By the way — the customer's platform team, all CKA certified. Who did they get that from?
+**SIMON:** Funny you say that. We'll come back to that. By the way — the customer's platform team, all CKA certified. Who did they get that from?
 
 **THOMAS:** …I may have sold them the training.
 
@@ -99,7 +99,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** The agent did auto-discovery for free. [RUM was better. Profiling was years ahead.] Sampling and cost controls lived on the vendor's side and just worked. We rebuilt half of that ourselves before the first trace showed up. That's the migration *onto* the standard. Then came the migrations *within* it. The customer instrumented in [2021]. Early adopters, doing the right thing. Then metrics changed under them. Then the semantic conventions for HTTP stabilised — which is great — except stabilising meant *renaming*. `http.method` became `http.request.method`. Sounds trivial. It touched every dashboard, every alert, every SLO that filtered on it. They re-instrumented twice in three years, and neither time was because *they* wanted something.
 
-`[SLIDE: the ledger — row 2 under TOOLS: "Stability. Paid for in years."]`
+`[SLIDE: the ledger — row 2: "The standard moved. Re-instrumented twice to keep up."]`
 
 **SIMON:** And who decided those names? Look at who's in the semantic conventions working groups. Vendors. Shaping the schema that their backends ingest.
 
@@ -113,7 +113,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** The argument is the pain was *one-time* and the freedom is permanent. Once a signal goes stable in OTel it stays stable. That's the deal.
 
-**SIMON:** That's a good deal. I'd take it. I'd just like it on the ledger.
+**SIMON:** That's a good deal. I'd take it. I'd just like the two migrations on the invoice.
 
 ---
 
@@ -141,7 +141,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** It slows down. Every change is now a multi-vendor negotiation. Every SDK has to agree. The customer wanted [a feature: e.g. evaluation context that changes at runtime / a specific hook behaviour] — and the honest answer I had to give them was: "join the working group." I'm a maintainer and I couldn't just *do* it for them.
 
-`[SLIDE: the ledger — row 3 under TOOLS: "Success slows the spec."]`
+`[SLIDE: the ledger — row 3: "Success slows the spec."]`
 
 **THOMAS:** Simon. That's not a failure. That's the thing becoming load-bearing. You *want* the spec to be slow once there are a thousand production systems on it. The alternative is a fast spec that breaks a thousand systems.
 
@@ -175,37 +175,41 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** So the customer asked what it would cost to leave. All of it. Let's add it up.
 
-`[SLIDE: the ledger, TOOLS column totalled — three rows visible]`
+`[SLIDE: the invoice — three rows, complete, amounts still blank]`
 
-**SIMON:** Non-portable operations. Two forced re-instrumentations. A spec they can't move without a working group. That's the left column. And it's real, and it's not zero, and anyone who told them it was zero was selling something.
+**SIMON:** Non-portable operations. Two re-instrumentations they didn't ask for. A spec they can't move without a working group. That's the invoice for "never locked in again." And it's real, and it's not zero, and anyone who told them it was zero was selling something.
 
 **THOMAS:** Now do the graveyard.
 
 **SIMON:** Fair. *(audience moment)* Hands up — who's migrated off something in the last year? Keep them up if the thing you left was an open standard. *(reacts to the room)*
 
-`[SLIDE: split — left: archived CNCF projects; right: [discontinued proprietary products] with "data export: no" ]`
+`[SLIDE: split — left: archived CNCF projects; right: [discontinued proprietary products] with "data export: no"]`
 
 **THOMAS:** Standards die. Projects get archived. But when an open standard dies, the spec is still there, the code is still there, the data is in a format someone else can read. When a proprietary product dies, it takes your data and three years of dashboards with it. Which corpse is easier to exhume?
 
-**SIMON:** The open one. Every time. I'll give you that. But there's a row I haven't added yet.
+**SIMON:** The open one. Every time. I'll give you that. But you've all been reading this invoice wrong. There's no currency on it.
 
-`[SLIDE: the ledger — PEOPLE column: "The knowledge."]`
+`[SLIDE: the invoice — click 1, amounts appear: "6 weeks · the platform team" / "2 migrations · everyone with a dashboard" / "1 working group · 1 engineer, indefinitely"]`
 
-**SIMON:** The knowledge. The switching cost was never really the config. It's the team. Two hundred engineers who *think* in Kubernetes. Who know which semconv attribute is the weird one. Who've internalised how flag evaluation works. Every one of those people is a sunk cost that walks out the door if you change stacks. Nobody budgets for retraining. And somebody in this room — *(looks at Thomas)* — sells that training.
+**SIMON:** Six weeks of the platform team. Two migrations for every developer who owns a dashboard. One engineer sitting in a working group, indefinitely. Nothing on this invoice is in euros.
 
-**THOMAS:** Guilty. And I'll take that row, because it's the best thing on the board. But it's two rows, not one.
+`[SLIDE: click 2 — currency stamp: "Currency: knowledge"]`
 
-`[SLIDE: the knowledge cell splits — "relearn the tool: paid either way" / "relearn how to think: paid only if you leave the standard"]`
+**SIMON:** The currency is knowledge. What your people had to learn, and would have to learn again. Two hundred engineers who *think* in this stack. Nobody budgets for it. And somebody in this room — *(looks at Thomas)* — sells it.
 
-**THOMAS:** Yes, they'll relearn the dashboard. New backend, new console, new query language — that cost is there in every migration, standard or not. I won't pretend it isn't. But they won't relearn what a span is. They won't relearn how a flag evaluates or what a Deployment does. That's the part that took years, and that part goes with the person. To the next job. To the next vendor. To the next company that gets acquired.
+**THOMAS:** Guilty. And I'll take that currency, because it's the best thing on the invoice. But there are two kinds.
 
-**SIMON:** And with a vendor?
+`[SLIDE: click 3 — split: "convertible" / "non-convertible"]`
 
-**THOMAS:** With a vendor you pay both rows. The console *and* the mental model, because the mental model *was* the console.
+**THOMAS:** Convertible: what a span is. How a flag evaluates. What a Deployment does. That knowledge spends at the next vendor, the next job, the next company that acquires you. Non-convertible: the console. The query language. The vendor's approval workflow. Worthless the day the contract ends — and yes, you pay that one in every migration, standard or not. I won't pretend otherwise.
+
+**SIMON:** So the invoice is the same size either way.
+
+**THOMAS:** Now price your proprietary stack. Same currency. Same amounts. All of it non-convertible. Because the mental model *was* the console.
 
 `[SLIDE: a real job ad — requirements list: Kubernetes, OpenTelemetry. No vendor product named.]`
 
-**THOMAS:** If you have to be locked into something — and you do — be locked into what your people can carry.
+**THOMAS:** If you have to be paid in something — and you do — be paid in a currency you can exchange.
 
 ---
 
@@ -213,7 +217,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 *Both step slightly toward centre. Tone drops; no more scoring points.*
 
-**SIMON:** Okay. Your best point is the one I can't answer: the knowledge travels. That's the real difference, and it's a bigger difference than the API.
+**SIMON:** Okay. Your best point is the one I can't answer: the currency converts. That's the real difference, and it's a bigger difference than the API.
 
 **THOMAS:** And yours is the one I don't say in trainings: the cost never goes to zero, it just moves somewhere nobody's looking. I should say it in trainings.
 
@@ -244,6 +248,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 - Replace every `[...]` with the real customer detail. The talk lives or dies on the scars being specific.
 - Round 2 timeline dates: verify against OTel spec release history before the slide is built.
 - Thomas needs one first-person migration story of his own somewhere in rounds 1–2 so it isn't only Simon's scars — a training-room anecdote works ("every cohort asks me the same question about annotations").
-- Lines to test for laughs: "I may have sold them the training" / "parking factor" / "which corpse is easier to exhume". Cut any that don't land in rehearsal.
+- Lines to test for laughs: "I may have sold them the training" / "parking factor" / "which corpse is easier to exhume" / "nothing on this invoice is in euros".
+- Amounts on the final invoice are placeholders — replace with the customer's real numbers; the currency reveal only works if the amounts are specific. Cut any that don't land in rehearsal.
 - Word count is now over the limit after the side-by-side additions; rehearse first, then cut. Candidates: Thomas's second counter in round 1, the "show me the export" beat.
 - Balance check: each round now has Simon's losses on screen and Thomas's gains on screen. Neither should get the last word every round — swap who closes round 2 if it still feels one-sided.
