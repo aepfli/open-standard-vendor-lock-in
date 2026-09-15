@@ -8,10 +8,14 @@ const props = defineProps({
   size: { type: String, default: '3.5rem' },
 })
 
+// Paths built here are opaque to Vite's asset rewriting, so they must carry
+// the deploy base themselves — GitHub Pages serves the deck from a subpath.
+const asset = file => `${import.meta.env.BASE_URL}logos/${file}`
+
 const MARKS = {
-  kubernetes:    { src: '/logos/kubernetes-icon-color.svg',    tinted: false },
-  opentelemetry: { src: '/logos/opentelemetry-icon-color.svg', tinted: false },
-  openfeature:   { src: '/logos/openfeature-icon-white.svg',   tinted: true, accent: '#5D5DFF' },
+  kubernetes:    { src: asset('kubernetes-icon-color.svg'),    tinted: false },
+  opentelemetry: { src: asset('opentelemetry-icon-color.svg'), tinted: false },
+  openfeature:   { src: asset('openfeature-icon-white.svg'),   tinted: true, accent: '#5D5DFF' },
 }
 </script>
 
