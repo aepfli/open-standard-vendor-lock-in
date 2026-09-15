@@ -98,6 +98,8 @@ THOMAS: "Fine. Start with the one I'm most sure about."
 layout: center
 ---
 
+<Ask active="get" />
+
 <StandardsStack active="kubernetes" />
 
 <!--
@@ -136,7 +138,7 @@ Deliberately few lines, deliberately large — the audience should feel this sid
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="get" />
 <Tag project="kubernetes" label="Kubernetes" />
 
 # Took six weeks
@@ -165,29 +167,6 @@ SIMON clicks one per item — each is a real thing the customer hit. The editori
   control-plane defaults — "you never wrote down, which is why you found them in week five"
 Land it: "Conformance certifies the previous slide. Nobody lives on the previous slide."
 THOMAS: "And that list is smaller than the whole compute layer used to be."
--->
-
----
-layout: center
----
-
-<Ask active="own" />
-<Tag project="kubernetes" label="Kubernetes" />
-
-# Who owns the roadmap?
-
-<div class="mt-6 h-64 w-full border-2 border-dashed rounded-xl flex items-center justify-center opacity-60 text-xl">
-  [ CNCF DevStats — Kubernetes contributions by company ]
-</div>
-
-<div class="mt-4 text-sm opacity-50">the mark and the conformance suite are the foundation's · the roadmap is the SIGs'</div>
-
-<!--
-TODO: screenshot from devstats.cncf.io, Kubernetes, "Companies contributing". Check the current shape before claiming anything about it on stage.
-First time the third question gets asked — say it plainly so the pattern registers: "Every standard in this talk gets the same three questions. This is the third one."
-THOMAS: conformance is genuinely neutral — the suite does not care who you are.
-SIMON: the suite is neutral. The roadmap has a shape, and the shape is who can afford full-time maintainers.
-Keep this short. Kubernetes is the warm-up for this question; OpenFeature is where it bites.
 -->
 
 ---
@@ -228,6 +207,8 @@ SIMON: "…all CKA certified. Who did they get that from?" — THOMAS: "I may ha
 layout: center
 ---
 
+<Ask active="cost" />
+
 <StandardsStack active="opentelemetry" />
 
 <!--
@@ -238,7 +219,7 @@ SIMON: "So then we instrumented it."
 layout: center
 ---
 
-<Ask active="get" />
+<Ask active="cost" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # One pipeline
@@ -286,24 +267,6 @@ SIMON: "So then we instrumented it." Customer instrumented 2021, re-instrumented
 -->
 
 ---
-layout: fact
----
-
-<Ask active="cost" />
-
-`http.method`
-<div class="text-3xl my-4 opacity-50">↓</div>
-`http.request.method`
-
-<div class="mt-10 text-xl opacity-70">every dashboard · every alert · every SLO</div>
-
-<!--
-SIMON: "Sounds trivial. It touched everything that filtered on it."
-"And who decided those names?"
-THOMAS: "Vendors. In a public room, with public notes, and a PR you could have commented on."
--->
-
----
 layout: center
 ---
 
@@ -335,26 +298,21 @@ THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
 -->
 
 ---
-layout: center
+layout: fact
 ---
 
-<Ask active="own" />
-<Tag project="opentelemetry" label="OpenTelemetry" />
+<Ask active="cost" />
 
-# Who owns OpenTelemetry?
+`http.method`
+<div class="text-3xl my-4 opacity-50">↓</div>
+`http.request.method`
 
-<div class="mt-6 h-64 w-full border-2 border-dashed rounded-xl flex items-center justify-center opacity-60 text-xl">
-  [ CNCF DevStats — OpenTelemetry contributions by company ]
-</div>
-
-<div class="mt-4 text-sm opacity-50">no single colour · which is exactly why the timeline looked like that</div>
+<div class="mt-10 text-xl opacity-70">every dashboard · every alert · every SLO</div>
 
 <!--
-TODO: screenshot from devstats.cncf.io, OpenTelemetry, "Companies contributing".
-THOMAS gets this one, and it is his best slide in the act: nobody owns it. That chart is the answer to Simon's timeline — seven years is what genuinely multi-vendor costs.
-SIMON concedes the governance and keeps the bill: "I'm not saying it's captured. I'm saying I paid for it not being captured, twice, in re-instrumentation."
-THOMAS: "Yes. That's the price of the thing you actually wanted."
-Sets up act III, where the chart looks nothing like this.
+SIMON: "Sounds trivial. It touched everything that filtered on it."
+"And who decided those names?"
+THOMAS: "Vendors. In a public room, with public notes, and a PR you could have commented on."
 -->
 
 ---
@@ -395,6 +353,8 @@ SIMON: "Good deal. I'd take it. I'd just like the two migrations on the bill."
 layout: center
 ---
 
+<Ask active="own" />
+
 <StandardsStack active="openfeature" />
 
 <!--
@@ -405,7 +365,7 @@ THOMAS: "Flags were supposed to be the easy part."
 layout: center
 ---
 
-<Ask active="get" />
+<Ask active="own" />
 <Tag project="openfeature" label="OpenFeature" />
 
 # One line to swap
@@ -431,7 +391,7 @@ The provider swap being one line is the strongest single claim in the talk. Let 
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="own" />
 <Tag project="openfeature" label="OpenFeature" />
 
 # Everything that isn't code

@@ -15,7 +15,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** *(easy, fluent, slightly too fast — he has said this two hundred times)* Okay. Kubernetes underneath — conformant distribution, doesn't matter which one. OpenTelemetry for everything observability: traces, metrics, logs, one SDK, pick your backend later. Feature flags through OpenFeature so they're not writing `if (customer == "bigbank")` in the code. Everything CNCF, everything portable, and — this is the important part — they will never be locked in again.
 
-`[SLIDE: clean reference architecture — K8s / OTel / OpenFeature / CNCF logos]`
+`[SLIDE: the act map — Kubernetes / OpenTelemetry / OpenFeature, all three lit, each under the question its act answers]`
 
 **SIMON:** That's a great answer.
 
@@ -53,9 +53,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 *Transition is invisible: Thomas simply continues.*
 
+`[SLIDE: act map — Kubernetes lit. PORTABILITY · "what do you get?"]`
+
 **THOMAS:** Kubernetes. There is an actual conformance program. Since 2017. Over a hundred certified distributions, and every one of them passes the same test suite. `kubectl apply` works on all of them. That's not marketing, that's a test you can run.
 
-`[SLIDE: two columns — "Moved in an afternoon" (Thomas's) / "Took six weeks" (Simon's, clicks through)]`
+`[SLIDE: "Moved in an afternoon" — Thomas's. Four lines, large.]`
 
 **THOMAS:** Show me a proprietary platform with a hundred interchangeable implementations.
 
@@ -63,11 +65,15 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** And?
 
-**SIMON:** The left column moved in an afternoon. Deployments, Services, RBAC, the Helm charts, every kubectl command. Your conformance suite tested every one of them. *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
+**SIMON:** All of that moved in an afternoon. Deployments, Services, RBAC, the Helm charts, every kubectl command. Your conformance suite tested every one of them.
+
+`[SLIDE: "Took six weeks" — Simon's. Six lines, small, one per click.]`
+
+**SIMON:** *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
 
 `[SLIDE: the ledger — first row: "Portable API. Non-portable operations."]`
 
-**SIMON:** Conformance certifies the floor. And nobody lives on the floor.
+**SIMON:** Conformance certifies the slide before that one. And nobody lives on that slide.
 
 **THOMAS:** Okay, but think about where that floor *was* before. Five, ten years ago, the lock-in wasn't the annotations — it was the whole compute layer. The scheduler, the deployment model, the networking model, all of it was the vendor's. You just told me the entire application layer moved in an afternoon. The cost didn't disappear, agreed. But it moved up the stack and it got a lot smaller.
 
@@ -85,19 +91,29 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ## Round 2 — OpenTelemetry (~4 min)
 
+`[SLIDE: act map — OpenTelemetry lit. TIME · "what does it cost?"]`
+
 **SIMON:** So then we instrumented it.
 
 **THOMAS:** OpenTelemetry. This one I'll defend even harder, because I remember what came before it. Three vendor agents on every host, each with its own format, each with its own idea of what a span is. Zipkin here, Jaeger there, and a proprietary agent nobody was allowed to remove.
 
-**SIMON:** I remember too. And I remember how long it took to get out of that.
+`[SLIDE: "One pipeline" — one SDK any backend · traces, metrics, logs · semantic conventions everyone speaks · leave on Friday, any Friday]`
+
+**THOMAS:** And this is what replaced it. One SDK, any backend. Leave on Friday. Any Friday.
+
+**SIMON:** Agreed. Every word of it. I just want the clock on the wall while you say it.
 
 `[SLIDE: timeline — 2016 OpenTracing · 2018 OpenCensus · 2019 merge into OpenTelemetry · 2021 tracing stable · 2022 metrics stable · 2023 logs, HTTP semantic conventions stable · migration markers along the way]`
 
 **SIMON:** And here's the thing nobody says out loud: leaving the proprietary agent has a feature list too.
 
-`[SLIDE: two columns — "What you keep" / "What you lost leaving the agent" (Simon clicks)]`
+`[SLIDE: "What it cost to leave the agent" — six lines, one per click]`
 
-**SIMON:** The agent did auto-discovery for free. [RUM was better. Profiling was years ahead.] Sampling and cost controls lived on the vendor's side and just worked. We rebuilt half of that ourselves before the first trace showed up. That's the migration *onto* the standard. Then came the migrations *within* it. The customer instrumented in [2021]. Early adopters, doing the right thing. Then metrics changed under them. Then the semantic conventions for HTTP stabilised — which is great — except stabilising meant *renaming*. `http.method` became `http.request.method`. Sounds trivial. It touched every dashboard, every alert, every SLO that filtered on it. They re-instrumented twice in three years, and neither time was because *they* wanted something.
+**SIMON:** The agent did auto-discovery for free. [RUM was better. Profiling was years ahead.] Sampling and cost controls lived on the vendor's side and just worked. We rebuilt half of that ourselves before the first trace showed up. That's the migration *onto* the standard. Then came the migrations *within* it. The customer instrumented in [2021]. Early adopters, doing the right thing. Then metrics changed under them. Then the semantic conventions for HTTP stabilised — which is great — except stabilising meant *renaming*. `http.method` became `http.request.method`.
+
+`[SLIDE: the rename, full screen — `http.method` → `http.request.method`]`
+
+**SIMON:** Sounds trivial. It touched every dashboard, every alert, every SLO that filtered on it. They re-instrumented twice in three years, and neither time was because *they* wanted something.
 
 `[SLIDE: the ledger — row 2: "The standard moved. Re-instrumented twice to keep up."]`
 
@@ -119,15 +135,21 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ## Round 3 — OpenFeature (~6.5 min)
 
+`[SLIDE: act map — OpenFeature lit. OWNERSHIP · "who owns it?"]`
+
 **THOMAS:** Flags were supposed to be the easy part.
 
 **SIMON:** Flags *were* the easy part. And this is the round where I stop pretending to be neutral.
 
 **SIMON:** When we started OpenFeature, we had OpenTelemetry's whole history in front of us. We watched it. And we said: scope it small. Ship the spec fast. Don't try to standardise the world, standardise the evaluation API and let providers compete on everything else. And it worked. Spec out in months, not years. Sandbox, incubating, SDKs in every language you'd want.
 
-`[SLIDE: two columns — "Portable" / "Not portable" (Simon clicks)]`
+`[SLIDE: "One line to swap" — the evaluation API · every SDK, every language · hooks, context, the mental model]`
 
-**SIMON:** And look at what we standardised. The evaluation API. The SDKs. The provider swap is one line. *(clicks)* And what we didn't: the flag definitions. The targeting rules. The segments. The experiment data. The audit history and the approval workflow the customer's compliance team signed off on. Every one of those is still in the vendor's format. We standardised the code and left the data exactly where it was.
+**SIMON:** And look at what we standardised. The evaluation API. The SDKs. The provider swap is one line.
+
+`[SLIDE: "Everything that isn't code" — six lines, one per click]`
+
+**SIMON:** *(clicks)* And what we didn't: the flag definitions. The targeting rules. The segments. The experiment data. The audit history and the approval workflow the customer's compliance team signed off on. Every one of those is still in the vendor's format. We standardised the code and left the data exactly where it was.
 
 **THOMAS:** You standardised the thing that touches every line of code. The rest is an export job.
 
@@ -141,7 +163,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** It slows down. Every change is now a multi-vendor negotiation. Every SDK has to agree. The customer wanted [a feature: e.g. evaluation context that changes at runtime / a specific hook behaviour] — and the honest answer I had to give them was: "join the working group." I'm a maintainer and I couldn't just *do* it for them.
 
-`[SLIDE: the ledger — row 3: "Success slows the spec."]`
+*(last click on that slide is the "join the working group" line — stay on it)*
 
 **THOMAS:** Simon. That's not a failure. That's the thing becoming load-bearing. You *want* the spec to be slow once there are a thousand production systems on it. The alternative is a fast spec that breaks a thousand systems.
 
@@ -159,15 +181,13 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** No. It took real work and real time and it's genuinely a multi-vendor project now. But there are standards out there that never made that transition. They have the licence, they have the foundation logo, they have the door — and nobody ever walked through it, so they fossilised around one company's use case. That is a proprietary standard with extra steps.
 
-`[SLIDE: the ledger — row 3 gets a second line: "One door. One company behind it."]`
-
 **THOMAS:** Here's what I'll say to that. The difference between what you just described and an actual proprietary standard is that *you could have changed it*. You did change it. The door was real. Nobody can padlock it — not the founder, not the foundation.
 
 **SIMON:** If someone walks through.
 
 **THOMAS:** Somebody does. And the reason they can afford to is the standard.
 
-`[SLIDE: before / after the standard — left column: an agent per language, maintained forever, table stakes to enter at all]`
+`[SLIDE: "Before the standard" / "After" — left column showing: an agent per language, maintained forever, table stakes to enter at all]`
 
 **THOMAS:** Before OpenTelemetry, if you wanted to sell observability you didn't start by building a product. You started by writing an agent. Java. Then Python, Go, Node, Ruby, .NET — and then you maintained all of them, forever, every time one of those languages shipped a new version. That wasn't a feature anybody bought. That was the moat. And it's exactly why that category was the same four companies for a decade.
 
@@ -193,9 +213,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** So the customer asked what it would cost to leave. All of it. Let's add it up.
 
-`[SLIDE: the invoice — three rows, complete, amounts still blank]`
+`[SLIDE: the invoice — rows 1 and 2 already there. Click 1 adds "Success slows the spec." Click 2 adds "One door. One company behind it." Amounts still blank.]`
 
-**SIMON:** Non-portable operations. Two re-instrumentations they didn't ask for. A spec they can't move without a working group. That's the invoice for "never locked in again." And it's real, and it's not zero, and anyone who told them it was zero was selling something.
+**SIMON:** Non-portable operations. Two re-instrumentations they didn't ask for. *(click)* A spec they can't move without a working group. *(click)* And one door, with one company behind it. That's the invoice for "never locked in again." And it's real, and it's not zero, and anyone who told them it was zero was selling something.
 
 **THOMAS:** Now do the graveyard.
 
@@ -241,9 +261,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** So the question was never "are we locked in." We always are.
 
+`[SLIDE: "Not *whether* you're locked in." — click reveals "*To whom.*"]`
+
 **THOMAS:** The question is *to whom*. A company, or a community. And whether you've got a seat in the room.
 
-`[SLIDE: three lines, appear one at a time]`
+`[SLIDE: three takeaways, appear one at a time]`
 
 **SIMON:** One. Evaluate the governance, not just the spec. Who owns the roadmap matters as much as what's in it. Pull up that DevStats chart before you adopt anything.
 

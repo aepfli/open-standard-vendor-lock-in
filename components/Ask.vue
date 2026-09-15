@@ -1,7 +1,7 @@
 <script setup>
-// Every act puts the same three questions to its standard. Showing all three
-// with one lit teaches the audience the rhythm by act II and lets them
-// predict it by act III.
+// Act indicator. Each act answers exactly one of the three questions, so this
+// stays fixed for the whole act — it tells the audience which question the
+// slide in front of them is in service of, not what the slide itself is.
 defineProps({
   active: { type: String, required: true },
 })

@@ -6,44 +6,43 @@ wrong one.
 
 ## Outline
 
-Three acts. Each act puts the **same three questions** to one standard, so the audience
-learns the pattern in act I, expects it in act II, and knows what is coming in act III —
-which is where the third question finally bites. Each act closes with a row added to a
-running invoice.
+Three acts. Each act takes **one theme, one question, one standard** — and spends its
+slides both answering the question and showing what is wrong with it. The act map opens
+each act with that row lit; a rail across the top of every slide shows which question is
+live. Each act closes with a row added to a running invoice.
 
-> **1. What do you get?**  **2. What does it cost?**  **3. Who owns it?**
+| | Theme | Question | Standard |
+| --- | --- | --- | --- |
+| **Act I** | Portability | what do you get? | Kubernetes |
+| **Act II** | Time | what does it cost? | OpenTelemetry |
+| **Act III** | Ownership | who owns it? | OpenFeature |
 
-Each act's third question is the one it is really about — but all three get asked every
-time, and the on-screen rail shows which one is live.
-
-**Act I — Portability · Kubernetes**
-1. *Get* — Deployments, Services, RBAC, Helm, CI, `kubectl`. 100+ certified distributions,
-   one conformance suite. Moved in an afternoon
-2. *Cost* — StorageClasses, LoadBalancer annotations, IAM bindings, autoscaler, ingress and
-   cert controllers, managed control-plane defaults. Six weeks, certified by nothing
-3. *Own* — the mark and the suite are the foundation's; the roadmap is the SIGs'
+**Act I — Portability · what do you get? · Kubernetes**
+- *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl`. 100+ certified
+  distributions, one conformance suite, since 2017. Moved in an afternoon
+- *The problem with the question:* StorageClasses, LoadBalancer annotations, IAM bindings,
+  autoscaler, ingress and cert controllers, managed control-plane defaults. Six weeks, and
+  certified by nothing. Conformance certifies a floor nobody lives on
 - *Invoice: portable API, non-portable operations*
 
-**Act II — Time and effort · OpenTelemetry**
-1. *Get* — one SDK, any backend; traces, metrics and logs in one pipeline; semantic
-   conventions everyone speaks. Leave on Friday, any Friday
-2. *Cost* — seven years from OpenTracing to a stable spec; `http.method` →
-   `http.request.method` touching every dashboard, alert and SLO; everything the vendor
-   agent did for free
-3. *Own* — no single colour on the contribution chart, which is exactly why the timeline
-   looks like that
+**Act II — Time · what does it cost? · OpenTelemetry**
+- *What you are paying for:* one SDK any backend; traces, metrics and logs in one pipeline;
+  semantic conventions everyone speaks. Leave on Friday, any Friday
+- *The answer:* seven years from OpenTracing to a stable spec; everything the vendor agent
+  did for free; `http.method` → `http.request.method` touching every dashboard, alert and
+  SLO. Two re-instrumentations, neither by choice
+- *The problem with the question:* the price bought consensus, and consensus is the product
 - *Invoice: the standard moved, and you moved with it*
 
-**Act III — Ownership · OpenFeature**
-1. *Get* — the evaluation API, every SDK, the one-line provider swap. Scoped small on
-   purpose, having watched OpenTelemetry
-2. *Cost* — flag definitions, targeting rules, segments, experiment data, approval
-   workflow. The code was standardised; the data stayed put. And the feature you wanted is
-   now "join the working group"
-3. *Own* — CNCF DevStats: open on paper, one company's roadmap in practice — and what it
-   took to stop being that
-- Counter-argument: the standard is what makes the *second* vendor affordable, which is the
-  only reason the door is worth anything — and the moat moved up
+**Act III — Ownership · who owns it? · OpenFeature**
+- *Setting up the question:* the evaluation API, every SDK, the one-line provider swap —
+  scoped small on purpose. And everything that isn't code: flag definitions, targeting
+  rules, segments, experiment data, approvals. The code was standardised; the data stayed
+  put, and the feature you wanted is now "join the working group"
+- *The answer:* CNCF DevStats — open on paper, one company's roadmap in practice, and what
+  it took to stop being that
+- *The problem with the question:* the standard is what makes the *second* vendor
+  affordable, which is the only reason the door is worth anything — and the moat moved up
 - *Invoice: success slows the spec · one door, one company behind it*
 
 **The exit test**
@@ -62,12 +61,12 @@ time, and the on-screen rail shows which one is live.
   the logo, the chart
 
 `cfp.md` holds the submitted abstract and a table tracking which promised argument lands
-where. `talk-dialog.md` is the full script; `slides.md` carries the same beats as presenter
-notes.
+where. `talk-dialog.md` is the full script; its `[SLIDE: …]` cues are kept in one-to-one
+order with `slides.md`, which carries the same beats as presenter notes.
 
-**Timing:** 28 slides for a 25-minute two-hander. Many are near-wordless (the three topic
-stack slides, the fact slides, the invoice) but it is tight — rehearse before cutting, and
-see the cut candidates at the bottom of `talk-dialog.md`.
+**Timing:** 26 slides for a 25-minute two-hander. Several are near-wordless (the three act
+maps, the rename, the invoice) but it is tight — rehearse before cutting, and see the cut
+candidates at the bottom of `talk-dialog.md`.
 
 ## Running it
 
