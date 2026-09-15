@@ -67,7 +67,7 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
   <div class="ghost">—</div>
@@ -78,6 +78,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -163,10 +165,10 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
-  <div v-click class="now"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></div>
+  <div class="now" v-click><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
 </div>
 
 <style>
@@ -174,6 +176,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -298,11 +302,11 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
-  <div class="prev"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></div>
-  <div v-click class="now"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></div>
+  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
+  <div class="now" v-click><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
 </div>
 
 <style>
@@ -310,6 +314,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -394,12 +400,12 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
-  <div class="prev"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></div>
-  <div class="prev"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></div>
-  <div v-click class="now"><b>Success slows the spec.</b></div>
+  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
+  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
+  <div class="now" v-click><span class="body"><b>Success slows the spec.</b></span><span class="amt">—</span></div>
 </div>
 
 <style>
@@ -407,6 +413,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -449,12 +457,12 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
-  <div class="prev"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></div>
-  <div class="prev"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></div>
-  <div class="now"><b>Success slows the spec.</b><br><span v-click><span class="sub">One door.</span> <b>One company behind it.</b></span></div>
+  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
+  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
+  <div class="now"><span class="body"><b>Success slows the spec.</b><br><span v-click><span class="sub">One door.</span> <b>One company behind it.</b></span></span><span class="amt">—</span></div>
 </div>
 
 <style>
@@ -462,6 +470,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -521,17 +531,16 @@ layout: center
 
 # "Never locked in again."
 
-<div class="text-lg opacity-60 -mt-2">the bill</div>
+<div class="text-lg opacity-60 -mt-2">invoice</div>
 
 <div class="ledger">
-  <div class="prev"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></div>
-  <div class="prev"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></div>
-  <div class="prev"><b>Success slows the spec.</b><br><span class="sub">One door.</span> <b>One company behind it.</b></div>
-  <div v-click="1" class="knowledge"><b>The knowledge.</b> <span class="sub" style="font-size:1.1rem">200 engineers who <i>think</i> in it</span>
-    <div v-click="2" class="split">
-      <div><span class="lbl">relearn the tool</span><br>the new console, the query language<br><b>paid either way</b></div>
-      <div><span class="lbl">relearn how to think</span><br>what a span is, how a flag evaluates<br><b>paid only if you leave the standard</b></div>
-    </div>
+  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt"><span v-click="1">6 weeks · the platform team</span></span></div>
+  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt"><span v-click="1">2 migrations · everyone with a dashboard</span></span></div>
+  <div class="prev"><span class="body"><b>Success slows the spec.</b><br><span class="sub">One door.</span> <b>One company behind it.</b></span><span class="amt"><span v-click="1">1 working group · 1 engineer, indefinitely</span></span></div>
+  <div class="total" v-click="2"><span class="body"><b>Currency</b></span><span class="amt cur">knowledge</span></div>
+  <div v-click="3" class="split">
+    <div><span class="lbl">convertible</span><br>what a span is · how a flag evaluates · what a Deployment does<br><b>spends at the next vendor, the next job</b></div>
+    <div><span class="lbl">non-convertible</span><br>the console · the query language · the vendor's workflow<br><b>worthless the day the contract ends</b></div>
   </div>
 </div>
 
@@ -540,6 +549,8 @@ layout: center
 .ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
 .ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
 .ledger > div.ghost { font-size: 1.6rem; }
+.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
 .ledger > div:first-child { border-top: 3px solid currentColor; }
 .ledger .sub { opacity: .6; }
 .ledger .ghost { opacity: .25; }
@@ -548,15 +559,18 @@ layout: center
 .ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
 .ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
 .ledger { font-size: 1.15rem; margin-top: 1rem; }
-.ledger .knowledge { font-size: 1.8rem; padding: .8rem 1rem; margin-top: .5rem; opacity: 1; border-top: 3px solid currentColor; }
-.ledger .split { font-size: .95rem; margin-top: .6rem; }
+.ledger > div.total { font-size: 1.8rem; opacity: 1; border-top: 3px solid currentColor; margin-top: .4rem; }
+.ledger .total .amt.cur { opacity: 1; font-weight: 700; }
+.ledger .amt span { opacity: 1; color: inherit; }
+.ledger > div.prev .amt { opacity: .9; }
+.ledger > div.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; font-size: 1rem; opacity: 1; border: 0; padding: .8rem 1.2rem 0; }
 </style>
 
 <!--
-SIMON: "But there's a row I haven't added yet." Click 1. Click 2 splits it; the rest of the bill stays visible.
-"The switching cost was never the config. It's the team. Nobody budgets for retraining. And somebody in this room sells that training."
-THOMAS: "Guilty. And I'll take that row, because it's the best thing on the board. But it's two rows, not one." Click 2.
-"Yes, they'll relearn the dashboard. They won't relearn what a span is. With a vendor you pay both."
+Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
+Click 2 — currency stamp. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it."
+THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the invoice."
+Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
 -->
 
 ---
