@@ -14,7 +14,7 @@ const isOn = key => props.active === 'all' || props.active === key
 // one row and both answers the question and shows what is wrong with it.
 const LAYERS = [
   { key: 'kubernetes',    name: 'Kubernetes',    theme: 'Portability', question: 'what do you get?' },
-  { key: 'opentelemetry', name: 'OpenTelemetry', theme: 'Time',        question: 'what does it cost?' },
+  { key: 'opentelemetry', name: 'OpenTelemetry', theme: 'Progress',    question: 'how does it move?' },
   { key: 'openfeature',   name: 'OpenFeature',   theme: 'Ownership',   question: 'who owns it?' },
 ]
 </script>

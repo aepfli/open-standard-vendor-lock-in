@@ -99,7 +99,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ## Round 2 — OpenTelemetry (~4 min)
 
-`[SLIDE: act map — OpenTelemetry lit. TIME · "what does it cost?"]`
+`[SLIDE: act map — OpenTelemetry lit. PROGRESS · "how does it move?"]`
 
 **SIMON:** So then we instrumented it.
 
@@ -109,7 +109,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** And this is what replaced it. One SDK, any backend. Leave on Friday. Any Friday.
 
-**SIMON:** Agreed. Every word of it. I just want the clock on the wall while you say it.
+**SIMON:** Agreed. Every word of it. So here's my question for this round, and it isn't "what did it cost." It's: *how does this thing move?* How fast, in which direction, and who does it drag along. Starting with the clock on the wall while you say that.
 
 `[SLIDE: timeline — 2016 OpenTracing · 2018 OpenCensus · 2019 merge into OpenTelemetry · 2021 tracing stable · 2022 metrics stable · 2023 logs, HTTP semantic conventions stable · migration markers along the way]`
 

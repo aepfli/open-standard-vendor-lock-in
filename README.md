@@ -15,7 +15,7 @@ each close carries a single idea.
 | | Theme | Question | Standard |
 | --- | --- | --- | --- |
 | **Act I** | Portability | what do you get? | Kubernetes |
-| **Act II** | Time | what does it cost? | OpenTelemetry |
+| **Act II** | Progress | how does it move? | OpenTelemetry |
 | **Act III** | Ownership | who owns it? | OpenFeature |
 
 **Act I — Portability · what do you get? · Kubernetes**
@@ -28,17 +28,21 @@ each close carries a single idea.
   certified by nothing. Conformance certifies a floor nobody lives on
 - *Invoice — **Migration**: the operational layer conformance didn't cover · 6 weeks, the platform team*
 
-**Act II — Time · what does it cost? · OpenTelemetry**
-- *What you are paying for:* one SDK any backend; traces, metrics and logs in one pipeline;
-  semantic conventions everyone speaks. Leave on Friday, any Friday
-- *The answer:* seven years from OpenTracing to a stable spec. And consensus is not only
-  slow, it is narrow — a spec holds what everyone could agree to, not what any one of them
-  does best, so the thing a vendor calls a differentiator a committee calls out of scope.
-  Then everything the vendor agent did for free, and `http.method` →
-  `http.request.method` touching every dashboard, alert and SLO. Two re-instrumentations,
-  neither by choice
-- *The problem with the question:* the price bought consensus, and consensus is the product
-- *Invoice — **Keeping up**: re-instrumenting when the spec moves · 2 migrations, everyone with a dashboard*
+**Act II — Progress · how does it move? · OpenTelemetry**
+- *It moved the whole industry:* one SDK any backend; traces, metrics and logs in one
+  pipeline; semantic conventions everyone speaks. Leave on Friday, any Friday
+- *Slowly:* seven years from OpenTracing to a stable spec
+- *And only where everyone agreed:* a spec holds what everyone could agree to, not what any
+  one of them does best — what a vendor calls a differentiator, a committee calls out of
+  scope. Paid in capability, not in weeks
+- *More slowly than the vendor did:* auto-discovery, RUM, profiling and sampling all worked
+  before you left the agent
+- *And sometimes under your feet:* `http.method` → `http.request.method`, touching every
+  dashboard, alert and SLO. Two re-instrumentations, neither by choice
+- *The problem with the question:* slow and narrow is what consensus costs, and consensus
+  is the product
+- *Invoice — **Keeping up**: re-instrumenting when the spec moves, and waiting for what
+  consensus hasn't reached · 2 migrations, everyone with a dashboard*
 
 **Act III — Ownership · who owns it? · OpenFeature**
 - *Setting up the question:* the evaluation API, every SDK, the one-line provider swap —
@@ -49,7 +53,7 @@ each close carries a single idea.
   it took to stop being that
 - *The problem with the question:* the standard is what makes the *second* vendor
   affordable, which is the only reason the door is worth anything — and the moat moved up
-- *Invoice — **Influence**: contribution, and it is optional · 1 working group, 1 engineer indefinitely. And the `from:` field, blank since the opening slide, is filled in: **the community***
+- *Invoice — **Influence**: contribution, and it is optional · 1 working group, 1 engineer indefinitely.. The bill is headed **from: the community** from the opening slide — the provocation is not who sent it, but that the community sends one at all*
 
 **The exit test**
 - Archived vs discontinued — which corpse is easier to exhume

@@ -8,7 +8,7 @@ defineProps({
 
 const QUESTIONS = [
   { key: 'get',  label: 'what you get' },
-  { key: 'cost', label: 'what it costs' },
+  { key: 'move', label: 'how it moves' },
   { key: 'own',  label: 'who owns it' },
 ]
 </script>

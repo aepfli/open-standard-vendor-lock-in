@@ -30,7 +30,11 @@ const LINES = [
   {
     item: 'Keeping up',
     vendor: 'forced upgrades · deprecations · repricing',
+    vendorNote: 'on their schedule, at their price',
     community: 're-instrumenting when the spec moves',
+    // Act II argues two costs: the churn of following it, and the ceiling on
+    // where it will go. The row bills both.
+    communityNote: "and waiting for what consensus hasn't reached",
     amount: '2 migrations · everyone with a dashboard',
   },
   {

@@ -185,7 +185,7 @@ SIMON: "…all CKA certified. Who did they get that from?" — THOMAS: "I may ha
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 
 <StandardsStack active="opentelemetry" />
 
@@ -197,7 +197,7 @@ SIMON: "So then we instrumented it."
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # One pipeline
@@ -224,7 +224,7 @@ SIMON does not fight it. He says "agreed" and turns the page — which is the ti
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # How long consensus takes
@@ -248,7 +248,7 @@ SIMON: "So then we instrumented it." Customer instrumented 2021, re-instrumented
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # The intersection, not the union
@@ -280,7 +280,7 @@ SIMON: "I will. It's still a cost. I'm adding it to the same invoice."
 layout: center
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # What it cost to leave the agent
@@ -311,7 +311,7 @@ THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
 layout: fact
 ---
 
-<Ask active="cost" />
+<Ask active="move" />
 
 `http.method`
 <div class="text-3xl my-4 opacity-50">↓</div>
