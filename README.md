@@ -6,37 +6,45 @@ wrong one.
 
 ## Outline
 
-Three acts, one standard each. Each act ends with a row added to a running invoice.
+Three acts. Each act puts the **same three questions** to one standard, so the audience
+learns the pattern in act I, expects it in act II, and knows what is coming in act III —
+which is where the third question finally bites. Each act closes with a row added to a
+running invoice.
+
+> **1. What do you get?**  **2. What does it cost?**  **3. Who owns it?**
+
+Each act's third question is the one it is really about — but all three get asked every
+time, and the on-screen rail shows which one is live.
 
 **Act I — Portability · Kubernetes**
-- Conformance is real: 100+ certified distributions, one suite, one `kubectl`
-- Deployments, Services, RBAC, Helm, CI pipelines all moved in an afternoon
-- What conformance does not certify: StorageClasses, LoadBalancer annotations, IAM
-  bindings, ingress and cert controllers, managed control-plane defaults
-- Six weeks in the column nobody lives in
+1. *Get* — Deployments, Services, RBAC, Helm, CI, `kubectl`. 100+ certified distributions,
+   one conformance suite. Moved in an afternoon
+2. *Cost* — StorageClasses, LoadBalancer annotations, IAM bindings, autoscaler, ingress and
+   cert controllers, managed control-plane defaults. Six weeks, certified by nothing
+3. *Own* — the mark and the suite are the foundation's; the roadmap is the SIGs'
 - *Invoice: portable API, non-portable operations*
 
 **Act II — Time and effort · OpenTelemetry**
-- Seven years from OpenTracing to a stable spec, via a merge and three stability
-  milestones
-- Consensus is slow because consensus is the product
-- `http.method` → `http.request.method`: a rename that touched every dashboard, alert
-  and SLO that filtered on it
-- The customer instrumented once and re-instrumented twice, neither time by choice
+1. *Get* — one SDK, any backend; traces, metrics and logs in one pipeline; semantic
+   conventions everyone speaks. Leave on Friday, any Friday
+2. *Cost* — seven years from OpenTracing to a stable spec; `http.method` →
+   `http.request.method` touching every dashboard, alert and SLO; everything the vendor
+   agent did for free
+3. *Own* — no single colour on the contribution chart, which is exactly why the timeline
+   looks like that
 - *Invoice: the standard moved, and you moved with it*
 
 **Act III — Ownership · OpenFeature**
-- Scoped small and shipped fast, deliberately, having watched OpenTelemetry
-- Portable: the evaluation API, the SDKs, the one-line provider swap
-- Not portable: flag definitions, targeting rules, segments, experiment data, approval
-  workflow — the code was standardised, the data stayed put
-- Success slows the spec: once production depends on it, every change is a multi-vendor
-  negotiation ("join the working group")
-- CNCF DevStats: open on paper, one company's roadmap in practice — and what it took to
-  stop being that
-- The counter-argument: the standard is what makes the *second* vendor affordable, which
-  is the only reason the door is worth anything
-- *Invoice: one door, one company behind it*
+1. *Get* — the evaluation API, every SDK, the one-line provider swap. Scoped small on
+   purpose, having watched OpenTelemetry
+2. *Cost* — flag definitions, targeting rules, segments, experiment data, approval
+   workflow. The code was standardised; the data stayed put. And the feature you wanted is
+   now "join the working group"
+3. *Own* — CNCF DevStats: open on paper, one company's roadmap in practice — and what it
+   took to stop being that
+- Counter-argument: the standard is what makes the *second* vendor affordable, which is the
+  only reason the door is worth anything — and the moat moved up
+- *Invoice: success slows the spec · one door, one company behind it*
 
 **The exit test**
 - Archived vs discontinued — which corpse is easier to exhume
@@ -53,7 +61,13 @@ Three acts, one standard each. Each act ends with a row added to a running invoi
 - Homework: pick one standard you depend on and find out who controls its roadmap — not
   the logo, the chart
 
-`talk-dialog.md` is the full script; `slides.md` carries the same beats as presenter notes.
+`cfp.md` holds the submitted abstract and a table tracking which promised argument lands
+where. `talk-dialog.md` is the full script; `slides.md` carries the same beats as presenter
+notes.
+
+**Timing:** 28 slides for a 25-minute two-hander. Many are near-wordless (the three topic
+stack slides, the fact slides, the invoice) but it is tight — rehearse before cutting, and
+see the cut candidates at the bottom of `talk-dialog.md`.
 
 ## Running it
 

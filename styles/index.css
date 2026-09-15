@@ -55,3 +55,32 @@
 .timeline .event .note { font-size: .85em; opacity: .55; }
 
 .timeline .event:last-child { padding-bottom: 0; }
+
+/* The two halves of an act are deliberately not typeset alike. What you get is
+   short and large and settled; what it costs is a list that keeps going. The
+   audience should read the imbalance before they read the words. */
+.gets {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Spacing lives on the paragraphs: a large line-height on the container gets
+   overridden by the theme, and collapsing the margins runs the lines together. */
+.gets p {
+  margin: 0 0 1.1rem;
+  line-height: 1.3;
+}
+
+.gets p:last-child {
+  margin-bottom: 0;
+}
+
+.costs {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.costs ul {
+  margin: 0;
+  line-height: 1.75;
+}

@@ -263,6 +263,16 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ## Notes for revision
 
+- **Structure:** every act now asks the same three questions — what do you get, what does
+  it cost, who owns it — and the slides carry an on-screen rail showing which is live. Say
+  the three out loud once in act I so the audience has the frame; after that let the rail
+  do it.
+- Acts I and II previously never asked "who owns it"; both now have a DevStats slide and
+  both need a real screenshot before the talk. Kubernetes and OpenTelemetry are the
+  warm-ups for that question — keep them short, because OpenFeature is where it bites.
+- Act III used to bill twice. It now bills once, at the end, revealing "success slows the
+  spec" and "one door, one company" as two clicks on the round-4 invoice.
+
 - Replace every `[...]` with the real customer detail. The talk lives or dies on the scars being specific.
 - Round 2 timeline dates: verify against OTel spec release history before the slide is built.
 - Thomas needs one first-person migration story of his own somewhere in rounds 1–2 so it isn't only Simon's scars — a training-room anecdote works ("every cohort asks me the same question about annotations").

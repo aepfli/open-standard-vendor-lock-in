@@ -105,48 +105,89 @@ Topic switch — no words needed. THOMAS just says: "Kubernetes."
 -->
 
 ---
-layout: two-cols
+layout: center
 ---
 
+<Ask active="get" />
 <Tag project="kubernetes" label="Kubernetes" />
 
 # Moved in an afternoon
 
-<div class="mt-4 text-lg">
+<div class="gets">
 
-- Deployments, Services, ConfigMaps
-- RBAC, Namespaces, NetworkPolicies
-- Helm charts, CI pipelines
-- `kubectl` — every single command
+Deployments · Services · ConfigMaps
+
+RBAC · Namespaces · NetworkPolicies
+
+Helm charts · CI pipelines
+
+`kubectl`
 
 </div>
 
-<div class="mt-6 text-sm opacity-60">100+ certified distributions · one conformance suite · since 2017</div>
+<div class="mt-10 text-sm opacity-60">100+ certified distributions · one conformance suite · since 2017</div>
 
-::right::
+<!--
+THOMAS owns this slide. "That's not marketing. That's a test you can run, and 100+ vendors passed it."
+Deliberately few lines, deliberately large — the audience should feel this side is short and settled.
+-->
+
+---
+layout: center
+---
+
+<Ask active="cost" />
+<Tag project="kubernetes" label="Kubernetes" />
 
 # Took six weeks
 
-<div class="mt-4 text-lg">
-
+<div class="costs">
 <v-clicks>
 
-- StorageClasses that don't exist
-- LoadBalancer annotations nobody reads
-- IAM → ServiceAccount binding (cloud-specific)
-- Cluster autoscaler = the cloud's autoscaler in a hat
-- Ingress class, cert issuer, DNS controller
-- Managed control-plane defaults you never wrote down
+- StorageClasses
+- LoadBalancer annotations
+- IAM → ServiceAccount binding
+- Cluster autoscaler
+- Ingress class · cert issuer · DNS controller
+- Managed control-plane defaults
 
 </v-clicks>
-
 </div>
 
+<div v-click class="mt-8 text-sm opacity-60">certified by nothing</div>
+
 <!--
-THOMAS opens on the LEFT column: "That's not marketing, that's a test you can run."
-SIMON clicks through the RIGHT column, one per item. Each is a real thing the customer hit.
-"Conformance certifies the left column. Nobody lives in the left column."
-THOMAS: the right column is smaller than the whole compute layer used to be.
+SIMON clicks one per item — each is a real thing the customer hit. The editorial stays in the mouth, not on the slide:
+  StorageClasses — "that don't exist on the other side"
+  LoadBalancer annotations — "nobody reads"
+  IAM binding — "cloud-specific, every time"
+  Cluster autoscaler — "is the cloud's autoscaler in a hat"
+  control-plane defaults — "you never wrote down, which is why you found them in week five"
+Land it: "Conformance certifies the previous slide. Nobody lives on the previous slide."
+THOMAS: "And that list is smaller than the whole compute layer used to be."
+-->
+
+---
+layout: center
+---
+
+<Ask active="own" />
+<Tag project="kubernetes" label="Kubernetes" />
+
+# Who owns the roadmap?
+
+<div class="mt-6 h-64 w-full border-2 border-dashed rounded-xl flex items-center justify-center opacity-60 text-xl">
+  [ CNCF DevStats — Kubernetes contributions by company ]
+</div>
+
+<div class="mt-4 text-sm opacity-50">the mark and the conformance suite are the foundation's · the roadmap is the SIGs'</div>
+
+<!--
+TODO: screenshot from devstats.cncf.io, Kubernetes, "Companies contributing". Check the current shape before claiming anything about it on stage.
+First time the third question gets asked — say it plainly so the pattern registers: "Every standard in this talk gets the same three questions. This is the third one."
+THOMAS: conformance is genuinely neutral — the suite does not care who you are.
+SIMON: the suite is neutral. The roadmap has a shape, and the shape is who can afford full-time maintainers.
+Keep this short. Kubernetes is the warm-up for this question; OpenFeature is where it bites.
 -->
 
 ---
@@ -197,6 +238,34 @@ SIMON: "So then we instrumented it."
 layout: center
 ---
 
+<Ask active="get" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# One pipeline
+
+<div class="gets">
+
+One SDK · any backend
+
+Traces · metrics · logs
+
+Semantic conventions everyone speaks
+
+Leave on Friday. Any Friday.
+
+</div>
+
+<!--
+THOMAS owns this slide, and he should sound like he means it — this is the single biggest thing open standards bought the customer.
+"Leave on Friday, any Friday" is the line. Pause after it.
+SIMON does not fight it. He says "agreed" and turns the page — which is the timeline.
+-->
+
+---
+layout: center
+---
+
+<Ask active="cost" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
 # How long consensus takes
@@ -220,6 +289,8 @@ SIMON: "So then we instrumented it." Customer instrumented 2021, re-instrumented
 layout: fact
 ---
 
+<Ask active="cost" />
+
 `http.method`
 <div class="text-3xl my-4 opacity-50">↓</div>
 `http.request.method`
@@ -233,45 +304,57 @@ THOMAS: "Vendors. In a public room, with public notes, and a PR you could have c
 -->
 
 ---
-layout: two-cols
+layout: center
 ---
 
+<Ask active="cost" />
 <Tag project="opentelemetry" label="OpenTelemetry" />
 
-# What you keep
+# What it cost to leave the agent
 
-<div class="mt-4 text-lg">
-
-- One SDK, any backend
-- Traces, metrics, logs — one pipeline
-- Semantic conventions everyone speaks
-- Leave on Friday. Any Friday.
-
-</div>
-
-::right::
-
-# What you lost leaving the agent
-
-<div class="mt-4 text-lg">
-
+<div class="costs">
 <v-clicks>
 
-- Auto-discovery the vendor agent did for free
-- [RUM / browser / mobile — thinner in OTel]
-- [Profiling — years behind the vendor's]
+- Auto-discovery
+- [ RUM / browser / mobile ]
+- [ Profiling ]
 - Vendor-side sampling & cost controls
-- Two forced re-instrumentations in three years
-- Dashboards rebuilt twice for a rename
+- Two forced re-instrumentations
+- Dashboards rebuilt twice
 
 </v-clicks>
-
 </div>
 
 <!--
-TODO: check the bracketed items against the customer's actual vendor before final — keep only what is true.
-SIMON clicks the RIGHT column. "Nobody tells you the migration *off* the proprietary agent has a feature list too."
-THOMAS: the left column is permanent, the right column is one-time. "That's the deal."
+TODO: check the bracketed items against the customer's actual vendor before final — keep only what is true, cut the rest.
+SIMON clicks one per item. "Nobody tells you the migration *off* the proprietary agent has a feature list too."
+  Auto-discovery — "the vendor agent did it for free"
+  RUM / profiling — "thinner, or years behind"
+  sampling — "their cost controls were the reason the bill was survivable"
+THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
+-->
+
+---
+layout: center
+---
+
+<Ask active="own" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# Who owns OpenTelemetry?
+
+<div class="mt-6 h-64 w-full border-2 border-dashed rounded-xl flex items-center justify-center opacity-60 text-xl">
+  [ CNCF DevStats — OpenTelemetry contributions by company ]
+</div>
+
+<div class="mt-4 text-sm opacity-50">no single colour · which is exactly why the timeline looked like that</div>
+
+<!--
+TODO: screenshot from devstats.cncf.io, OpenTelemetry, "Companies contributing".
+THOMAS gets this one, and it is his best slide in the act: nobody owns it. That chart is the answer to Simon's timeline — seven years is what genuinely multi-vendor costs.
+SIMON concedes the governance and keeps the bill: "I'm not saying it's captured. I'm saying I paid for it not being captured, twice, in re-instrumentation."
+THOMAS: "Yes. That's the price of the thing you actually wanted."
+Sets up act III, where the chart looks nothing like this.
 -->
 
 ---
@@ -319,42 +402,61 @@ THOMAS: "Flags were supposed to be the easy part."
 -->
 
 ---
-layout: two-cols
+layout: center
 ---
 
+<Ask active="get" />
 <Tag project="openfeature" label="OpenFeature" />
 
-# Portable
+# One line to swap
 
-<div class="mt-4 text-lg">
+<div class="gets">
 
-- The evaluation API
-- Every SDK, every language
-- Swap the provider: one line
-- Hooks, context, the mental model
+The evaluation API
+
+Every SDK · every language
+
+Hooks · context · the mental model
 
 </div>
 
-<div class="mt-6 text-sm opacity-60">scoped small · shipped in months · learned from OTel</div>
+<div class="mt-10 text-sm opacity-60">scoped small · shipped in months · learned from OTel</div>
 
-::right::
+<!--
+SIMON owns this one and should sound proud of it — he built it. "We had OpenTelemetry's whole history in front of us, and we scoped it small on purpose."
+The provider swap being one line is the strongest single claim in the talk. Let it sit.
+-->
 
-# Not portable
+---
+layout: center
+---
 
-<div class="mt-4 text-lg">
+<Ask active="cost" />
+<Tag project="openfeature" label="OpenFeature" />
 
+# Everything that isn't code
+
+<div class="costs">
 <v-clicks>
 
-- The flag definitions themselves
-- Targeting rules and segments
+- Flag definitions
+- Targeting rules · segments
 - Experiment & analytics data
-- Audit history, approvals, workflows
-- Provider-specific hooks you got used to
-- The feature the customer wanted → "join the working group"
+- Audit history · approvals · workflows
+- Provider-specific hooks
+- The feature you wanted → "join the working group"
 
 </v-clicks>
-
 </div>
+
+<div v-click class="mt-8 text-sm opacity-60">we standardised the code and left the data where it was</div>
+
+<!--
+SIMON clicks one per item — this is his own project, so he gets to be the one listing what it does not cover.
+Last click is the sting: the customer wanted a feature and the honest answer was "join the working group". "I'm a maintainer and I couldn't just *do* it for them."
+THOMAS: "That's not a failure. That's the thing becoming load-bearing. You *want* a slow spec once a thousand production systems depend on it."
+SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked like* while it was fast."
+-->
 
 <!--
 SIMON: "This is the round where I stop pretending to be neutral."
@@ -362,46 +464,12 @@ SIMON: "This is the round where I stop pretending to be neutral."
 THOMAS: "You standardised the thing that touches every line of code. The rest is an export job." SIMON: "Show me the export."
 -->
 
----
-layout: center
----
-
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
-  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
-  <div class="now" v-click><span class="body"><b>Success slows the spec.</b></span><span class="amt">—</span></div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-</style>
-
-<!--
-SIMON: "Join the working group." I'm a maintainer and I couldn't just *do* it for them.
-THOMAS: "That's not failure. That's the thing becoming load-bearing."
-SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked like* while it was fast."
--->
 
 ---
 layout: center
 ---
 
+<Ask active="own" />
 <Tag project="openfeature" label="OpenFeature" />
 
 # Who paid the engineers?
@@ -422,8 +490,6 @@ THOMAS: "The door was real. Nobody can padlock it." SIMON: "If someone walks thr
 ---
 layout: two-cols
 ---
-
-<Tag project="opentelemetry" label="OpenTelemetry" />
 
 # Before the standard
 
@@ -473,7 +539,7 @@ layout: center
 <div class="ledger">
   <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
   <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
-  <div class="now"><span class="body"><b>Success slows the spec.</b><br><span v-click><span class="sub">One door.</span> <b>One company behind it.</b></span></span><span class="amt">—</span></div>
+  <div class="now"><span class="body"><span v-click="1"><b>Success slows the spec.</b></span><br><span v-click="2"><span class="sub">One door.</span> <b>One company behind it.</b></span></span><span class="amt">—</span></div>
 </div>
 
 <style>
