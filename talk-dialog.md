@@ -225,7 +225,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** If someone walks through.
 
-**THOMAS:** Somebody does. Hold that thought — it's the whole of the next section.
+**THOMAS:** Somebody does. Hold that thought — I'll come back for it once you've finished adding up.
 
 `[SLIDE: the invoice — third line item lands: "Steering · contribution, and it is optional"]`
 
@@ -234,34 +234,6 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 **THOMAS:** And every line on it is from us. The community. Your own project is on that list.
 
 **SIMON:** Every line. That's the honest version of everything I've said today, and I'm not going to soften it: open standards send invoices.
-
----
-
-## Act IV — Is there anywhere to go? (~4 min)
-
-*Both turn back to the screen. The three boxes from the opening are up again.*
-
-`[SLIDE: act map — all three lit. "Is there anywhere to go?"]`
-
-**THOMAS:** Three acts, and all three of them priced *staying*. Now price leaving. Because leaving isn't a property of the spec — it's a property of there being somewhere to go. And that's the thought I asked you to hold.
-
-`[SLIDE: Before | the standard | After — left column showing: an agent per language, maintained forever, table stakes to enter at all]`
-
-**THOMAS:** Before OpenTelemetry, if you wanted to sell observability you didn't start by building a product. You started by writing an agent. Java. Then Python, Go, Node, Ruby, .NET — and then you maintained all of them, forever, every time one of those languages shipped a new version. That wasn't a feature anybody bought. That was the moat. And it's exactly why that category was the same four companies for a decade.
-
-`[SLIDE: click — the whole "After" column arrives: one wire format / a startup ships a backend, not twelve agents / the category has new names in it]`
-
-**THOMAS:** *(click)* Now there's one wire format. A four-person company ships a backend instead of twelve agents. And look at who's selling observability today — names that did not exist when you were writing your first agent. Same shape with OpenFeature: a provider is an adapter, not a platform. That's a week of work, not a company-year.
-
-**THOMAS:** So — yes. One company behind the door. But the standard is what makes the *second* company affordable. That's not a nice side effect, that's the whole mechanism.
-
-*(beat)*
-
-**SIMON:** That's the best argument you've made today.
-
-**THOMAS:** I'll take it.
-
-**SIMON:** And it costs you something. The entry cost fell — and the moat moved *up*. Nobody competes on collecting the data any more, so everybody competes above the standard. The pipeline. The storage. The query language. The AI feature they announced last quarter. Which is exactly where the next invoice comes from.
 
 **THOMAS:** Now do the graveyard.
 
@@ -308,6 +280,38 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 **SIMON:** So the invoice is the same size either way.
 
 **THOMAS:** The invoice is the same size. The currency is not.
+
+---
+
+## Act IV — What did you get for it? (~3 min)
+
+*Both turn back to the screen. The three boxes from the opening are up again.*
+
+`[SLIDE: act map — all three lit. "What did you get for it?"]`
+
+**THOMAS:** That's the bill. Now I want the other half of the page, because nobody ever writes it down. *(to Simon)* You held a thought for me.
+
+**SIMON:** I did. Somebody walks through the door.
+
+**THOMAS:** Somebody walks through the door. And the reason they can afford to is the standard.
+
+`[SLIDE: Before | the standard | After — left column: your own implementation per language, maintained forever, before you could sell anything]`
+
+**THOMAS:** Before OpenTelemetry, if you wanted to sell observability you didn't start by building a product. You started by writing an agent. Java. Then Python, Go, Node, Ruby, .NET — and then you maintained all of them, forever, every time one of those languages shipped a new version. That wasn't a feature anybody bought. That was the moat. And it's exactly why that category was the same four companies for a decade.
+
+`[SLIDE: click — the whole "After" column arrives: one interface many implementations / ship the product, not the plumbing / the category has new names in it]`
+
+**THOMAS:** *(click)* Now there's one wire format, and a four-person company ships a backend instead of twelve agents. And look at who's selling observability today — names that did not exist when you were writing your first agent. Same shape with OpenFeature: a provider is an adapter, not a platform. That's a week of work, not a company-year.
+
+**THOMAS:** So — yes. One company behind the door. But the standard is what makes the *second* company affordable. That's not a nice side effect, that's the whole mechanism.
+
+*(beat)*
+
+**SIMON:** That's the best argument you've made today.
+
+**THOMAS:** I'll take it.
+
+**SIMON:** And it costs you something — which is the line I'd have put on the invoice if you'd let me finish it first. The entry cost fell, and the moat moved *up*. Nobody competes on collecting the data any more, so everybody competes above the standard. The pipeline. The storage. The query language. The AI feature they announced last quarter. You didn't escape the moat. You moved house.
 
 `[SLIDE: a real job ad — requirements list: Kubernetes, OpenTelemetry. No vendor product named.]`
 

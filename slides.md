@@ -470,66 +470,9 @@ SIMON: hands-up moment — "who's migrated off something in the last year? Keep 
 -->
 
 ---
-layout: center
----
-
-<Ask active="all" />
-
-# Is there anywhere to go?
-
-<StandardsStack active="all" class="mt-12" />
-
-<!--
-ACT IV. The same three boxes Thomas put up twenty minutes ago under "never locked in again" — lit again, and this time it is a question.
-Everything so far priced staying. This act prices leaving, and leaving needs somewhere to go.
-No single standard owns this act, which is why all three are lit and the rail shows all three questions.
--->
-
----
 layout: two-cols
 ---
 
-<Ask active="all" />
-<ColumnDivider label="the standard" />
-
-# Before
-
-<div class="mt-4 text-lg">
-
-- an agent per language
-- maintained forever
-- table stakes to enter at all
-
-</div>
-
-<div class="mt-6 text-sm opacity-60">the moat <b>was</b> the instrumentation</div>
-
-::right::
-
-# After
-
-<div v-click class="mt-4 text-lg">
-
-- one wire format
-- a startup ships a backend, not twelve agents
-- the category has new names in it
-
-</div>
-
-<div v-click class="mt-6 text-sm opacity-60">the moat moved <b>up</b></div>
-
-<!--
-Opens act IV, and pays off "if someone walks through" — the held thought from the end of act III.
-THOMAS takes the LEFT column: the door matters because somebody can afford to build on the other side of it. Before OTel, shipping an observability product meant writing and maintaining an agent for every language. That moat is what kept the category to a handful of incumbents.
-Clicks the RIGHT column one at a time. Name real ones on the third click — the point is that the names are new.
-SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
--->
-
----
-layout: two-cols
----
-
-<Ask active="all" />
 <ColumnDivider />
 
 # Archived
@@ -581,13 +524,10 @@ Then the right column, and the number is the argument: sixty days. Three months.
 The honest claim is NOT that you couldn't get your data out — Google published a migration path. It's that there was nowhere to take it. No second implementation. Compare the hundred and thirty-one on the Kubernetes slide.
 SIMON does not get to enjoy the last row: "OpenTracing. That's the first line on my own timeline, and its death cost me a re-instrumentation. It's row two on the invoice."
 -->
-
 ---
 layout: center
 clicks: 2
 ---
-
-<Ask active="all" />
 
 <Invoice :rows="3" amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
 
@@ -597,6 +537,67 @@ Click 2 — currency stamp. SIMON: "The currency is knowledge. What your people 
 THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the invoice."
 Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
 -->
+
+---
+layout: center
+---
+
+<Ask active="all" />
+
+# What did you get for it?
+
+<StandardsStack active="all" class="mt-12" />
+
+<!--
+ACT IV. The same three boxes Thomas put up twenty minutes ago under "never locked in again" — lit again, and this time it is a question.
+The bill is already on the table. This act is the other half of the page: what the money bought. A market with more than one supplier in it, and knowledge that leaves with the people.
+No single standard owns this act, which is why all three are lit and the rail shows all three questions.
+THOMAS owns it. It is the only act that is not a prosecution.
+-->
+
+---
+layout: two-cols
+---
+
+<Ask active="all" />
+<ColumnDivider label="the standard" />
+
+# Before
+
+<div class="mt-4 text-lg">
+
+- your own implementation, per language
+- maintained forever
+- before you could sell anything
+
+</div>
+
+<div class="mt-6 text-sm opacity-60">the moat <b>was</b> the integration</div>
+
+::right::
+
+# After
+
+<div v-click class="mt-4 text-lg">
+
+- one interface, many implementations
+- ship the product, not the plumbing
+- the category has new names in it
+
+</div>
+
+<div v-click class="mt-6 text-sm opacity-60">the moat moved <b>up</b></div>
+
+<!--
+Opens act IV, and pays off "if someone walks through" — the held thought from the end of act III.
+The slide is deliberately generic, because act IV is about all three standards, not about OpenTelemetry. The specifics live in Thomas's mouth — same principle as the Kubernetes cost slide.
+THOMAS takes the LEFT column and names OTel out loud: before it, selling observability meant writing an agent for Java, then Python, Go, Node, Ruby, .NET — and maintaining all of them forever. That is what kept the category to four companies for a decade.
+Then the OpenFeature version in one line, because it is the same shape one size down: every flag vendor shipped its own SDK per language; now a provider is an adapter, a week of work.
+Click reveals the RIGHT column whole. Name real vendors on "new names in it" — the point dies if the names are not said out loud.
+SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
+-->
+
+
 
 
 ---

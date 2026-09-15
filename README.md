@@ -18,7 +18,7 @@ each close carries a single idea.
 | **Act I** | Portability | what do you get? | Kubernetes |
 | **Act II** | Progress | how does it move? | OpenTelemetry |
 | **Act III** | Ownership | who owns it? | OpenFeature |
-| **Act IV** | Market | is there anywhere to go? | *all three* |
+| **Act IV** | Return | what did you get for it? | *all three* |
 
 **Act I — Portability · what do you get? · Kubernetes**
 - *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl` — moved in an afternoon.
@@ -63,28 +63,41 @@ each close carries a single idea.
   founder, not the foundation. Whether that matters is act IV's question
 - *Invoice — **Steering**: contribution, and it is optional · 1 working group, 1 engineer indefinitely. The bill is headed **from: the community** from the opening slide — the provocation is not who sent it, but that the community sends one at all*
 
-**Act IV — Market · is there anywhere to go? · all three**
+**The reckoning** — after act III, before act IV
+
+The bill has been accumulating one line per act; completing it is the payoff of the
+three-act structure, so it lands here rather than later.
+
+- *Archived vs discontinued* — the last cost consideration, and the only one that is not
+  about you leaving but about it leaving you. Six archived CNCF projects against three
+  proprietary shutdowns, and the argument is the notice period: 60 days (Docker Cloud),
+  3 months (Heroku free dynos), 12 months (Google Cloud IoT Core), against a left column
+  where notice is a meaningless idea because nothing was withdrawn. The claim is
+  deliberately *not* "no data export" — it is that there was nowhere to take it
+- *The bill, complete.* Amounts first: 6 weeks, 2 migrations, 1 engineer indefinitely —
+  and nothing on it in euros. Then Thomas's reveal, the `from: a vendor` column against the
+  same three line items: exit fees, forced upgrades, enterprise tier. There was never a
+  column marked zero. The one row the vendor genuinely wins is said plainly — escalation is
+  fast, *if what you need is already on their roadmap*
+- *The Currency row.* Theirs is money + tool knowledge, **non-convertible**. Yours is
+  engineering time + domain knowledge, **convertible**. Same size invoice, different currency
+
+**Act IV — Return · what did you get for it? · all three**
 
 Opens on the same three boxes as the opening claim slide, lit again twenty minutes later
-and now framed as a question. It has no standard of its own — the rail shows all three
-questions, because the act is about the market rather than any one project. It exists
-because acts I–III all priced *staying*; this one prices *leaving*, and leaving needs
-somewhere to go.
+and now framed as a question. It has no standard of its own — the rail shows all three.
+The bill is already on the table; this act is the other half of the page, and it is the
+only act that is not a prosecution. Thomas owns it.
 
-- Before / the standard / After — the entry cost fell, so a second vendor became
-  affordable. That is the only reason the door is worth anything. And the moat moved up
-- Archived vs discontinued — which corpse is easier to exhume. Six archived CNCF projects
-  against three proprietary shutdowns, and the argument is the notice period: 60 days
-  (Docker Cloud), 3 months (Heroku free dynos), 12 months (Google Cloud IoT Core), versus a
-  left column where notice is a meaningless idea because nothing was withdrawn. The claim
-  is deliberately *not* "no data export" — it is that there was nowhere to take it. Compare
-  the 131 conformant Kubernetes distributions in act I
-- Thomas puts the second column on the bill: the same three line items, `from: a vendor` —
-  exit fees, forced upgrades, enterprise tier. There was never a column marked zero
-- The one row the vendor wins, said plainly: escalation is fast, *if what you need is
-  already on their roadmap*
-- The Currency row: theirs is money + tool knowledge, **non-convertible**; yours is
-  engineering time + domain knowledge, **convertible**. Same size invoice, different currency
+- *Before / the standard / After* — the entry cost fell, so a second vendor became
+  affordable, and that is the only reason the door is worth anything. Deliberately generic:
+  the pattern is on the slide, the OpenTelemetry and OpenFeature specifics are in Thomas's
+  mouth. Simon takes the last word — the moat did not vanish, it moved up
+- *The job ad* — what you walk out with. Kubernetes and OpenTelemetry named as
+  requirements; no vendor product named at all
+
+**The turn**
+
 - Not *whether* you are locked in. *To whom*
 
 **Takeaways**

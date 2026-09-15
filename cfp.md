@@ -73,7 +73,7 @@ outline and `talk-dialog.md` for the script.
 | **Con** — Governance conflicts shape the spec | II, III | "who decided those names? vendors"; DevStats | covered |
 | **Con** — Migration costs between compliant implementations | I, II | "Took six weeks"; "What it cost to leave the agent", the rename | covered |
 | **Con** — Lowest-common-denominator risk | II | "The intersection, not the union" | covered |
-| **Con** — CNCF graveyard | IV | Archived vs Discontinued | covered |
+| **Con** — CNCF graveyard | reckoning | Archived vs Discontinued, before the bill | covered |
 
 ## Claim density
 
@@ -85,13 +85,14 @@ slide*, so a claim landing twice is counted in both acts.
 | I — Portability · Kubernetes | 2 | 1 | **3** | balanced |
 | II — Progress · OpenTelemetry | 0 | 4 | **4** | densest, and entirely prosecution |
 | III — Ownership · OpenFeature | 1 | 2 | **3** | balanced by the NATS slide |
-| IV — Market | 3 | 1 | **4** | densest, and almost entirely defence |
+| the reckoning | 0 | 1 | **1** | the graveyard, then the complete bill |
+| IV — Return | 3 | 0 | **3** | the only section that is not a prosecution |
 
 Two things fall out of this.
 
 **The Pro and Con claims are segregated by act, not mixed.** Acts II and III carry no Pro
-claim on any slide — they are pure prosecution, and every promised benefit lands in acts I
-and IV. That is the deliberate shape of the talk (the invoice is one-sided until round 4),
+claim on any slide — they are pure prosecution, and every promised benefit lands in act I
+or after the bill. That is the deliberate shape of the talk (the invoice is one-sided until round 4),
 but it means a listener who leaves at the break has heard only the case against. Thomas's
 spoken defence in rounds 1–3 is doing all of the balancing work, and none of it is on a
 slide. See the note in `talk-dialog.md` about not cutting his promise of the second column.
