@@ -84,3 +84,32 @@
   margin: 0;
   line-height: 1.75;
 }
+
+/* Roll of the dead: a name and the years it was alive. Matches the tabular
+   treatment of .timeline .year rather than inventing a second look. */
+.roll {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .35rem 1.2rem;
+  align-items: baseline;
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.roll .span {
+  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
+  opacity: .55;
+  white-space: nowrap;
+}
+
+/* The one the audience recognises, on the left; the notice period, on the right. */
+.roll .keep { font-weight: 600; }
+.roll .notice { font-weight: 600; opacity: .8; }
+
+/* Slidev's two-cols layout is a bare `grid grid-cols-2` with no gutter, so
+   right-aligned content in the left column runs straight into the right
+   column's text. Give every two-column slide a gap. */
+.slidev-layout.two-columns {
+  column-gap: 3rem;
+}

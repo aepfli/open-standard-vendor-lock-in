@@ -243,11 +243,21 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Fair. *(audience moment)* Hands up — who's migrated off something in the last year? Keep them up if the thing you left was an open standard. *(reacts to the room)*
 
-`[SLIDE: split — left: archived CNCF projects; right: [discontinued proprietary products] with "data export: no"]`
+`[SLIDE: split — left: six archived CNCF projects with their lifespans, OpenTracing last; right: Docker Cloud / Heroku free dynos / Google Cloud IoT Core, each with the notice period]`
 
-**THOMAS:** Standards die. Projects get archived. But when an open standard dies, the spec is still there, the code is still there, the data is in a format someone else can read. When a proprietary product dies, it takes your data and three years of dashboards with it. Which corpse is easier to exhume?
+**THOMAS:** Standards die. Projects get archived. CNI-Genie, Krustlet, Keptn, Pravega, Xline — all CNCF projects, all archived. And nothing on that list was taken away from anybody. The spec is still there, the repo is still public, the data is in a format someone else can read. Archiving a project is a statement about who is maintaining it. It is not an eviction.
 
-**SIMON:** The open one. Every time. I'll give you that. But that invoice is still sitting there and nobody has paid it.
+**THOMAS:** Now the other column, and I want you to look at one number. Docker Cloud: sixty days. Heroku's free plans: three months, and they deleted the databases. Google Cloud IoT Core: twelve months, and the advice was to go talk to their partners.
+
+**SIMON:** You're going to say "data export".
+
+**THOMAS:** I'm not, because it wouldn't be true — Google published a migration path. I'm saying something worse. There was nowhere to take it. No second implementation. *(beat)* You showed them a hundred and thirty-one places to take a Kubernetes cluster. How many places could you take an IoT Core deployment?
+
+*(beat)*
+
+**THOMAS:** Which corpse is easier to exhume?
+
+**SIMON:** The open one. Every time. I'll give you that. *(points at the last row on the left)* And I'll take the one that's got my name on it. OpenTracing. That's the first line on my own timeline, from the round before last — and when it died, it cost me a re-instrumentation. It's row two on the invoice. *(beat)* The corpse was easy to exhume. The funeral still had a bill. But that invoice is still sitting there and nobody has paid it.
 
 **THOMAS:** Then let's finish it properly. You've been showing them one column.
 

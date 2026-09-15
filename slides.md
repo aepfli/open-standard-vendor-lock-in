@@ -495,34 +495,40 @@ layout: two-cols
 
 # Archived
 
-<div class="mt-6 text-lg opacity-80">
-
-- spec: still there
-- code: still there
-- data: readable by someone else
-
+<div class="roll">
+  <div>CNI-Genie</div><div class="span">2020 → 2025</div>
+  <div>Krustlet</div><div class="span">2021 → 2024</div>
+  <div>Keptn</div><div class="span">2020 → 2025</div>
+  <div>Pravega</div><div class="span">2020 → 2025</div>
+  <div>Xline</div><div class="span">2023 → 2025</div>
+  <div class="keep">OpenTracing</div><div class="span">2016 → 2021</div>
 </div>
 
-<div class="mt-8 opacity-50 text-sm">[ CNCF archived projects list ]</div>
+<div class="mt-8 text-sm opacity-60">spec: still there · code: still there · <b>nothing was withdrawn</b></div>
 
 ::right::
 
 # Discontinued
 
-<div class="mt-6 text-lg opacity-80">
-
-- spec: never existed
-- code: gone with the contract
-- data export: <b>no</b>
-
+<div class="roll">
+  <div>Docker Cloud</div><div class="span notice">60 days</div>
+  <div>Heroku free dynos</div><div class="span notice">3 months</div>
+  <div>Google Cloud IoT Core</div><div class="span notice">12 months</div>
 </div>
 
-<div class="mt-8 opacity-50 text-sm">[ discontinued proprietary products ]</div>
+<div class="mt-8 text-sm opacity-60">spec: never existed · nowhere to take it · <b>you leave on their schedule</b></div>
 
 <!--
-TODO: fill both columns with real, safe examples.
-THOMAS: "Which corpse is easier to exhume?"
-SIMON: "The open one. Every time. But there's a row I haven't added yet."
+Sources — re-check before the talk, the left column moves every quarter:
+  archived: cncf/landscape landscape.yml, entries with `project: archived` (28 of them)
+  Docker Cloud: announced 20 Mar 2018, dead 21 May 2018 — 60 days
+  Heroku free dynos: announced 25 Aug 2022, dead 28 Nov 2022 — and inactive databases deleted
+  Google Cloud IoT Core: announced Aug 2022, dead 16 Aug 2023 — customers sent to "our network of partners"
+
+THOMAS owns the left column. "Standards die. Projects get archived. Nothing on that list was taken away from anyone — the spec is still there, the repo is still public, the data is in a format someone else can read."
+Then the right column, and the number is the argument: sixty days. Three months. Twelve months. "Which corpse is easier to exhume?"
+The honest claim is NOT that you couldn't get your data out — Google published a migration path. It's that there was nowhere to take it. No second implementation. Compare the hundred and thirty-one on the Kubernetes slide.
+SIMON does not get to enjoy the last row: "OpenTracing. That's the first line on my own timeline, and its death cost me a re-instrumentation. It's row two on the invoice."
 -->
 
 ---

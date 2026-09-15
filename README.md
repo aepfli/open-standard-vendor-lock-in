@@ -56,7 +56,12 @@ each close carries a single idea.
 - *Invoice — **Influence**: contribution, and it is optional · 1 working group, 1 engineer indefinitely.. The bill is headed **from: the community** from the opening slide — the provocation is not who sent it, but that the community sends one at all*
 
 **The exit test**
-- Archived vs discontinued — which corpse is easier to exhume
+- Archived vs discontinued — which corpse is easier to exhume. Six archived CNCF projects
+  against three proprietary shutdowns, and the argument is the notice period: 60 days
+  (Docker Cloud), 3 months (Heroku free dynos), 12 months (Google Cloud IoT Core), versus a
+  left column where notice is a meaningless idea because nothing was withdrawn. The claim
+  is deliberately *not* "no data export" — it is that there was nowhere to take it. Compare
+  the 131 conformant Kubernetes distributions in act I
 - Thomas puts the second column on the bill: the same three line items, `from: a vendor` —
   exit fees, forced upgrades, enterprise tier. There was never a column marked zero
 - The one row the vendor wins, said plainly: escalation is fast, *if what you need is
