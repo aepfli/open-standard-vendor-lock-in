@@ -38,9 +38,9 @@ defineProps({
 }
 
 /* Content on these slides is top-aligned while the layout is full height, so a
-   centred label lands below the text. Sit it a third of the way down, which is
-   inside the content band on both slides that use this. */
-.rule:first-child { flex: 1; }
+   centred label lands mid-text. Sit it around 60% down — clear of the footer
+   lines under each column, and still well above the slide edge. */
+.rule:first-child { flex: 3; }
 .rule:last-child { flex: 2; }
 
 /* With no label the two segments butt together and read as one line. */

@@ -257,11 +257,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** Then let's finish it properly. You've been showing them one column.
 
-`[SLIDE: the invoice — now with amounts: 6 weeks · the platform team / 2 migrations · everyone with a dashboard / 1 working group · 1 engineer, indefinitely]`
+`[SLIDE: the invoice — every row live. Three clicks, one amount at a time: 6 weeks · the platform team / 2 migrations · everyone with a dashboard / 1 working group · 1 engineer, indefinitely]`
 
-**SIMON:** And here is what those three lines actually cost. Six weeks of the platform team. Two migrations for every developer who owns a dashboard. One engineer sitting in a working group, indefinitely.
+**SIMON:** And here is what those three lines actually cost. *(click)* Six weeks of the platform team. *(click)* Two migrations for every developer who owns a dashboard. *(click)* One engineer sitting in a working group, indefinitely.
 
-`[SLIDE: click 1 — the "from: a vendor" column appears beside it. Same three line items.]`
+`[SLIDE: click 4 — the "from: a vendor" column appears beside it. Same three line items.]`
 
 **THOMAS:** Same bill. Different letterhead. Migrating: exit fees, data export, and a rewrite — because there is no conformance suite to tell you what carries over. Keeping up: forced upgrades, deprecations, and repricing, on their schedule, not yours. Steering: enterprise tier, escalation, and waiting.
 
@@ -271,7 +271,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Fine. Then there's one line still missing, and it's the one that decides it.
 
-`[SLIDE: click 2 — the Currency row appears across both columns.]`
+`[SLIDE: click 5 — the Currency row appears across both columns.]`
 
 **SIMON:** Nothing on this invoice is in euros. The currency is what your people had to learn, and would have to learn again. Two hundred engineers who *think* in this stack. Nobody budgets for it. And somebody in this room — *(looks at Thomas)* — sells it.
 
@@ -365,6 +365,10 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
   all three questions: the act is about the market, not about any one project.
 - The market-structure beat moved out of round 3 into act IV, where it is the first
   argument rather than a coda. Round 3 now ends on its own invoice line.
+- **The bill is the one slide that steps deliberately.** Five clicks: three amounts read
+  out one at a time, then the vendor column, then the Currency row. Everything else on that
+  slide is up from the start. Do not rush the three amounts — they are the only numbers in
+  the talk and Simon says each one out loud.
 - **Clicks are structural only.** Bullet lists land whole — the per-line stepping was
   making the presenter click through lines the room reads in a second. What still clicks:
   the punchline under a list, the "After" column arriving after "Before", "To whom.", and

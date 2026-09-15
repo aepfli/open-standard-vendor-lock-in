@@ -526,10 +526,10 @@ SIMON does not get to enjoy the last row: "OpenTracing. That's the first line on
 -->
 ---
 layout: center
-clicks: 2
+clicks: 5
 ---
 
-<Invoice :rows="3" amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
+<Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks >= 5" />
 
 <!--
 Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."

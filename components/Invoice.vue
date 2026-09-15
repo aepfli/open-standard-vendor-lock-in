@@ -17,7 +17,11 @@ defineProps({
   // Amounts are held back until the exit test. During the acts each close
   // should carry exactly one new idea — the line item — not a line item and a
   // price and a letterhead all at once.
-  amounts: { type: Boolean, default: false },
+  // The reckoning: every row is live, because Simon is reading the whole
+  // document rather than adding a line to it.
+  bill: { type: Boolean, default: false },
+  // How many amounts have been read out. He goes down them one at a time.
+  amounts: { type: Number, default: 0 },
 })
 
 // Only the Steering row carries qualifiers, and it carries one on each side —
@@ -74,17 +78,17 @@ const CURRENCY = {
       v-for="(l, i) in LINES.slice(0, rows)"
       :key="l.item"
       class="grid line"
-      :class="{ on: vendor || i === rows - 1 }"
+      :class="{ on: bill || vendor || i === rows - 1 }"
     >
       <div class="item">{{ l.item }}</div>
       <div v-if="vendor" class="cell">
         {{ l.vendor }}
-        <div v-if="amounts && l.vendorNote" class="note">{{ l.vendorNote }}</div>
+        <div v-if="vendor && l.vendorNote" class="note">{{ l.vendorNote }}</div>
       </div>
       <div class="cell">
         {{ l.community }}
-        <div v-if="amounts && l.communityNote" class="note">{{ l.communityNote }}</div>
-        <div v-if="amounts" class="amt">{{ l.amount }}</div>
+        <div v-if="vendor && l.communityNote" class="note">{{ l.communityNote }}</div>
+        <div v-if="i < amounts" class="amt">{{ l.amount }}</div>
       </div>
     </div>
 
@@ -161,8 +165,9 @@ const CURRENCY = {
   transition: opacity .4s;
 }
 
-/* Only the newest charge is lit while the bill is being built; once the
-   comparison is up, the whole document is live. */
+/* Dimming the older rows only means something while the bill is being built
+   one act at a time — it marks the line that just landed. From the reckoning
+   onward Simon is reading the whole document, so every row is live. */
 .line.on { opacity: 1; }
 
 .item {
