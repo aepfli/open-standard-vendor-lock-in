@@ -1,8 +1,9 @@
 <script setup>
 // Renders a CNCF project mark. Kubernetes and OpenTelemetry ship full-colour
-// SVGs; OpenFeature is monochrome-only in cncf/artwork, so it is drawn as a
-// CSS mask we can tint ourselves.
-const props = defineProps({
+// SVGs; OpenFeature's mark is monochrome by design, so it is drawn as a CSS
+// mask filled with currentColor — that way it follows the slide's ink colour
+// instead of needing a separate black and white file per theme.
+defineProps({
   project: { type: String, required: true },
   active: { type: Boolean, default: true },
   size: { type: String, default: '3.5rem' },
@@ -13,24 +14,20 @@ const props = defineProps({
 const asset = file => `${import.meta.env.BASE_URL}logos/${file}`
 
 const MARKS = {
-  kubernetes:    { src: asset('kubernetes-icon-color.svg'),    tinted: false },
-  opentelemetry: { src: asset('opentelemetry-icon-color.svg'), tinted: false },
-  openfeature:   { src: asset('openfeature-icon-white.svg'),   tinted: true, accent: '#5D5DFF' },
+  kubernetes:    { src: asset('kubernetes-icon-color.svg'),    mono: false },
+  opentelemetry: { src: asset('opentelemetry-icon-color.svg'), mono: false },
+  openfeature:   { src: asset('openfeature-icon-white.svg'),   mono: true },
 }
 </script>
 
 <template>
-  <!-- Tinted marks are masks, so the fill follows `active` instead of a filter. -->
   <div
-    v-if="MARKS[project].tinted"
-    class="project-logo project-logo--masked"
+    v-if="MARKS[project].mono"
+    class="project-logo project-logo--mono"
     :class="{ 'is-dim': !active }"
-    :style="{
-      width: size,
-      height: size,
-      '--mark': `url(${MARKS[project].src})`,
-      '--accent': MARKS[project].accent,
-    }"
+    :style="{ width: size, height: size, '--mark': `url(${MARKS[project].src})` }"
+    role="img"
+    :aria-label="project"
   />
   <img
     v-else
@@ -46,25 +43,26 @@ const MARKS = {
 .project-logo {
   display: block;
   object-fit: contain;
-  transition: filter .4s, background-color .4s, opacity .4s;
+  transition: filter .4s, opacity .4s;
 }
 
-/* Inactive marks desaturate so only the one being discussed carries brand
-   colour. Opacity rather than brightness, so they stay visible on a light
-   background instead of washing out to white. */
+/* Inactive marks desaturate so only the one being discussed carries colour.
+   Opacity rather than brightness, so they stay visible on a light background
+   instead of washing out to white. */
 .project-logo.is-dim {
   filter: grayscale(1) brightness(.8) opacity(.4);
 }
 
-.project-logo--masked {
-  background-color: var(--accent);
+/* The white source SVG is used purely as a stencil; currentColor supplies the
+   ink, so the mark reads correctly on both light and dark slides. */
+.project-logo--mono {
+  background-color: currentColor;
   mask: var(--mark) no-repeat center / contain;
   -webkit-mask: var(--mark) no-repeat center / contain;
 }
 
-.project-logo--masked.is-dim {
+.project-logo--mono.is-dim {
   filter: none;
-  background-color: currentColor;
   opacity: .35;
 }
 </style>
