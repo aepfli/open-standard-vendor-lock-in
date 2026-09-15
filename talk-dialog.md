@@ -41,7 +41,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Let's define the crime first. Lock-in isn't a yes or no. It's a cost.
 
-`[SLIDE: the invoice — empty. Header: "Never locked in again." Rows have an amount column, blank.]`
+`[SLIDE: the invoice — empty. Header: "Never locked in again." A `from:` field, blank, that nobody will notice until act III.]`
 
 **SIMON:** You said "never locked in again." I'm going to keep the invoice for that sentence. Every layer of that beautiful architecture of yours — what it costs to leave, and what it costs to stay.
 
@@ -59,7 +59,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 `[SLIDE: "Moved in an afternoon" — Thomas's. Four lines, large.]`
 
-**THOMAS:** Show me a proprietary platform with a hundred interchangeable implementations.
+**THOMAS:** How many passed it?
+
+`[SLIDE: the wall — every product certified against Kubernetes v1.34. ~125 names, tiny, filling the slide.]`
+
+**THOMAS:** This isn't a slide you read. It's a slide you look at. *(beat)* You can't name half of them. Neither can I. And every single one of them runs your manifests. Show me a proprietary platform with a hundred interchangeable implementations.
 
 **SIMON:** I can't. And I'm not going to pretend the API isn't portable. It is. So here's what happened with the customer. They started on [managed cloud cluster]. Two years in, [data residency / cost / an acquisition] means they need to move on-prem. Conformant distribution to conformant distribution. Should be a weekend.
 
@@ -71,7 +75,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
 
-`[SLIDE: the ledger — first row: "Portable API. Non-portable operations."]`
+`[SLIDE: the invoice — first line item: "Migration · the operational layer conformance didn't cover · 6 weeks, the platform team"]`
 
 **SIMON:** Conformance certifies the slide before that one. And nobody lives on that slide.
 
@@ -115,7 +119,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Sounds trivial. It touched every dashboard, every alert, every SLO that filtered on it. They re-instrumented twice in three years, and neither time was because *they* wanted something.
 
-`[SLIDE: the ledger — row 2: "The standard moved. Re-instrumented twice to keep up."]`
+`[SLIDE: the invoice — second line item: "Keeping up · re-instrumenting when the spec moves · 2 migrations, everyone with a dashboard"]`
 
 **SIMON:** And who decided those names? Look at who's in the semantic conventions working groups. Vendors. Shaping the schema that their backends ingest.
 
@@ -213,9 +217,15 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** So the customer asked what it would cost to leave. All of it. Let's add it up.
 
-`[SLIDE: the invoice — rows 1 and 2 already there. Click 1 adds "Success slows the spec." Click 2 adds "One door. One company behind it." Amounts still blank.]`
+`[SLIDE: the invoice — third line item lands: "Influence · contribution, and it is optional · 1 working group, 1 engineer indefinitely"]`
 
-**SIMON:** Non-portable operations. Two re-instrumentations they didn't ask for. *(click)* A spec they can't move without a working group. *(click)* And one door, with one company behind it. That's the invoice for "never locked in again." And it's real, and it's not zero, and anyone who told them it was zero was selling something.
+**SIMON:** Migration: the operational layer conformance didn't cover — six weeks of the platform team. Keeping up: re-instrumenting every time the spec moves — two migrations, and everyone who owns a dashboard paid. Influence: contribution, indefinitely. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
+
+**THOMAS:** You've had that document on screen all morning with the top line blank.
+
+`[SLIDE: click — the `from:` field fills in: "the community"]`
+
+**SIMON:** I have. And that's the honest version of everything I've said today. It's a real bill, and it's from the community. *(beat)* Which is the first time in this talk that field has had anything in it at all.
 
 **THOMAS:** Now do the graveyard.
 
@@ -225,25 +235,29 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** Standards die. Projects get archived. But when an open standard dies, the spec is still there, the code is still there, the data is in a format someone else can read. When a proprietary product dies, it takes your data and three years of dashboards with it. Which corpse is easier to exhume?
 
-**SIMON:** The open one. Every time. I'll give you that. But you've all been reading this invoice wrong. There's no currency on it.
+**SIMON:** The open one. Every time. I'll give you that. But that invoice is still sitting there and nobody has paid it.
 
-`[SLIDE: the invoice — click 1, amounts appear: "6 weeks · the platform team" / "2 migrations · everyone with a dashboard" / "1 working group · 1 engineer, indefinitely"]`
+**THOMAS:** Then let's finish it properly. You've been showing them one column.
 
-**SIMON:** Six weeks of the platform team. Two migrations for every developer who owns a dashboard. One engineer sitting in a working group, indefinitely. Nothing on this invoice is in euros.
+`[SLIDE: the invoice — click 1: the "from: a vendor" column appears beside it. Same three line items.]`
 
-`[SLIDE: click 2 — currency stamp: "Currency: knowledge"]`
+**THOMAS:** Same bill. Different letterhead. Migration: exit fees, data export, and a rewrite — because there is no conformance suite to tell you what carries over. Keeping up: forced upgrades, deprecations, and repricing, on their schedule, not yours. Influence: enterprise tier, escalation, and waiting.
 
-**SIMON:** The currency is knowledge. What your people had to learn, and would have to learn again. Two hundred engineers who *think* in this stack. Nobody budgets for it. And somebody in this room — *(looks at Thomas)* — sells it.
+**SIMON:** You've made my argument. Both columns have numbers in them.
 
-**THOMAS:** Guilty. And I'll take that currency, because it's the best thing on the invoice. But there are two kinds.
+**THOMAS:** Both columns *always* had numbers in them. That's the whole point — there was never a column marked zero. And I'll give you the one row I lose: escalation is fast. If what you need is already on their roadmap, a vendor ships it next quarter and no working group can match that. If it *isn't* on their roadmap, you wait forever, and there's no door to walk through.
 
-`[SLIDE: click 3 — split: "convertible" / "non-convertible"]`
+**SIMON:** Fine. Then there's one line still missing, and it's the one that decides it.
 
-**THOMAS:** Convertible: what a span is. How a flag evaluates. What a Deployment does. That knowledge spends at the next vendor, the next job, the next company that acquires you. Non-convertible: the console. The query language. The vendor's approval workflow. Worthless the day the contract ends — and yes, you pay that one in every migration, standard or not. I won't pretend otherwise.
+`[SLIDE: click 2 — the Currency row appears across both columns.]`
+
+**SIMON:** Nothing on this invoice is in euros. The currency is what your people had to learn, and would have to learn again. Two hundred engineers who *think* in this stack. Nobody budgets for it. And somebody in this room — *(looks at Thomas)* — sells it.
+
+**THOMAS:** Guilty. And I'll take it, because look at what each column is paid in. Theirs: money, and tool knowledge. The console, the query language, their approval workflow. Non-convertible — worthless the day the contract ends. Yours: engineering time, and domain knowledge. What a span is. How a flag evaluates. What a Deployment does. Convertible — it spends at the next vendor, the next job, the next company that acquires you.
 
 **SIMON:** So the invoice is the same size either way.
 
-**THOMAS:** Now price your proprietary stack. Same currency. Same amounts. All of it non-convertible. Because the mental model *was* the console.
+**THOMAS:** The invoice is the same size. The currency is not.
 
 `[SLIDE: a real job ad — requirements list: Kubernetes, OpenTelemetry. No vendor product named.]`
 

@@ -65,29 +65,7 @@ THOMAS to audience: "I'm the defence. This is Simon, the prosecution and also on
 layout: center
 ---
 
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="ghost">—</div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-</style>
+<Invoice :rows="0" />
 
 <!--
 SIMON: "You said 'never locked in again'. Let's keep the bill for that. Every layer of that architecture — what it costs to leave, and what it costs to stay."
@@ -127,11 +105,33 @@ Helm charts · CI pipelines
 
 </div>
 
-<div class="mt-10 text-sm opacity-60">100+ certified distributions · one conformance suite · since 2017</div>
+<div class="mt-10 text-sm opacity-60">one conformance suite · since 2017</div>
 
 <!--
-THOMAS owns this slide. "That's not marketing. That's a test you can run, and 100+ vendors passed it."
+THOMAS owns this slide. "That's not marketing. That's a test you can run."
 Deliberately few lines, deliberately large — the audience should feel this side is short and settled.
+Then: "How many passed it?"
+-->
+
+---
+layout: center
+---
+
+<Ask active="get" />
+<Tag project="kubernetes" label="Kubernetes" />
+
+# Every one of these runs your manifests
+
+<Distributions />
+
+<div class="mt-6 text-sm opacity-60">certified against Kubernetes v1.34 · <span class="opacity-70">cncf/k8s-conformance</span></div>
+
+<!--
+THOMAS: "This is not a slide you read. This is a slide you look at."
+Nobody in the room can name half of them, and that is the point — you have never heard of most of your own exit options.
+Source: github.com/cncf/k8s-conformance, the v1.34 directory. 131 submissions; 125 names shown because Gardener files one per cloud and they collapse to the same label.
+Refresh before the talk: the number moves every release, and a stale number is the one thing an audience will fact-check live.
+SIMON, flat: "I've migrated between two of them. Ask me how it went."
 -->
 
 ---
@@ -173,29 +173,7 @@ THOMAS: "And that list is smaller than the whole compute layer used to be."
 layout: center
 ---
 
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="now" v-click><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-</style>
+<Invoice :rows="1" />
 
 <!--
 SIMON: "Conformance certifies the left column. Nobody lives in the left column."
@@ -319,30 +297,7 @@ THOMAS: "Vendors. In a public room, with public notes, and a PR you could have c
 layout: center
 ---
 
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
-  <div class="now" v-click><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-</style>
+<Invoice :rows="2" />
 
 <!--
 THOMAS: "The pain was one-time and the freedom is permanent. Once stable, stays stable."
@@ -490,33 +445,10 @@ SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone d
 
 ---
 layout: center
+clicks: 1
 ---
 
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt">—</span></div>
-  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt">—</span></div>
-  <div class="now"><span class="body"><span v-click="1"><b>Success slows the spec.</b></span><br><span v-click="2"><span class="sub">One door.</span> <b>One company behind it.</b></span></span><span class="amt">—</span></div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-</style>
+<Invoice :rows="3" :from="$clicks >= 1" />
 
 <!--
 ROUND 4 starts here.
@@ -564,44 +496,10 @@ SIMON: "The open one. Every time. But there's a row I haven't added yet."
 
 ---
 layout: center
+clicks: 2
 ---
 
-# "Never locked in again."
-
-<div class="text-lg opacity-60 -mt-2">invoice</div>
-
-<div class="ledger">
-  <div class="prev"><span class="body"><span class="sub">Portable API.</span><br><b>Non-portable operations.</b></span><span class="amt"><span v-click="1">6 weeks · the platform team</span></span></div>
-  <div class="prev"><span class="body"><span class="sub">The standard moved.</span><br><b>Re-instrumented twice to keep up.</b></span><span class="amt"><span v-click="1">2 migrations · everyone with a dashboard</span></span></div>
-  <div class="prev"><span class="body"><b>Success slows the spec.</b><br><span class="sub">One door.</span> <b>One company behind it.</b></span><span class="amt"><span v-click="1">1 working group · 1 engineer, indefinitely</span></span></div>
-  <div class="total" v-click="2"><span class="body"><b>Currency</b></span><span class="amt cur">knowledge</span></div>
-  <div v-click="3" class="split">
-    <div><span class="lbl">convertible</span><br>what a span is · how a flag evaluates · what a Deployment does<br><b>spends at the next vendor, the next job</b></div>
-    <div><span class="lbl">non-convertible</span><br>the console · the query language · the vendor's workflow<br><b>worthless the day the contract ends</b></div>
-  </div>
-</div>
-
-<style>
-.ledger { width: 100%; max-width: 44rem; margin: 2rem auto 0; font-size: 1.6rem; text-align: left; }
-.ledger > div { padding: .55rem 1.2rem; border-bottom: 1px solid rgba(128,128,128,.4); font-size: 1.05rem; opacity: .55; }
-.ledger > div.now { padding: 1rem 1.2rem; font-size: 1.8rem; opacity: 1; }
-.ledger > div.ghost { font-size: 1.6rem; }
-.ledger > div { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-.ledger .amt { font-variant-numeric: tabular-nums; opacity: .35; white-space: nowrap; text-align: right; }
-.ledger > div:first-child { border-top: 3px solid currentColor; }
-.ledger .sub { opacity: .6; }
-.ledger .ghost { opacity: .25; }
-.ledger .knowledge { border-top: 3px solid currentColor; margin-top: 1rem; font-size: 2rem; }
-.ledger .split { font-size: 1.05rem; margin-top: .8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.ledger .split > div { border-left: 3px solid currentColor; padding-left: .8rem; }
-.ledger .split .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .6; }
-.ledger { font-size: 1.15rem; margin-top: 1rem; }
-.ledger > div.total { font-size: 1.8rem; opacity: 1; border-top: 3px solid currentColor; margin-top: .4rem; }
-.ledger .total .amt.cur { opacity: 1; font-weight: 700; }
-.ledger .amt span { opacity: 1; color: inherit; }
-.ledger > div.prev .amt { opacity: .9; }
-.ledger > div.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; font-size: 1rem; opacity: 1; border: 0; padding: .8rem 1.2rem 0; }
-</style>
+<Invoice :rows="3" from :vendor="$clicks >= 1" :currency="$clicks >= 2" />
 
 <!--
 Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
@@ -610,6 +508,9 @@ THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the
 Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
 -->
 
+
+---
+layout: center
 ---
 layout: center
 ---

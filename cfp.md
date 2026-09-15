@@ -64,13 +64,13 @@ outline and `talk-dialog.md` for the script.
 
 | Promised | Where it lands | Status |
 | --- | --- | --- |
-| Migration costs | Act I cost (six weeks), Act II cost (leaving the agent) | covered |
+| Migration costs | Act I cost (six weeks), Act II cost (leaving the agent), and the Migration line on the invoice in both columns | covered |
 | Governance slowdowns | Act II cost (timeline), Act III cost ("join the working group") | covered |
 | Specs shaped by committee | Act II own, Act III own (DevStats) | covered |
 | Lowers barrier to entry | "Before the standard / After" | covered |
 | No single vendor controls the roadmap | Act II own (OTel: no single colour) | covered |
 | Diversity of implementations | "After" — the category has new names in it | thin — only a click |
 | Genuine user choice | the turn: "not whether, but to whom" | covered |
-| Interoperability without renegotiating integrations | — | **not on a slide** |
+| Interoperability without renegotiating integrations | the Kubernetes conformance wall — ~125 products, same manifests | covered |
 | Lowest-common-denominator risk | — | **not on a slide** |
 | CNCF graveyard | Archived vs Discontinued | covered |

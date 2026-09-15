@@ -18,12 +18,13 @@ live. Each act closes with a row added to a running invoice.
 | **Act III** | Ownership | who owns it? | OpenFeature |
 
 **Act I — Portability · what do you get? · Kubernetes**
-- *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl`. 100+ certified
-  distributions, one conformance suite, since 2017. Moved in an afternoon
+- *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl` — moved in an afternoon.
+  Then the wall: every product certified against Kubernetes v1.34, ~125 names, generated
+  from `cncf/k8s-conformance` into `components/Distributions.vue`
 - *The problem with the question:* StorageClasses, LoadBalancer annotations, IAM bindings,
   autoscaler, ingress and cert controllers, managed control-plane defaults. Six weeks, and
   certified by nothing. Conformance certifies a floor nobody lives on
-- *Invoice: portable API, non-portable operations*
+- *Invoice — **Migration**: the operational layer conformance didn't cover · 6 weeks, the platform team*
 
 **Act II — Time · what does it cost? · OpenTelemetry**
 - *What you are paying for:* one SDK any backend; traces, metrics and logs in one pipeline;
@@ -32,7 +33,7 @@ live. Each act closes with a row added to a running invoice.
   did for free; `http.method` → `http.request.method` touching every dashboard, alert and
   SLO. Two re-instrumentations, neither by choice
 - *The problem with the question:* the price bought consensus, and consensus is the product
-- *Invoice: the standard moved, and you moved with it*
+- *Invoice — **Keeping up**: re-instrumenting when the spec moves · 2 migrations, everyone with a dashboard*
 
 **Act III — Ownership · who owns it? · OpenFeature**
 - *Setting up the question:* the evaluation API, every SDK, the one-line provider swap —
@@ -43,14 +44,16 @@ live. Each act closes with a row added to a running invoice.
   it took to stop being that
 - *The problem with the question:* the standard is what makes the *second* vendor
   affordable, which is the only reason the door is worth anything — and the moat moved up
-- *Invoice: success slows the spec · one door, one company behind it*
+- *Invoice — **Influence**: contribution, and it is optional · 1 working group, 1 engineer indefinitely. And the `from:` field, blank since the opening slide, is filled in: **the community***
 
 **The exit test**
 - Archived vs discontinued — which corpse is easier to exhume
-- The invoice has no currency column. The currency is knowledge
-- Convertible (what a span is, how a flag evaluates) vs non-convertible (the console, the
-  query language) — and a proprietary stack bills the same amount, all of it
-  non-convertible
+- Thomas puts the second column on the bill: the same three line items, `from: a vendor` —
+  exit fees, forced upgrades, enterprise tier. There was never a column marked zero
+- The one row the vendor wins, said plainly: escalation is fast, *if what you need is
+  already on their roadmap*
+- The Currency row: theirs is money + tool knowledge, **non-convertible**; yours is
+  engineering time + domain knowledge, **convertible**. Same size invoice, different currency
 - Not *whether* you are locked in. *To whom*
 
 **Takeaways**
@@ -64,8 +67,8 @@ live. Each act closes with a row added to a running invoice.
 where. `talk-dialog.md` is the full script; its `[SLIDE: …]` cues are kept in one-to-one
 order with `slides.md`, which carries the same beats as presenter notes.
 
-**Timing:** 26 slides for a 25-minute two-hander. Several are near-wordless (the three act
-maps, the rename, the invoice) but it is tight — rehearse before cutting, and see the cut
+**Timing:** 27 slides for a 25-minute two-hander. Several are near-wordless (the three act maps, the
+rename, the distribution wall, the invoice) but it is tight — rehearse before cutting, and see the cut
 candidates at the bottom of `talk-dialog.md`.
 
 ## Running it
