@@ -477,10 +477,9 @@ SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone d
 
 ---
 layout: center
-clicks: 1
 ---
 
-<Invoice :rows="3" :from="$clicks >= 1" />
+<Invoice :rows="3" />
 
 <!--
 ROUND 4 starts here.
@@ -531,7 +530,7 @@ layout: center
 clicks: 2
 ---
 
-<Invoice :rows="3" from amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
+<Invoice :rows="3" amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
 
 <!--
 Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."

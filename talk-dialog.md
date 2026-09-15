@@ -41,11 +41,15 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Let's define the crime first. Lock-in isn't a yes or no. It's a cost.
 
-`[SLIDE: the invoice — empty. Header: "Never locked in again." A `from:` field, blank, that nobody will notice until act III.]`
+`[SLIDE: the invoice — empty. Header: "Never locked in again." Column already labelled `from: the community`, and no line items under it yet.]`
 
 **SIMON:** You said "never locked in again." I'm going to keep the invoice for that sentence. Every layer of that beautiful architecture of yours — what it costs to leave, and what it costs to stay.
 
-**THOMAS:** Fine. Start with the one I'm most sure about.
+**THOMAS:** One condition. You fill that column in, line by line, and I won't interrupt the arithmetic. At the end, I fill in the column next to it.
+
+**SIMON:** There is no column next to it.
+
+**THOMAS:** *(to the audience)* There's always a column next to it. *(to Simon)* Start with the one I'm most sure about.
 
 ---
 
@@ -231,11 +235,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Three lines. Migration — the operational layer conformance never covered. Keeping up — re-instrumenting every time the spec moves. Influence — contribution, and there is no other door. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
 
-**THOMAS:** You've had that document on screen all morning with the top line blank.
+**THOMAS:** And every line on it is from us. The community. Your own project is on that list.
 
-`[SLIDE: click — the `from:` field fills in: "the community"]`
-
-**SIMON:** I have. And that's the honest version of everything I've said today. It's a real bill, and it's from the community. *(beat)* Which is the first time in this talk that field has had anything in it at all.
+**SIMON:** Every line. That's the honest version of everything I've said today, and I'm not going to soften it: open standards send invoices.
 
 **THOMAS:** Now do the graveyard.
 
@@ -313,6 +315,12 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ## Notes for revision
 
+- **The invoice is deliberately one-sided until round 4.** For twenty minutes the only
+  column on screen is `from: the community`, which means the visual artifact reads as a
+  prosecution of open standards — by the maintainer of one of them. That is the engine of
+  the talk, but it is also the thing most likely to be screenshotted out of context at
+  minute twelve. Two safeguards, both already in the script: Thomas argues back in every
+  round, and he promises the second column in the opening. Do not cut that promise.
 - **Structure:** every act now asks the same three questions — what do you get, what does
   it cost, who owns it — and the slides carry an on-screen rail showing which is live. Say
   the three out loud once in act I so the audience has the frame; after that let the rail

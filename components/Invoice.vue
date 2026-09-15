@@ -3,13 +3,13 @@
 // are the same whoever issues them. Only the FROM field changes, which is why
 // the closing question is "to whom" rather than "whether".
 //
-// The community column fills one row per act. The vendor column is Thomas's
-// reveal at the exit test — the comparison nobody prices.
+// The community column is labelled from the first slide on purpose. The
+// provocation is not who sent the bill — the cells say that plainly — it is
+// that the community sends one at all. The vendor column is the reveal, and it
+// is Thomas's, at the exit test.
 defineProps({
   // Line items billed so far, 0–3. The last one shown is lit.
   rows: { type: Number, default: 0 },
-  // Act III resolves the letterhead.
-  from: { type: Boolean, default: false },
   // The second column. Until this is set the bill looks like a bill; after it,
   // it looks like a choice.
   vendor: { type: Boolean, default: false },
@@ -64,10 +64,7 @@ const CURRENCY = {
     <div class="grid heads">
       <div />
       <div v-if="vendor" class="col-head">from: a vendor</div>
-      <div class="col-head">
-        <template v-if="vendor || from">from: the community</template>
-        <span v-else class="unknown">from: <span class="blank" /></span>
-      </div>
+      <div class="col-head">from: the community</div>
     </div>
 
     <div
@@ -152,16 +149,6 @@ const CURRENCY = {
   text-transform: uppercase;
   opacity: .75;
   font-weight: 600;
-}
-
-/* Blank for most of the talk. Act III fills it in, which is the answer the
-   closing line asks for out loud. */
-.unknown { opacity: .5; }
-
-.unknown .blank {
-  display: inline-block;
-  width: 7rem;
-  border-bottom: 1px solid currentColor;
 }
 
 .line {
