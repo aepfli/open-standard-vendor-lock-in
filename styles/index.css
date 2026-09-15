@@ -85,22 +85,25 @@
   line-height: 1.75;
 }
 
-/* Roll of the dead: a name and the years it was alive. Matches the tabular
-   treatment of .timeline .year rather than inventing a second look. */
+/* Roll of the dead: a name and the years it was alive. Evidence, not argument —
+   the reasons above it carry the point, so this sits smaller and quieter, under
+   a rule. Tabular figures match the treatment of .timeline .year. */
 .roll {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: .35rem 1.2rem;
+  gap: .3rem 1.2rem;
   align-items: baseline;
-  margin-top: 1.2rem;
-  font-size: 1.05rem;
+  margin-top: 2rem;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(128, 128, 128, .35);
+  font-size: .82rem;
+  opacity: .65;
 }
 
 .roll .span {
   font-variant-numeric: tabular-nums;
-  font-size: .85rem;
-  opacity: .55;
   white-space: nowrap;
+  opacity: .8;
 }
 
 /* The one the audience recognises, on the left; the notice period, on the right. */

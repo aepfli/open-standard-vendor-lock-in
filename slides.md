@@ -495,6 +495,14 @@ layout: two-cols
 
 # Archived
 
+<div class="mt-6 text-lg opacity-80">
+
+- spec: still there
+- code: still there
+- **nothing was withdrawn**
+
+</div>
+
 <div class="roll">
   <div>CNI-Genie</div><div class="span">2020 → 2025</div>
   <div>Krustlet</div><div class="span">2021 → 2024</div>
@@ -504,19 +512,23 @@ layout: two-cols
   <div class="keep">OpenTracing</div><div class="span">2016 → 2021</div>
 </div>
 
-<div class="mt-8 text-sm opacity-60">spec: still there · code: still there · <b>nothing was withdrawn</b></div>
-
 ::right::
 
 # Discontinued
+
+<div class="mt-6 text-lg opacity-80">
+
+- spec: never existed
+- nowhere to take it
+- **you leave on their schedule**
+
+</div>
 
 <div class="roll">
   <div>Docker Cloud</div><div class="span notice">60 days</div>
   <div>Heroku free dynos</div><div class="span notice">3 months</div>
   <div>Google Cloud IoT Core</div><div class="span notice">12 months</div>
 </div>
-
-<div class="mt-8 text-sm opacity-60">spec: never existed · nowhere to take it · <b>you leave on their schedule</b></div>
 
 <!--
 Sources — re-check before the talk, the left column moves every quarter:
