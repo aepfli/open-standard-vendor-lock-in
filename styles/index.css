@@ -1,0 +1,9 @@
+.tag {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .5;
+}
