@@ -9,7 +9,8 @@ wrong one.
 Three acts. Each act takes **one theme, one question, one standard** — and spends its
 slides both answering the question and showing what is wrong with it. The act map opens
 each act with that row lit; a rail across the top of every slide shows which question is
-live. Each act closes with a row added to a running invoice.
+live. Each act closes by adding one line item to a running invoice — no amounts yet, so
+each close carries a single idea.
 
 | | Theme | Question | Standard |
 | --- | --- | --- | --- |
@@ -19,8 +20,9 @@ live. Each act closes with a row added to a running invoice.
 
 **Act I — Portability · what do you get? · Kubernetes**
 - *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl` — moved in an afternoon.
-  Then the wall: every product certified against Kubernetes v1.34, ~125 names, generated
-  from `cncf/k8s-conformance` into `components/Distributions.vue`
+  Then the wall: every product certified against Kubernetes v1.34 — 80 logos plus the rest
+  by name, generated from `cncf/k8s-conformance` into `components/Distributions.vue` and
+  `public/logos/distros/`
 - *The problem with the question:* StorageClasses, LoadBalancer annotations, IAM bindings,
   autoscaler, ingress and cert controllers, managed control-plane defaults. Six weeks, and
   certified by nothing. Conformance certifies a floor nobody lives on
@@ -29,9 +31,12 @@ live. Each act closes with a row added to a running invoice.
 **Act II — Time · what does it cost? · OpenTelemetry**
 - *What you are paying for:* one SDK any backend; traces, metrics and logs in one pipeline;
   semantic conventions everyone speaks. Leave on Friday, any Friday
-- *The answer:* seven years from OpenTracing to a stable spec; everything the vendor agent
-  did for free; `http.method` → `http.request.method` touching every dashboard, alert and
-  SLO. Two re-instrumentations, neither by choice
+- *The answer:* seven years from OpenTracing to a stable spec. And consensus is not only
+  slow, it is narrow — a spec holds what everyone could agree to, not what any one of them
+  does best, so the thing a vendor calls a differentiator a committee calls out of scope.
+  Then everything the vendor agent did for free, and `http.method` →
+  `http.request.method` touching every dashboard, alert and SLO. Two re-instrumentations,
+  neither by choice
 - *The problem with the question:* the price bought consensus, and consensus is the product
 - *Invoice — **Keeping up**: re-instrumenting when the spec moves · 2 migrations, everyone with a dashboard*
 
@@ -63,11 +68,23 @@ live. Each act closes with a row added to a running invoice.
 - Homework: pick one standard you depend on and find out who controls its roadmap — not
   the logo, the chart
 
+The conformance wall is generated. Regenerate it before the talk — the certified set moves
+every release, and a stale number is the one thing an audience will fact-check live:
+
+```bash
+node tools/build-distributions.mjs v1.34   # pick a version that has finished filling up
+```
+
+It rewrites `components/Distributions.vue` and `public/logos/distros/`, then prints the
+product count to put in the slide footer. Logos come from whatever URL each vendor listed
+in `cncf/k8s-conformance`, so the logo/name split shifts a little run to run as vendor
+links come and go.
+
 `cfp.md` holds the submitted abstract and a table tracking which promised argument lands
 where. `talk-dialog.md` is the full script; its `[SLIDE: …]` cues are kept in one-to-one
 order with `slides.md`, which carries the same beats as presenter notes.
 
-**Timing:** 27 slides for a 25-minute two-hander. Several are near-wordless (the three act maps, the
+**Timing:** 28 slides for a 25-minute two-hander. Several are near-wordless (the three act maps, the
 rename, the distribution wall, the invoice) but it is tight — rehearse before cutting, and see the cut
 candidates at the bottom of `talk-dialog.md`.
 

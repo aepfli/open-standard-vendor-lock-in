@@ -14,6 +14,10 @@ defineProps({
   // it looks like a choice.
   vendor: { type: Boolean, default: false },
   currency: { type: Boolean, default: false },
+  // Amounts are held back until the exit test. During the acts each close
+  // should carry exactly one new idea — the line item — not a line item and a
+  // price and a letterhead all at once.
+  amounts: { type: Boolean, default: false },
 })
 
 const LINES = [
@@ -80,7 +84,7 @@ const CURRENCY = {
       <div class="cell">
         {{ l.community }}
         <div v-if="l.communityNote" class="note">{{ l.communityNote }}</div>
-        <div class="amt">{{ l.amount }}</div>
+        <div v-if="amounts" class="amt">{{ l.amount }}</div>
       </div>
     </div>
 

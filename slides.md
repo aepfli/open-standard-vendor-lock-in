@@ -124,12 +124,12 @@ layout: center
 
 <Distributions />
 
-<div class="mt-6 text-sm opacity-60">certified against Kubernetes v1.34 · <span class="opacity-70">cncf/k8s-conformance</span></div>
+<div class="mt-8 text-sm opacity-60">131 products certified against Kubernetes v1.34 · <span class="opacity-70">cncf/k8s-conformance</span></div>
 
 <!--
 THOMAS: "This is not a slide you read. This is a slide you look at."
 Nobody in the room can name half of them, and that is the point — you have never heard of most of your own exit options.
-Source: github.com/cncf/k8s-conformance, the v1.34 directory. 131 submissions; 125 names shown because Gardener files one per cloud and they collapse to the same label.
+Source: github.com/cncf/k8s-conformance, the v1.34 directory. 131 products certified; 80 logos on screen because some vendors file one submission per cloud (Gardener) or per variant (EKS / EKS-A / EKS-D) and the identical marks are deduped. The 37 with no usable logo URL are on the wall by name, so nothing is quietly dropped.
 Refresh before the talk: the number moves every release, and a stale number is the one thing an audience will fact-check live.
 SIMON, flat: "I've migrated between two of them. Ask me how it went."
 -->
@@ -242,6 +242,38 @@ layout: center
 <!--
 TODO: verify dates against OTel spec release history before final.
 SIMON: "So then we instrumented it." Customer instrumented 2021, re-instrumented twice, neither time because they wanted to.
+-->
+
+---
+layout: center
+---
+
+<Ask active="cost" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# The intersection, not the union
+
+<div class="costs">
+<v-clicks>
+
+- A spec holds what everyone could agree to
+- Not what any one of them does best
+- What a vendor calls a differentiator, a committee calls out of scope
+- \[ the signal your team actually wanted \]
+
+</v-clicks>
+</div>
+
+<div v-click class="mt-8 text-sm opacity-60">paid in capability, not in weeks</div>
+
+<!--
+TODO: replace the bracketed line with the real one — the signal or feature this customer wanted and did not get. Name it, or cut the line. A generic complaint here is worth nothing.
+SIMON: the previous slide was the bill in weeks. This one is the bill in capability, and nobody puts it on a slide.
+"Every name in the semantic conventions is a name every vendor could live with. That is not the same as the right name."
+Last click is the one that should sting, because it is specific and theirs.
+THOMAS's rebuttal, and he should get it in full: "The intersection is the portable part. That is not a side effect — that IS the product. A spec that tried to cover the union would still be in draft."
+And the forward reference: "Which is exactly why Simon's own project scoped small and shipped in months. He'll tell you that himself in about four minutes."
+SIMON: "I will. It's still a cost. I'm adding it to the same invoice."
 -->
 
 ---
@@ -499,7 +531,7 @@ layout: center
 clicks: 2
 ---
 
-<Invoice :rows="3" from :vendor="$clicks >= 1" :currency="$clicks >= 2" />
+<Invoice :rows="3" from amounts :vendor="$clicks >= 1" :currency="$clicks >= 2" />
 
 <!--
 Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
@@ -509,8 +541,6 @@ Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a fla
 -->
 
 
----
-layout: center
 ---
 layout: center
 ---

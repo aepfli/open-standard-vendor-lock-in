@@ -72,5 +72,5 @@ outline and `talk-dialog.md` for the script.
 | Diversity of implementations | "After" — the category has new names in it | thin — only a click |
 | Genuine user choice | the turn: "not whether, but to whom" | covered |
 | Interoperability without renegotiating integrations | the Kubernetes conformance wall — ~125 products, same manifests | covered |
-| Lowest-common-denominator risk | — | **not on a slide** |
+| Lowest-common-denominator risk | Act II, "The intersection, not the union" | covered |
 | CNCF graveyard | Archived vs Discontinued | covered |

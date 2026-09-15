@@ -61,7 +61,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** How many passed it?
 
-`[SLIDE: the wall — every product certified against Kubernetes v1.34. ~125 names, tiny, filling the slide.]`
+`[SLIDE: the wall — every product certified against Kubernetes v1.34. 80 logos, then the rest by name, filling the slide.]`
 
 **THOMAS:** This isn't a slide you read. It's a slide you look at. *(beat)* You can't name half of them. Neither can I. And every single one of them runs your manifests. Show me a proprietary platform with a hundred interchangeable implementations.
 
@@ -75,7 +75,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** *(clicks)* Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
 
-`[SLIDE: the invoice — first line item: "Migration · the operational layer conformance didn't cover · 6 weeks, the platform team"]`
+`[SLIDE: the invoice — first line item: "Migration · the operational layer conformance didn't cover". No amount yet, and the `from:` field still blank.]`
 
 **SIMON:** Conformance certifies the slide before that one. And nobody lives on that slide.
 
@@ -109,6 +109,16 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 `[SLIDE: timeline — 2016 OpenTracing · 2018 OpenCensus · 2019 merge into OpenTelemetry · 2021 tracing stable · 2022 metrics stable · 2023 logs, HTTP semantic conventions stable · migration markers along the way]`
 
+**SIMON:** And slow isn't the only price. A spec doesn't hold the best idea in the room. It holds the one nobody objected to.
+
+`[SLIDE: "The intersection, not the union" — four lines, one per click. Last one is the signal this customer actually wanted.]`
+
+**SIMON:** *(clicks)* What everyone could agree to. Not what any one of them does best. What a vendor calls a differentiator, a committee calls out of scope. *(last click — name the real one)* And that's paid in capability, not in weeks. Nobody puts that on a slide.
+
+**THOMAS:** The intersection *is* the portable part. That's not a side effect, that's the product. A spec that tried to cover the union would still be in draft — and you know that better than anyone, because your own project scoped small on purpose. You'll tell them so yourself in about four minutes.
+
+**SIMON:** I will. It's still a cost, and it's going on the same invoice.
+
 **SIMON:** And here's the thing nobody says out loud: leaving the proprietary agent has a feature list too.
 
 `[SLIDE: "What it cost to leave the agent" — six lines, one per click]`
@@ -119,7 +129,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** Sounds trivial. It touched every dashboard, every alert, every SLO that filtered on it. They re-instrumented twice in three years, and neither time was because *they* wanted something.
 
-`[SLIDE: the invoice — second line item: "Keeping up · re-instrumenting when the spec moves · 2 migrations, everyone with a dashboard"]`
+`[SLIDE: the invoice — second line item: "Keeping up · re-instrumenting when the spec moves"]`
 
 **SIMON:** And who decided those names? Look at who's in the semantic conventions working groups. Vendors. Shaping the schema that their backends ingest.
 
@@ -217,9 +227,9 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **SIMON:** So the customer asked what it would cost to leave. All of it. Let's add it up.
 
-`[SLIDE: the invoice — third line item lands: "Influence · contribution, and it is optional · 1 working group, 1 engineer indefinitely"]`
+`[SLIDE: the invoice — third line item lands: "Influence · contribution, and it is optional"]`
 
-**SIMON:** Migration: the operational layer conformance didn't cover — six weeks of the platform team. Keeping up: re-instrumenting every time the spec moves — two migrations, and everyone who owns a dashboard paid. Influence: contribution, indefinitely. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
+**SIMON:** Three lines. Migration — the operational layer conformance never covered. Keeping up — re-instrumenting every time the spec moves. Influence — contribution, and there is no other door. That's the invoice for "never locked in again." It's real, it's not zero, and anyone who told them it was zero was selling something.
 
 **THOMAS:** You've had that document on screen all morning with the top line blank.
 
@@ -239,7 +249,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 **THOMAS:** Then let's finish it properly. You've been showing them one column.
 
-`[SLIDE: the invoice — click 1: the "from: a vendor" column appears beside it. Same three line items.]`
+`[SLIDE: the invoice — now with amounts: 6 weeks · the platform team / 2 migrations · everyone with a dashboard / 1 working group · 1 engineer, indefinitely]`
+
+**SIMON:** And here is what those three lines actually cost. Six weeks of the platform team. Two migrations for every developer who owns a dashboard. One engineer sitting in a working group, indefinitely.
+
+`[SLIDE: click 1 — the "from: a vendor" column appears beside it. Same three line items.]`
 
 **THOMAS:** Same bill. Different letterhead. Migration: exit fees, data export, and a rewrite — because there is no conformance suite to tell you what carries over. Keeping up: forced upgrades, deprecations, and repricing, on their schedule, not yours. Influence: enterprise tier, escalation, and waiting.
 
