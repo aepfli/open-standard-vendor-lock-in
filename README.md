@@ -28,6 +28,12 @@ each close carries a single idea.
 - *The problem with the question:* StorageClasses, LoadBalancer annotations, IAM bindings,
   autoscaler, ingress and cert controllers, managed control-plane defaults. Six weeks, and
   certified by nothing. Conformance certifies a floor nobody lives on
+- *And the one that hit everybody at once:* ingress-nginx. Announced for retirement in 2025;
+  from March 2026 no releases, no bugfixes, and no patches for security vulnerabilities. The
+  recommended path is Gateway API — a different object, so a migration, not a swap. It
+  landed on all 131 certified distributions identically, because conformance certified the
+  Ingress object and not the thing implementing it. Thomas's answer is real: the API held,
+  and you had a dozen implementations to choose from *because* the interface was standard
 - *Invoice — **Migrating**: the operational layer conformance didn't cover · 6 weeks, the platform team*
 
 **Act II — Progress · how does it move? · OpenTelemetry**
@@ -124,7 +130,7 @@ links come and go.
 where. `talk-dialog.md` is the full script; its `[SLIDE: …]` cues are kept in one-to-one
 order with `slides.md`, which carries the same beats as presenter notes.
 
-**Timing:** 30 slides for a 25-minute two-hander. Several are near-wordless (the three act maps, the
+**Timing:** 31 slides for a 25-minute two-hander. Several are near-wordless (the three act maps, the
 rename, the distribution wall, the invoice) but it is tight — rehearse before cutting, and see the cut
 candidates at the bottom of `talk-dialog.md`.
 

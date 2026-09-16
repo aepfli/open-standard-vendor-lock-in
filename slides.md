@@ -171,6 +171,31 @@ THOMAS: "And that list is smaller than the whole compute layer used to be."
 layout: center
 ---
 
+<Ask active="get" />
+<Tag project="kubernetes" label="Kubernetes" />
+
+# Conformance didn't cover this
+
+<div class="timeline text-lg mt-8">
+  <div class="year">2025</div><div class="event">the project announces ingress-nginx will retire</div>
+  <div class="year">2026</div><div class="event">no further releases, no bugfixes<div class="note">and no patches for security vulnerabilities, whatever turns up</div></div>
+  <div class="year"></div><div class="event cont">the recommended path is Gateway API — a different object<div class="note">not a drop-in. Ingress → Gateway is a migration, and there is a tool for it because it has to be</div></div>
+</div>
+
+<div class="mt-8 text-sm opacity-60">the Ingress object was conformant · <b>the thing implementing it was not</b></div>
+
+<!--
+Verified from kubernetes.io/blog/2025/11/11/ingress-nginx-retirement: "Best-effort maintenance will continue until March 2026. Afterward, there will be no further releases, no bugfixes, and no updates to resolve any security vulnerabilities that may be discovered." Recommended paths: Gateway API, or one of the alternative controllers in the docs. Ingress2Gateway 1.0 shipped as the migration tool.
+TODO if you want the scale number on stage: secondary sources put ingress-nginx at roughly half of all clusters. The official announcement does NOT give a figure — find a source you trust or say "the most widely deployed" instead, which the project's own wording supports.
+SIMON's closer for act I, and it is the strongest thing he has: go back to that wall. A hundred and thirty-one certified distributions, and this landed on every single one of them at the same time. Conformance is not a shield against the thing underneath the API going away.
+THOMAS gets a real answer and should take it: the API held. Your manifests still describe an Ingress. What you are replacing is an implementation, and there were a dozen others to pick from precisely because the interface was standard. Try that when the product is the interface.
+SIMON: "Six weeks for the cloud. And this one hit everybody at once."
+-->
+
+---
+layout: center
+---
+
 <Invoice :rows="1" />
 
 <!--

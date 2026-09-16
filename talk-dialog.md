@@ -53,7 +53,7 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ---
 
-## Round 1 — Kubernetes (~4 min)
+## Round 1 — Kubernetes (~5 min)
 
 *Transition is invisible: Thomas simply continues.*
 
@@ -78,6 +78,20 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 `[SLIDE: "Took six weeks" — Simon's. Six lines, small, all at once. One click at the end for "certified by nothing".]`
 
 **SIMON:** Then: storage classes that don't exist. Load balancer annotations nobody on the new side reads. IAM roles bound to service accounts through a mechanism that only exists on one cloud. Node autoscaling that was actually the cloud's autoscaler wearing a Kubernetes hat. The ingress class, the cert issuer, the DNS controller. And a dozen managed control-plane defaults nobody had ever written down because nobody had to. Six weeks.
+
+**THOMAS:** And that list is smaller than the whole compute layer used to be.
+
+**SIMON:** It is. *(beat)* But that list was one cloud to another. Let me show you the one that hit everybody at the same time.
+
+`[SLIDE: "Conformance didn't cover this" — ingress-nginx: 2025 retirement announced · 2026 no releases, no bugfixes, no security patches · Gateway API is a different object]`
+
+**SIMON:** ingress-nginx. The project announced it was retiring. Best-effort maintenance to March, and after that no releases, no bugfixes — and no patches for security vulnerabilities, whatever turns up. The recommended path is Gateway API, which is not a drop-in; it's a different object. There's a migration tool, because there has to be.
+
+**SIMON:** *(back to the wall slide in his head)* Now go back to your hundred and thirty-one. Every one of them certified. Every one of them hit by this, at the same time, in the same way. Conformance certified the Ingress object. It did not certify the thing that implemented it, and that's the part that went away.
+
+**THOMAS:** *(takes it)* And the API held. Your manifests still describe an Ingress. What you replaced was an implementation — and you had a dozen to choose from *because* the interface was standard. Try that when the interface is the product. When a proprietary load balancer sunsets, you don't pick a different implementation of it. There isn't one.
+
+**SIMON:** Six weeks for the cloud. And this one, everybody at once.
 
 `[SLIDE: the invoice — first line item: "Migrating · the operational layer conformance didn't cover". No amount yet, and the `from:` field still blank.]`
 

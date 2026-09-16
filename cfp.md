@@ -77,7 +77,7 @@ outline and `talk-dialog.md` for the script.
 | **Pro** — Interoperability without renegotiating | I | the conformance wall — same manifests on all of them | covered |
 | **Con** — Consensus is slow | II, III | the timeline; "join the working group" | covered |
 | **Con** — Governance conflicts shape the spec | II, III | "who decided those names? vendors"; DevStats | covered |
-| **Con** — Migration costs between compliant implementations | I, II | "Took six weeks"; "What it cost to leave the agent", the rename | covered |
+| **Con** — Migration costs between compliant implementations | I, II | "Took six weeks"; ingress-nginx retiring across all 131 certified distributions at once; "What it cost to leave the agent", the rename | covered |
 | **Con** — Lowest-common-denominator risk | II | "The intersection, not the union" | covered |
 | **Con** — CNCF graveyard | reckoning | Archived vs Discontinued, before the bill | covered |
 
@@ -88,7 +88,7 @@ slide*, so a claim landing twice is counted in both acts.
 
 | Act | Pro | Con | Total | Note |
 | --- | --- | --- | --- | --- |
-| I — Portability · Kubernetes | 2 | 1 | **3** | balanced |
+| I — Portability · Kubernetes | 2 | 2 | **4** | ingress-nginx adds a second Con |
 | II — Progress · OpenTelemetry | 0 | 4 | **4** | densest, and entirely prosecution |
 | III — Ownership · OpenFeature | 1 | 2 | **3** | balanced by the NATS slide |
 | the reckoning | 0 | 1 | **1** | the graveyard, then the complete bill |
