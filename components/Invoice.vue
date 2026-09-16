@@ -33,7 +33,7 @@ const LINES = [
   {
     item: 'Migrating',
     vendor: 'exit fees · data export · rewrite',
-    community: "the operational layer conformance didn't cover",
+    community: "conformance didn't cover the operational and cloud provider layer",
     amount: '6 weeks · the platform team',
   },
   {

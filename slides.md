@@ -1,3 +1,9 @@
+<!-- TODOS:
+* Add TSC Labs Logo
+* Social Media QR Codes
+* 
+-->
+
 ---
 theme: seriph
 title: Your Open Source Standard Is Just Another Lock-In
@@ -35,7 +41,7 @@ Stay on this slide until Thomas gives the textbook answer.
 layout: center
 ---
 
-# "Never locked in again."
+# The "Never locked in again" Stack
 
 <StandardsStack active="all" class="mt-12" />
 
@@ -91,7 +97,7 @@ layout: center
 <Ask active="get" />
 <Tag project="kubernetes" label="Kubernetes" />
 
-# Moved in an afternoon
+# Migration between K8s Clusters
 
 <div class="gets">
 
@@ -172,9 +178,39 @@ layout: center
 ---
 # Famous Issues with Kubernetes
 
-- ingress-nginx -> traefik bzw. gateway API
-- Deployment v1beta -> apps/v1
-- Ingress v1beta -> networking/v1
+- API Deprecation
+  - networking/v1 Ingress
+  - apps/v1 Deployment
+
+---
+layout: center
+---
+
+<Ask active="get" />
+<Tag project="kubernetes" label="Kubernetes" />
+
+# Conformance didn't cover this
+
+- API Deprecation
+  - networking/v1 Ingress
+  - apps/v1 Deployment
+  
+<div class="timeline text-lg mt-8">
+  <div class="year">2025</div><div class="event">the project announces ingress-nginx will retire</div>
+  <div class="year">2026</div><div class="event">no further releases, no bugfixes<div class="note">and no patches for security vulnerabilities, whatever turns up</div></div>
+  <div class="year"></div><div class="event cont">the recommended path is Gateway API — a different object<div class="note">not a drop-in. Ingress → Gateway is a migration, and there is a tool for it because it has to be</div></div>
+</div>
+
+<v-click>
+<div class="mt-8 text-xl opacity-60" align="center">the Ingress object was conformant · <b>the maintainership situation was not</b></div>
+</v-click>
+<!--
+Verified from kubernetes.io/blog/2025/11/11/ingress-nginx-retirement: "Best-effort maintenance will continue until March 2026. Afterward, there will be no further releases, no bugfixes, and no updates to resolve any security vulnerabilities that may be discovered." Recommended paths: Gateway API, or one of the alternative controllers in the docs. Ingress2Gateway 1.0 shipped as the migration tool.
+TODO if you want the scale number on stage: secondary sources put ingress-nginx at roughly half of all clusters. The official announcement does NOT give a figure — find a source you trust or say "the most widely deployed" instead, which the project's own wording supports.
+SIMON's closer for act I, and it is the strongest thing he has: go back to that wall. A hundred and thirty-one certified distributions, and this landed on every single one of them at the same time. Conformance is not a shield against the thing underneath the API going away.
+THOMAS gets a real answer and should take it: the API held. Your manifests still describe an Ingress. What you are replacing is an implementation, and there were a dozen others to pick from precisely because the interface was standard. Try that when the product is the interface.
+SIMON: "Six weeks for the cloud. And this one hit everybody at once."
+-->
 
 ---
 layout: center
@@ -191,30 +227,7 @@ layout: center
 
 - More vendor lock-ins through proprietary solutions
 
----
-layout: center
----
 
-<Ask active="get" />
-<Tag project="kubernetes" label="Kubernetes" />
-
-# Conformance didn't cover this
-
-<div class="timeline text-lg mt-8">
-  <div class="year">2025</div><div class="event">the project announces ingress-nginx will retire</div>
-  <div class="year">2026</div><div class="event">no further releases, no bugfixes<div class="note">and no patches for security vulnerabilities, whatever turns up</div></div>
-  <div class="year"></div><div class="event cont">the recommended path is Gateway API — a different object<div class="note">not a drop-in. Ingress → Gateway is a migration, and there is a tool for it because it has to be</div></div>
-</div>
-
-<div class="mt-8 text-sm opacity-60">the Ingress object was conformant · <b>the thing implementing it was not</b></div>
-
-<!--
-Verified from kubernetes.io/blog/2025/11/11/ingress-nginx-retirement: "Best-effort maintenance will continue until March 2026. Afterward, there will be no further releases, no bugfixes, and no updates to resolve any security vulnerabilities that may be discovered." Recommended paths: Gateway API, or one of the alternative controllers in the docs. Ingress2Gateway 1.0 shipped as the migration tool.
-TODO if you want the scale number on stage: secondary sources put ingress-nginx at roughly half of all clusters. The official announcement does NOT give a figure — find a source you trust or say "the most widely deployed" instead, which the project's own wording supports.
-SIMON's closer for act I, and it is the strongest thing he has: go back to that wall. A hundred and thirty-one certified distributions, and this landed on every single one of them at the same time. Conformance is not a shield against the thing underneath the API going away.
-THOMAS gets a real answer and should take it: the API held. Your manifests still describe an Ingress. What you are replacing is an implementation, and there were a dozen others to pick from precisely because the interface was standard. Try that when the product is the interface.
-SIMON: "Six weeks for the cloud. And this one hit everybody at once."
--->
 
 ---
 layout: center
@@ -257,7 +270,7 @@ Traces · metrics · logs
 
 Semantic conventions everyone speaks
 
-Leave on Friday. Any Friday.
+Switch your provider at Friday night
 
 </div>
 
@@ -265,6 +278,39 @@ Leave on Friday. Any Friday.
 THOMAS owns this slide, and he should sound like he means it — this is the single biggest thing open standards bought the customer.
 "Leave on Friday, any Friday" is the line. Pause after it.
 SIMON does not fight it. He says "agreed" and turns the page — which is the timeline.
+-->
+
+---
+layout: center
+---
+
+> Yesterday, my observability provider told me to install their collector-distribution
+
+---
+layout: center
+---
+
+<Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# The intersection, not the union
+
+<div class="costs">
+
+- A spec holds what everyone could agree to
+- Not what any one of them does best
+- What a vendor calls a differentiator, a committee calls out of scope
+
+</div>
+
+<!--
+TODO: replace the bracketed line with the real one — the signal or feature this customer wanted and did not get. Name it, or cut the line. A generic complaint here is worth nothing.
+SIMON: the previous slide was the bill in weeks. This one is the bill in capability, and nobody puts it on a slide.
+"Every name in the semantic conventions is a name every vendor could live with. That is not the same as the right name."
+Last click is the one that should sting, because it is specific and theirs.
+THOMAS's rebuttal, and he should get it in full: "The intersection is the portable part. That is not a side effect — that IS the product. A spec that tried to cover the union would still be in draft."
+And the forward reference: "Which is exactly why Simon's own project scoped small and shipped in months. He'll tell you that himself in about four minutes."
+SIMON: "I will. It's still a cost. I'm adding it to the same invoice."
 -->
 
 ---
@@ -292,65 +338,6 @@ SIMON: "So then we instrumented it." Customer instrumented 2021, re-instrumented
 -->
 
 ---
-layout: center
----
-
-<Ask active="move" />
-<Tag project="opentelemetry" label="OpenTelemetry" />
-
-# The intersection, not the union
-
-<div class="costs">
-
-- A spec holds what everyone could agree to
-- Not what any one of them does best
-- What a vendor calls a differentiator, a committee calls out of scope
-- \[ the signal your team actually wanted \]
-
-</div>
-
-<div v-click class="mt-8 text-sm opacity-60">paid in capability, not in weeks</div>
-
-<!--
-TODO: replace the bracketed line with the real one — the signal or feature this customer wanted and did not get. Name it, or cut the line. A generic complaint here is worth nothing.
-SIMON: the previous slide was the bill in weeks. This one is the bill in capability, and nobody puts it on a slide.
-"Every name in the semantic conventions is a name every vendor could live with. That is not the same as the right name."
-Last click is the one that should sting, because it is specific and theirs.
-THOMAS's rebuttal, and he should get it in full: "The intersection is the portable part. That is not a side effect — that IS the product. A spec that tried to cover the union would still be in draft."
-And the forward reference: "Which is exactly why Simon's own project scoped small and shipped in months. He'll tell you that himself in about four minutes."
-SIMON: "I will. It's still a cost. I'm adding it to the same invoice."
--->
-
----
-layout: center
----
-
-<Ask active="move" />
-<Tag project="opentelemetry" label="OpenTelemetry" />
-
-# What it cost to leave the agent
-
-<div class="costs">
-
-- Auto-discovery
-- [ RUM / browser / mobile ]
-- [ Profiling ]
-- Vendor-side sampling & cost controls
-- Two forced re-instrumentations
-- Dashboards rebuilt twice
-
-</div>
-
-<!--
-TODO: check the bracketed items against the customer's actual vendor before final — keep only what is true, cut the rest.
-SIMON clicks one per item. "Nobody tells you the migration *off* the proprietary agent has a feature list too."
-  Auto-discovery — "the vendor agent did it for free"
-  RUM / profiling — "thinner, or years behind"
-  sampling — "their cost controls were the reason the bill was survivable"
-THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
--->
-
----
 layout: fact
 ---
 
@@ -366,6 +353,35 @@ layout: fact
 SIMON: "Sounds trivial. It touched everything that filtered on it."
 "And who decided those names?"
 THOMAS: "Vendors. In a public room, with public notes, and a PR you could have commented on."
+-->
+---
+layout: center
+---
+
+<Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
+
+# Using proprietary Agents
+
+<div class="costs">
+
+- Auto-discovery
+- RUM / browser / mobile 
+- Profiling 
+- Vendor-side sampling & cost controls
+- Two forced re-instrumentations
+- Dashboards rebuilt twice
+- Rethink Ingest Path with every migration
+
+</div>
+
+<!--
+TODO: check the bracketed items against the customer's actual vendor before final — keep only what is true, cut the rest.
+SIMON clicks one per item. "Nobody tells you the migration *off* the proprietary agent has a feature list too."
+  Auto-discovery — "the vendor agent did it for free"
+  RUM / profiling — "thinner, or years behind"
+  sampling — "their cost controls were the reason the bill was survivable"
+THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
 -->
 
 ---
@@ -503,21 +519,6 @@ THOMAS gets the second half, and it is the strongest thing he says all talk: it 
 Do not let Simon win this slide. He raises it and then loses it — that is the point, and it is why he can be honest about his own project on the slide before.
 -->
 
-
----
-layout: center
----
-
-<Invoice :rows="3" />
-
-<!--
-ROUND 4 starts here.
-SIMON: "So the customer asked what it would cost to leave. All of it."
-"Real, not zero, and anyone who told them it was zero was selling something."
-THOMAS: "Now do the graveyard."
-SIMON: hands-up moment — "who's migrated off something in the last year? Keep them up if it was an open standard."
--->
-
 ---
 layout: two-cols
 ---
@@ -556,6 +557,7 @@ layout: two-cols
 </div>
 
 <div class="roll">
+  <div>Minio</div><div class="span notice"></div>
   <div>Docker Cloud</div><div class="span notice">60 days</div>
   <div>Heroku free dynos</div><div class="span notice">3 months</div>
   <div>Google Cloud IoT Core</div><div class="span notice">12 months</div>
@@ -573,6 +575,22 @@ Then the right column, and the number is the argument: sixty days. Three months.
 The honest claim is NOT that you couldn't get your data out — Google published a migration path. It's that there was nowhere to take it. No second implementation. Compare the hundred and thirty-one on the Kubernetes slide.
 SIMON does not get to enjoy the last row: "OpenTracing. That's the first line on my own timeline, and its death cost me a re-instrumentation. It's row two on the invoice."
 -->
+
+---
+layout: center
+---
+
+<Invoice :rows="3" />
+
+<!--
+ROUND 4 starts here.
+SIMON: "So the customer asked what it would cost to leave. All of it."
+"Real, not zero, and anyone who told them it was zero was selling something."
+THOMAS: "Now do the graveyard."
+SIMON: hands-up moment — "who's migrated off something in the last year? Keep them up if it was an open standard."
+-->
+
+
 ---
 layout: center
 clicks: 6
@@ -698,10 +716,6 @@ layout: center
 </v-clicks>
 </div>
 
-<div v-click class="mt-12 text-xl opacity-70 text-left max-w-3xl mx-auto">
-Homework: pick one standard you depend on. Find out who controls its roadmap. <b>Not the logo. The chart.</b>
-</div>
-
 <!--
 SIMON: 1 — "Pull up that DevStats chart before you adopt anything."
 THOMAS: 2 — "That 'join the working group' answer Simon hated giving? It was the right answer."
@@ -717,7 +731,7 @@ class: text-center
 # Your Open Source Standard<br>Is Just Another Lock-In
 
 <div class="mt-8 text-xl">Simon Schrottner · schrottner.at/talks</div>
-<div class="text-xl">Thomas Schuetz · [link]</div>
+<div class="text-xl">Thomas Schuetz · www.learncloudnative.eu</div>
 
 <!--
 SIMON: "And if you don't like the answer —"
