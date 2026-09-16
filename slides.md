@@ -1,12 +1,9 @@
-<!-- TODOS:
-* Add TSC Labs Logo
-* Social Media QR Codes
-* 
--->
-
 ---
 theme: seriph
 title: Your Open Source Standard Is Just Another Lock-In
+# Pinned rather than left to the viewer's system: the sponsor marks in
+# <global-bottom> carry their own colours and only work on a light ground.
+colorSchema: light
 info: |
   Simon Schrottner · Thomas Schuetz — 25 min debate
 class: text-center
@@ -17,6 +14,11 @@ transition: fade
 mdc: true
 layout: center
 ---
+
+<!-- TODOS:
+* Social Media QR Codes
+* Replace the ingress-nginx scale claim with a source, or cut it
+-->
 
 <!--
 Holding slide. Nothing on screen while the hallway conversation starts.
@@ -56,6 +58,9 @@ Hold through the reveal ("Don't you *maintain* OpenFeature?").
 ---
 layout: cover
 class: text-center
+# Seriph's cover defaults to a remote Unsplash image, which is a dead endpoint
+# and renders as a grey plate with white type. The deck is white; so is this.
+background: '#fff'
 ---
 
 # Your Open Source Standard<br>Is Just Another Lock-In
@@ -176,35 +181,38 @@ THOMAS: "And that list is smaller than the whole compute layer used to be."
 ---
 layout: center
 ---
-# Famous Issues with Kubernetes
-
-- API Deprecation
-  - networking/v1 Ingress
-  - apps/v1 Deployment
-
----
-layout: center
----
 
 <Ask active="get" />
 <Tag project="kubernetes" label="Kubernetes" />
 
 # Conformance didn't cover this
 
-- API Deprecation
-  - networking/v1 Ingress
-  - apps/v1 Deployment
-  
-<div class="timeline text-lg mt-8">
-  <div class="year">2025</div><div class="event">the project announces ingress-nginx will retire</div>
-  <div class="year">2026</div><div class="event">no further releases, no bugfixes<div class="note">and no patches for security vulnerabilities, whatever turns up</div></div>
-  <div class="year"></div><div class="event cont">the recommended path is Gateway API — a different object<div class="note">not a drop-in. Ingress → Gateway is a migration, and there is a tool for it because it has to be</div></div>
+<div class="exhibit mt-6">
+  <div class="label">the API moved</div>
+  <div class="shifts">
+    <div class="kind">Ingress</div><div class="api">extensions/v1beta1</div><div class="arrow">→</div><div class="api">networking.k8s.io/v1</div><div class="when">removed in v1.22</div>
+    <div class="kind">Deployment</div><div class="api">extensions/v1beta1</div><div class="arrow">→</div><div class="api">apps/v1</div><div class="when">removed in v1.16</div>
+  </div>
+</div>
+
+<div class="exhibit">
+  <div class="label">the implementation left</div>
+  <div class="timeline">
+    <div class="year">2025</div><div class="event">the project announces ingress-nginx will retire</div>
+    <div class="year">2026</div><div class="event">no further releases, no bugfixes<div class="note">and no patches for security vulnerabilities, whatever turns up</div></div>
+    <div class="year"></div><div class="event cont">the recommended path is Gateway API — a different object<div class="note">not a drop-in. Ingress → Gateway is a migration, and there is a tool for it because it has to be</div></div>
+  </div>
 </div>
 
 <v-click>
-<div class="mt-8 text-xl opacity-60" align="center">the Ingress object was conformant · <b>the maintainership situation was not</b></div>
+<div class="mt-6 text-center text-xl opacity-60">the Ingress object was conformant · <b>the maintainership situation was not</b></div>
 </v-click>
+
 <!--
+Two exhibits, one charge — this used to be two slides that said the same thing twice.
+THOMAS can take the top block first, because it is the weaker half and he should say so: APIs get deprecated on a published schedule, with a deprecation policy, a release note, and years of overlap. Both of those versions were removable because something better was already standard. That is maintenance, not lock-in.
+The version pairs are the real removals, not the current names: extensions/v1beta1 Ingress → networking.k8s.io/v1, removed in v1.22; extensions/v1beta1 (and apps/v1beta1, apps/v1beta2) Deployment → apps/v1, removed in v1.16. Verify against kubernetes.io/docs/reference/using-api/deprecation-guide before final.
+Then SIMON takes the bottom block, which is the half that actually hurts.
 Verified from kubernetes.io/blog/2025/11/11/ingress-nginx-retirement: "Best-effort maintenance will continue until March 2026. Afterward, there will be no further releases, no bugfixes, and no updates to resolve any security vulnerabilities that may be discovered." Recommended paths: Gateway API, or one of the alternative controllers in the docs. Ingress2Gateway 1.0 shipped as the migration tool.
 TODO if you want the scale number on stage: secondary sources put ingress-nginx at roughly half of all clusters. The official announcement does NOT give a figure — find a source you trust or say "the most widely deployed" instead, which the project's own wording supports.
 SIMON's closer for act I, and it is the strongest thing he has: go back to that wall. A hundred and thirty-one certified distributions, and this landed on every single one of them at the same time. Conformance is not a shield against the thing underneath the API going away.
@@ -215,6 +223,8 @@ SIMON: "Six weeks for the cloud. And this one hit everybody at once."
 ---
 layout: center
 ---
+
+<Ask active="get" />
 
 # What would be the alternative?
 
@@ -284,7 +294,18 @@ SIMON does not fight it. He says "agreed" and turns the page — which is the ti
 layout: center
 ---
 
-> Yesterday, my observability provider told me to install their collector-distribution
+<Ask active="move" />
+
+<div class="pullquote">
+
+> Yesterday, my observability provider told me to install *their* collector-distribution
+
+</div>
+
+<!--
+The line that pays for the whole act, so it is the only thing on the slide and it
+is the size of a headline. Say it flat, let it hang, then turn the page.
+-->
 
 ---
 layout: center
@@ -479,16 +500,17 @@ clicks: 1
 
 # Who paid the engineers?
 
-<div class="mt-6 h-72 w-full border-2 border-dashed rounded-xl flex items-center justify-center opacity-60 text-xl">
-  [ CNCF DevStats — OpenFeature contributions by company, over time ]
+<div class="mt-6 flex justify-center">
+  <img src="/org-dependency.png" alt="Organization dependency: one organization at 60% of all contributions, the other nine sharing 40%" class="shot" />
 </div>
 
-<div class="mt-4 text-sm opacity-50">devstats.cncf.io · companies contributing · one contributor carries most of the commits</div>
+<div class="mt-3 text-sm opacity-50">one organization · <b>60%</b> of all contributions · the other nine share what is left</div>
 
 <div v-click class="mt-4 text-lg">and the spec still isn't theirs</div>
 
 <!--
-TODO: screenshot from devstats.cncf.io, OpenFeature, "Companies contributing" stacked chart. The chart names the company; decide before the talk whether to say the name out loud.
+The chart is on screen now, and it names the company — Dynatrace, at 60% of all contributions, with nine other organisations sharing the remaining 40%. There is no deciding whether to say the name out loud any more; the room can read it. Say it plainly and early rather than letting it hang.
+TODO: put the exact source under the image before the talk (which insights page, which time window). A chart with no provenance is the one thing an audience will challenge.
 ACCURACY — do not overstate this, it is a real project and a real company. OpenFeature is NOT owned or controlled by its largest contributor. The spec is a collaborative, multi-vendor effort and has been. What the chart shows is concentration of *work*, not concentration of *control*.
 SIMON makes the precise version: one company has carried most of the commits since the beginning. That is not capture — nobody there can merge what the other vendors will not take.
 Click: "and the spec still isn't theirs." Say it plainly. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
@@ -523,6 +545,7 @@ Do not let Simon win this slide. He raises it and then loses it — that is the 
 layout: two-cols
 ---
 
+<Ask active="own" />
 <ColumnDivider />
 
 # Archived
@@ -608,6 +631,8 @@ Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a fla
 layout: center
 ---
 
+<Ask active="all" />
+
 <div class="border rounded-xl p-8 max-w-2xl mx-auto text-left font-mono text-lg leading-relaxed shadow">
 <div class="opacity-50 text-sm mb-2">Senior Platform Engineer — [Company]</div>
 <div class="font-bold mb-3">Requirements</div>
@@ -687,12 +712,16 @@ SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone d
 
 
 ---
-layout: statement
+layout: center
 ---
 
-Not *whether* you're locked in.
+<div class="pullquote">
 
-<div v-click class="mt-6">*To whom.*</div>
+> Not *whether* you're locked in.
+>
+> <span v-click>*To whom.*</span>
+
+</div>
 
 <!--
 THE TURN. Tone drops. Both step to centre.
@@ -726,11 +755,14 @@ THOMAS: homework.
 ---
 layout: cover
 class: text-center
+# Seriph's cover defaults to a remote Unsplash image, which is a dead endpoint
+# and renders as a grey plate with white type. The deck is white; so is this.
+background: '#fff'
 ---
 
 # Your Open Source Standard<br>Is Just Another Lock-In
 
-<div class="mt-8 text-xl">Simon Schrottner · schrottner.at/talks</div>
+<div class="mt-8 text-xl">Simon Schrottner · schrottner.at</div>
 <div class="text-xl">Thomas Schuetz · www.learncloudnative.eu</div>
 
 <!--

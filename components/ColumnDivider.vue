@@ -37,11 +37,12 @@ defineProps({
   opacity: .25;
 }
 
-/* Content on these slides is top-aligned while the layout is full height, so a
-   centred label lands mid-text. Sit it around 60% down — clear of the footer
-   lines under each column, and still well above the slide edge. */
-.rule:first-child { flex: 3; }
-.rule:last-child { flex: 2; }
+/* The label is wider than the gutter between the columns, so anywhere alongside
+   the text it overlaps one side or the other. Content is vertically centred, so
+   sit the label near the foot of the rule — below both columns, clear of the
+   slide edge, reading as a caption on the line rather than a collision with it. */
+.rule:first-child { flex: 6; }
+.rule:last-child { flex: 1; }
 
 /* With no label the two segments butt together and read as one line. */
 .column-divider:not(.labelled) { gap: 0; }
