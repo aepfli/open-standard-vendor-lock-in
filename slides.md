@@ -141,7 +141,7 @@ layout: center
 <Ask active="get" />
 <Tag project="kubernetes" label="Kubernetes" />
 
-# Took six weeks
+# Additional Locks without a Key
 
 <div class="costs">
 
@@ -166,6 +166,30 @@ SIMON clicks one per item — each is a real thing the customer hit. The editori
 Land it: "Conformance certifies the previous slide. Nobody lives on the previous slide."
 THOMAS: "And that list is smaller than the whole compute layer used to be."
 -->
+
+---
+layout: center
+---
+# Famous Issues with Kubernetes
+
+- ingress-nginx -> traefik bzw. gateway API
+- Deployment v1beta -> apps/v1
+- Ingress v1beta -> networking/v1
+
+---
+layout: center
+---
+
+# What would be the alternative?
+
+- Building Solutions on your own
+  - DNS Management
+  - Cert-Management
+  - Load Balancing
+
+- One-shot operations, back to pipelines
+
+- More vendor lock-ins through proprietary solutions
 
 ---
 layout: center
