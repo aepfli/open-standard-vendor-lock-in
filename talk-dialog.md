@@ -306,11 +306,11 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
 
 ---
 
-## Act IV — What does it buy a vendor? (~3 min)
+## Act IV — Who builds the door? (~3 min)
 
 *Both turn back to the screen. The three boxes from the opening are up again.*
 
-`[SLIDE: act map — all three lit. "What does it buy a vendor?"]`
+`[SLIDE: act map — all three lit. "Who builds the door?"]`
 
 **THOMAS:** That's the bill, and that's what your people keep. Now the seat nobody in this room is sitting in. *(to Simon)* You held a thought for me.
 
@@ -378,16 +378,20 @@ Target: ~22 min spoken. Rough word count per section noted; ~140 words/min.
   the talk, but it is also the thing most likely to be screenshotted out of context at
   minute twelve. Two safeguards, both already in the script: Thomas argues back in every
   round, and he promises the second column in the opening. Do not cut that promise.
-- **Act IV** ("is there anywhere to go?") is the old exit test, named. It opens on the same
-  three boxes as the opening claim slide — lit again, twenty minutes later, now as a
+- **Act IV** ("who builds the door?") is the old exit test, named. The title is the
+  customer-side question, not the supplier-side one — the act argues that the standard cut
+  the cost of entry, so a second implementation became affordable, and that is the only
+  reason the exit priced in acts I-III exists at all. It also pays off Simon's held thought,
+  which is the first line of the act, and the closing line of the talk. It opens on the
+  same three boxes as the opening claim slide — lit again, twenty minutes later, now as a
   question. It has no standard of its own, which is why all three are lit and the rail shows
   all three questions: the act is about the market, not about any one project.
 - The market-structure beat moved out of round 3 into act IV, where it is the first
   argument rather than a coda. Round 3 now ends on its own invoice line.
-- **The bill is the one slide that steps deliberately.** Five clicks: three amounts read
-  out one at a time, then the vendor column, then the Currency row. Everything else on that
-  slide is up from the start. Do not rush the three amounts — they are the only numbers in
-  the talk and Simon says each one out loud.
+- **The bill is the one slide that steps deliberately.** Six clicks: three amounts read
+  out one at a time, then the vendor column, then the Currency row in two — theirs, then
+  yours. Everything else on that slide is up from the start. Do not rush the three amounts —
+  they are the only numbers in the talk and Simon says each one out loud.
 - **Clicks are structural only.** Bullet lists land whole — the per-line stepping was
   making the presenter click through lines the room reads in a second. What still clicks:
   the punchline under a list, the "After" column arriving after "Before", "To whom.", and
