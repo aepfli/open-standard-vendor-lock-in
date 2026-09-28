@@ -501,25 +501,25 @@ clicks: 2
 # Who paid the engineers?
 
 <div class="mt-6 relative h-[19rem] w-[42rem]">
-  <div v-click.hide="1" class="absolute left-0 right-0 flex flex-col items-center">
+  <div v-click.hide="2" class="absolute left-0 right-0 flex flex-col items-center">
     <img src="/org-dependency.png" class="shot h-[17rem]" alt="GitHub organization dependency over the previous five years: one organization at 60% of all contributions, nine others sharing the remaining 40%. Top contributor Dynatrace, 31,843 contributions." />
     <div class="mt-3 text-xs uppercase tracking-widest opacity-45">the previous five years</div>
   </div>
-  <div v-click="1" class="absolute left-0 right-0 flex flex-col items-center">
+  <div v-click="2" class="absolute left-0 right-0 flex flex-col items-center">
     <img src="/org-dependency-now.png" class="shot h-[17rem]" alt="The same chart over ninety days: two organizations at 79% of all contributions, eight others sharing 21%. Flagsmith 5,480 at 40%, Dynatrace 5,201 at 38%, then General Motors, Leboncoin and codecentric." />
     <div class="mt-3 text-xs uppercase tracking-widest opacity-45">the last ninety days</div>
   </div>
 </div>
 
-<div v-click="2" class="mt-4 text-lg">and the spec still isn't theirs</div>
+<div v-click="1" class="mt-4 text-lg">and the spec still isn't theirs</div>
 
 <!--
 The chart is on screen now, and it names the company — Dynatrace, at 60% of all contributions over the previous five years, with nine other organisations sharing the remaining 40%. There is no deciding whether to say the name out loud any more; the room can read it. Say it plainly and early rather than letting it hang. The numbers are on the chart, so read them off it rather than saying them twice.
-Click 1: the same chart over the last ninety days. SAY THE WINDOW OUT LOUD — this is not the same measurement twice, it is the record against the present tense, and if you let the room assume like-for-like the first question afterwards will be about the axis rather than the argument. The window is printed under each chart for exactly that reason.
-What it shows: across the previous five years one company carried 60%. Across the last ninety days the largest is at 40%, and it takes two of them to reach 79%. The project got a second engine. That cuts our own way, so concede it before anyone in the room can — the bus factor went from one to two.
+Click 1: "and the spec still isn't theirs." Say it plainly, against the five-year chart still on screen. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
+Click 2: the same chart over the last ninety days. SAY THE WINDOW OUT LOUD — this is not the same measurement twice, it is the record against the present tense, and if you let the room assume like-for-like the first question afterwards will be about the axis rather than the argument. The window is printed under each chart for exactly that reason.
+What it shows: across the previous five years one company carried 60%. Across the last ninety days the largest is at 40%, and it takes two of them to reach 79%. The project got a second engine. That cuts our own way too, so let it land after the concession rather than before it — the bus factor went from one to two.
 ACCURACY — do not overstate this, these are real projects and real companies. OpenFeature is NOT owned or controlled by its largest contributors. The spec is a collaborative, multi-vendor effort and has been. What the chart shows is concentration of *work*, not concentration of *control*.
 SIMON makes the precise version: a small number of companies have carried most of the commits. That is not capture — none of them can merge what the other vendors will not take.
-Click 2: "and the spec still isn't theirs." Say it plainly. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
 Then the actual complaint, which is narrower and true: capacity is not neutral. When a couple of companies pay most of the engineers, the things built first are the things those companies needed first. Not maliciously — naturally. The bus factor was a parking factor — and it is a factor of two now, which is better and still not neutral.
 SIMON: "The spec was never theirs. The roadmap's *pace* was."
 -->
