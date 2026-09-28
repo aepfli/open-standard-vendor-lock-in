@@ -295,6 +295,7 @@ layout: center
 ---
 
 <Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 <div class="pullquote">
 
@@ -363,6 +364,7 @@ layout: fact
 ---
 
 <Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 `http.method`
 <div class="text-3xl my-4 opacity-50">↓</div>
@@ -390,8 +392,6 @@ layout: center
 - RUM / browser / mobile 
 - Profiling 
 - Vendor-side sampling & cost controls
-- Two forced re-instrumentations
-- Dashboards rebuilt twice
 - Rethink Ingest Path with every migration
 
 </div>
@@ -402,6 +402,7 @@ SIMON clicks one per item. "Nobody tells you the migration *off* the proprietary
   Auto-discovery — "the vendor agent did it for free"
   RUM / profiling — "thinner, or years behind"
   sampling — "their cost controls were the reason the bill was survivable"
+The re-instrumentation and dashboard counts used to sit here too. They are costs of the migration, not things the proprietary agent gives you, and the invoice already bills them by name — say them there.
 THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
 -->
 
@@ -470,7 +471,6 @@ layout: center
 - Experiment & analytics data
 - Audit history · approvals · workflows
 - Provider-specific hooks
-- The feature you wanted → "join the working group"
 
 </div>
 
@@ -478,7 +478,27 @@ layout: center
 
 <!--
 SIMON clicks one per item — this is his own project, so he gets to be the one listing what it does not cover.
-Last click is the sting: the customer wanted a feature and the honest answer was "join the working group". "I'm a maintainer and I couldn't just *do* it for them."
+Every line here is a thing the standard left in the vendor's format. The sting that used to close the list has its own slide now — it is a different kind of gap and it was being read as a sixth bullet.
+-->
+
+---
+layout: center
+---
+
+<Ask active="own" />
+<Tag project="openfeature" label="OpenFeature" />
+
+<div class="pullquote">
+
+> The feature you wanted?
+>
+> *"Join the working group."*
+
+</div>
+
+<!--
+The sting, and the only thing on the slide, because it is the one gap on the list that is not about data — it is about who gets to decide, which is the act's actual question.
+SIMON: the customer wanted a feature and that was the honest answer. "I'm a maintainer and I couldn't just *do* it for them."
 THOMAS: "That's not a failure. That's the thing becoming load-bearing. You *want* a slow spec once a thousand production systems depend on it."
 SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked like* while it was fast."
 -->
