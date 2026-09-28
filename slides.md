@@ -492,7 +492,7 @@ THOMAS: "You standardised the thing that touches every line of code. The rest is
 
 ---
 layout: center
-clicks: 1
+clicks: 2
 ---
 
 <Ask active="own" />
@@ -500,21 +500,21 @@ clicks: 1
 
 # Who paid the engineers?
 
-<div class="mt-6 flex justify-center">
-  <img src="/org-dependency.png" alt="Organization dependency: one organization at 60% of all contributions, the other nine sharing 40%" class="shot" />
+<div class="mt-6 relative h-[17rem]">
+  <img v-click.hide="1" src="/org-dependency.png" class="shot absolute left-1/2 -translate-x-1/2 h-[17rem] w-auto" alt="GitHub organization dependency, the earlier snapshot: one organization at 60% of all contributions, nine others sharing the remaining 40%. Top contributor Dynatrace, 31,843 contributions." />
+  <img v-click="1" src="/org-dependency-now.png" class="shot absolute left-1/2 -translate-x-1/2 h-[17rem] w-auto" alt="The same chart today: two organizations at 79% of all contributions, eight others sharing 21%. Flagsmith 5,480 at 40%, Dynatrace 5,201 at 38%, then General Motors, Leboncoin and codecentric." />
 </div>
 
-<div class="mt-3 text-sm opacity-50">one organization · <b>60%</b> of all contributions · the other nine share what is left</div>
-
-<div v-click class="mt-4 text-lg">and the spec still isn't theirs</div>
+<div v-click="2" class="mt-4 text-lg">and the spec still isn't theirs</div>
 
 <!--
-The chart is on screen now, and it names the company — Dynatrace, at 60% of all contributions, with nine other organisations sharing the remaining 40%. There is no deciding whether to say the name out loud any more; the room can read it. Say it plainly and early rather than letting it hang.
-TODO: put the exact source under the image before the talk (which insights page, which time window). A chart with no provenance is the one thing an audience will challenge.
-ACCURACY — do not overstate this, it is a real project and a real company. OpenFeature is NOT owned or controlled by its largest contributor. The spec is a collaborative, multi-vendor effort and has been. What the chart shows is concentration of *work*, not concentration of *control*.
-SIMON makes the precise version: one company has carried most of the commits since the beginning. That is not capture — nobody there can merge what the other vendors will not take.
-Click: "and the spec still isn't theirs." Say it plainly. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
-Then the actual complaint, which is narrower and true: capacity is not neutral. When one company pays most of the engineers, the things built first are the things that company needed first. Not maliciously — naturally. The bus factor was a parking factor.
+The chart is on screen now, and it names the company — Dynatrace, at 60% of all contributions, with nine other organisations sharing the remaining 40%. There is no deciding whether to say the name out loud any more; the room can read it. Say it plainly and early rather than letting it hang. The numbers are on the chart, so read them off it rather than saying them twice.
+Click 1: the same chart today. The top contributor is down from 60% to 40%, and it now takes two organisations — Flagsmith and Dynatrace — to reach 79%. That is the honest update and it cuts our own way: the bus factor went from one company to two. Concede it before anyone in the room can.
+TODO — BLOCKING, the two charts must be comparable: the old one totals 31,843 contributions against the new one's 5,480, which means they are almost certainly different time windows, not a year of movement. Re-pull both from the same insights page over the same span before the talk, or the comparison is not one. Put the source and the window under the image.
+ACCURACY — do not overstate this, these are real projects and real companies. OpenFeature is NOT owned or controlled by its largest contributors. The spec is a collaborative, multi-vendor effort and has been. What the chart shows is concentration of *work*, not concentration of *control*.
+SIMON makes the precise version: a small number of companies have carried most of the commits. That is not capture — none of them can merge what the other vendors will not take.
+Click 2: "and the spec still isn't theirs." Say it plainly. It is the strongest thing on this slide and it is Thomas's point, conceded by Simon before Thomas has to make it.
+Then the actual complaint, which is narrower and true: capacity is not neutral. When a couple of companies pay most of the engineers, the things built first are the things those companies needed first. Not maliciously — naturally. The bus factor was a parking factor — and it is a factor of two now, which is better and still not neutral.
 SIMON: "The spec was never theirs. The roadmap's *pace* was."
 -->
 
