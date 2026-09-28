@@ -225,6 +225,7 @@ layout: center
 ---
 
 <Ask active="get" />
+<Tag project="kubernetes" label="Kubernetes" />
 
 # What would be the alternative?
 
