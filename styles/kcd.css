@@ -1,0 +1,212 @@
+/* KCD Sofia 2026 conference template.
+ *
+ * The template we were given is a Google Slides deck ("KCD Sofia 2026
+ * Template", owned by orlin@orlix.org). Its theme XML is stock Google default
+ * — Arial and the Google Slides palette — because all of the branding is baked
+ * into five full-bleed 1920x1080 PNGs. Those PNGs are the template. They live
+ * in public/kcd/ and are wired up below; everything else here exists to keep
+ * the deck's own content clear of them.
+ *
+ * Colours are sampled from that artwork, not guessed.
+ */
+
+:root {
+  /* The flat content ground of the blue variant. This is the brand blue, and
+     the colour the logo is drawn in on the white variant. */
+  --kcd-blue: #0086ff;
+
+  /* The dark corner of the title slide's diagonal gradient. Carries ~9:1 on
+     white, so it is the one that can hold small type. */
+  --kcd-blue-deep: #0b2db5;
+
+  /* The pale end of the same gradient, and the colour of the bottom rails. */
+  --kcd-blue-tint: #a8d6fe;
+
+  /* Swap these two lines for the dark variant of the template:
+       bg-title-dark.png / bg-content-dark.png
+     Note that the deck pins colorSchema: light because the sponsor marks only
+     work on a light ground, so a dark swap needs those revisited too. */
+  --kcd-bg-title: url('/kcd/bg-title-light.png');
+  --kcd-bg-content: url('/kcd/bg-content-light.png');
+
+  /* The artwork is fixed furniture, so the usable area of every slide is
+     smaller than the canvas. Measured off the 1920x1080 PNGs: the logo lockup
+     ends at y=182 (16.9%), the bottom rails start at y=968 (89.6%). Slidev's
+     canvas is a fixed 980x551.25 box that is transform-scaled to the viewport,
+     so these convert to px once and stay correct at every render size. */
+  --kcd-safe-top: 93px;
+
+  /* The deck's own corner chrome has to clear the artwork too, and the sponsor
+     marks are the lower bound rather than the rails: they sit just above the
+     rails (64px), stand 1.7rem tall, and content clears them by a line. */
+  --kcd-sponsor-bottom: 64px;
+  --kcd-safe-bottom: 99px;
+
+  /* Right edge of the logo lockup (x=421 of 1920) plus a gutter. The act rail
+     starts here instead of at the slide's left inset. */
+  --kcd-rail-left: 231px;
+
+  /* Seriph tints every h1 with this. */
+  --slidev-theme-primary: var(--kcd-blue-deep);
+}
+
+/* Every slide carries the content artwork; the two covers override it below.
+   Slidev scales the canvas rather than re-laying it out, so `cover` sizing
+   matches the 16:9 art exactly with no cropping.
+
+   The doubled class here and below is not a typo. Slidev's own layouts-base.css
+   sizes .slidev-layout with `@apply px-14 py-10`, and it is injected after this
+   file — at equal specificity it won, and the padding that keeps content clear
+   of the logo silently did nothing. Doubling the class outranks it without
+   reaching for !important. */
+.slidev-layout.slidev-layout {
+  background-image: var(--kcd-bg-content);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: max(2.5rem, var(--kcd-safe-top));
+  padding-bottom: max(2.5rem, var(--kcd-safe-bottom));
+
+  /* Slidev's `center` layout centres twice: `place-content-center` on this
+     grid, and `margin-block: auto` on the wrapper inside it. The two are not
+     equivalent when the content is taller than the space. `align-content:
+     center` splits the overflow across both ends, which is what pushed three
+     headings up under the logo; auto margins are defined to collapse to zero
+     against negative free space, so they centre while it fits and fall back to
+     the top when it doesn't — which is the behaviour we want.
+
+     So: stop the grid centring, stretch its single row to the full content box,
+     and let the wrapper's auto margins be the only centring. A slide that runs
+     long now runs long downwards, and its heading always starts below the
+     lockup. Nothing here is layout-specific, so the two-column and comparison
+     slides keep the alignment between their columns. */
+  align-content: stretch;
+}
+
+/* Seriph's cover layout writes its background into an inline style — and, for
+   anything that isn't a plain colour, dims it behind `linear-gradient(#0005,
+   #0008)` and forces white type. The slides dodge that by passing '#fff',
+   which leaves the type dark and the plate clean; we put the title artwork
+   back on top of it here, where the dimming can't reach. Hence !important:
+   it is outranking an inline style, not a specificity fight. */
+.slidev-layout.cover.cover {
+  background-image: var(--kcd-bg-title) !important;
+}
+
+/* Display type sits well above the 24px large-text threshold, so it can carry
+   the bright brand blue at ~3.5:1. Ordinary headings can't, and take the deep
+   tone from --slidev-theme-primary instead. */
+.slidev-layout.cover.cover h1,
+.slidev-layout.fact.fact h1 {
+  color: var(--kcd-blue);
+}
+
+/* The template's own type is Arial only because Google Slides defaults to it;
+   the wordmark is geometric. Poppins for headings follows the mark, Inter
+   keeps the data-heavy slides readable. Both are fetched via `fonts:` in
+   slides.md. */
+.slidev-layout.slidev-layout h1,
+.slidev-layout.slidev-layout h2,
+.slidev-layout.slidev-layout h3,
+.slidev-layout.slidev-layout h4 {
+  font-family: 'Poppins', var(--slidev-font-sans);
+  letter-spacing: -0.01em;
+}
+
+.slidev-layout.slidev-layout h6 {
+  font-family: 'Poppins', var(--slidev-font-sans);
+}
+
+/* Accents that used to inherit seriph's muted teal. */
+.slidev-layout.slidev-layout a {
+  color: var(--kcd-blue-deep);
+  text-decoration-color: var(--kcd-blue-tint);
+}
+
+.slidev-layout.slidev-layout blockquote {
+  border-left-color: var(--kcd-blue);
+}
+
+/* The rails at the bottom of the artwork are the slide's visual baseline, so
+   rules drawn in content read as a second, competing one unless they are
+   tinted to match. */
+.roll {
+  border-top-color: var(--kcd-blue-tint);
+}
+
+/* --- The deck's own chrome, moved out of the artwork's way ------------------
+ *
+ * Both of these are the deck's, not the template's, so they are overridden
+ * here rather than edited at their source: Ask.vue and deck.css still
+ * describe where the chrome sits on a bare slide, and this file is the one
+ * place that says what the conference artwork does to that.
+ */
+
+/* The act rail ran straight through the logo lockup. Start it to the right of
+   the lockup instead, still aligned with <Tag> in the opposite corner.
+   Ask.vue ships its own unscoped `.ask` block, which Vue injects after this
+   stylesheet, so this needs to outweigh it. Doubling the class does that
+   without naming an ancestor: Slidev renders the slides either side of the
+   current one outside a .slidev-layout, and a descendant selector missed them
+   — the rail jumped back under the logo as you paged through. */
+.ask.ask {
+  left: var(--kcd-rail-left);
+}
+
+/* The sponsor marks sat on the bottom rails. Lift them just clear. */
+.slidev-layout.slidev-layout::before,
+.slidev-layout.slidev-layout::after {
+  bottom: var(--kcd-sponsor-bottom);
+}
+
+/* The artwork claims 93px at the top and 99px at the bottom of a 551px canvas,
+   so a third of the slide is gone before any content is set. Seriph's 1.1rem
+   body and 4xl headings were sized for the full canvas; stepping both down
+   buys most of that back without touching a single slide's content. */
+.slidev-layout.slidev-layout {
+  font-size: 1rem;
+}
+
+.slidev-layout.slidev-layout h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.slidev-layout.cover.cover h1 {
+  font-size: 3.1rem;
+  line-height: 1.15;
+}
+
+.slidev-layout.fact.fact h1 {
+  font-size: 4rem;
+}
+
+/* <ColumnDivider> is inset from the slide's edges rather than from its content
+   box, so the artwork's rails ran through the foot of the rule. Span the safe
+   area instead, which is what the columns either side of it now span.
+   !important because the component's inset comes from a `<style scoped>`
+   block — same specificity as anything written here, injected later, so it
+   wins every tie. */
+.column-divider {
+  top: calc(var(--kcd-safe-top) + 2.5rem) !important;
+  bottom: var(--kcd-safe-bottom) !important;
+}
+
+/* The heading moves up into the band beside the logo — under the act rail,
+   right of the lockup — instead of starting below it. It shares a left edge
+   with the rail, so the two read as one line of slide furniture. Lifting it
+   out of flow hands the body of the slide back the ~47px the heading used to
+   cost below the artwork, which is what brings the slides that ran onto the
+   rails back inside.
+
+   Only on `center`, which is every ordinary title-and-body slide. `cover` and
+   `fact` set their heading as display type in the middle of the slide, and
+   `two-cols` carries one heading per column — both need theirs left in flow. */
+.slidev-layout.slidev-layout.center h1 {
+  position: absolute;
+  top: 2.7rem;
+  left: var(--kcd-rail-left);
+  right: 3.5rem;
+  margin: 0;
+  text-align: left;
+}
