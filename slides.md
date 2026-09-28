@@ -500,13 +500,13 @@ clicks: 2
 
 # Who paid the engineers?
 
-<div class="mt-6 relative h-[19rem]">
+<div class="mt-6 relative h-[19rem] w-[42rem]">
   <div v-click.hide="1" class="absolute left-0 right-0 flex flex-col items-center">
-    <img src="/org-dependency.png" class="shot h-[17rem] w-auto" alt="GitHub organization dependency over five years: one organization at 60% of all contributions, nine others sharing the remaining 40%. Top contributor Dynatrace, 31,843 contributions." />
+    <img src="/org-dependency.png" class="shot h-[17rem]" alt="GitHub organization dependency over five years: one organization at 60% of all contributions, nine others sharing the remaining 40%. Top contributor Dynatrace, 31,843 contributions." />
     <div class="mt-3 text-xs uppercase tracking-widest opacity-45">the last five years</div>
   </div>
   <div v-click="1" class="absolute left-0 right-0 flex flex-col items-center">
-    <img src="/org-dependency-now.png" class="shot h-[17rem] w-auto" alt="The same chart over ninety days: two organizations at 79% of all contributions, eight others sharing 21%. Flagsmith 5,480 at 40%, Dynatrace 5,201 at 38%, then General Motors, Leboncoin and codecentric." />
+    <img src="/org-dependency-now.png" class="shot h-[17rem]" alt="The same chart over ninety days: two organizations at 79% of all contributions, eight others sharing 21%. Flagsmith 5,480 at 40%, Dynatrace 5,201 at 38%, then General Motors, Leboncoin and codecentric." />
     <div class="mt-3 text-xs uppercase tracking-widest opacity-45">the last ninety days</div>
   </div>
 </div>
