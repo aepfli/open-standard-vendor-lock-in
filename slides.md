@@ -225,6 +225,7 @@ layout: center
 ---
 
 <Ask active="get" />
+<Tag project="kubernetes" label="Kubernetes" />
 
 # What would be the alternative?
 
@@ -295,6 +296,7 @@ layout: center
 ---
 
 <Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 <div class="pullquote">
 
@@ -363,6 +365,7 @@ layout: fact
 ---
 
 <Ask active="move" />
+<Tag project="opentelemetry" label="OpenTelemetry" />
 
 `http.method`
 <div class="text-3xl my-4 opacity-50">↓</div>
@@ -390,8 +393,6 @@ layout: center
 - RUM / browser / mobile 
 - Profiling 
 - Vendor-side sampling & cost controls
-- Two forced re-instrumentations
-- Dashboards rebuilt twice
 - Rethink Ingest Path with every migration
 
 </div>
@@ -402,6 +403,7 @@ SIMON clicks one per item. "Nobody tells you the migration *off* the proprietary
   Auto-discovery — "the vendor agent did it for free"
   RUM / profiling — "thinner, or years behind"
   sampling — "their cost controls were the reason the bill was survivable"
+The re-instrumentation and dashboard counts used to sit here too. They are costs of the migration, not things the proprietary agent gives you, and the invoice already bills them by name — say them there.
 THOMAS: the last slide is permanent, this one is one-time. "That's the deal."
 -->
 
@@ -470,7 +472,6 @@ layout: center
 - Experiment & analytics data
 - Audit history · approvals · workflows
 - Provider-specific hooks
-- The feature you wanted → "join the working group"
 
 </div>
 
@@ -478,7 +479,28 @@ layout: center
 
 <!--
 SIMON clicks one per item — this is his own project, so he gets to be the one listing what it does not cover.
-Last click is the sting: the customer wanted a feature and the honest answer was "join the working group". "I'm a maintainer and I couldn't just *do* it for them."
+Every line here is a thing the standard left in the vendor's format. The sting that used to close the list has its own slide now — it is a different kind of gap and it was being read as a sixth bullet.
+-->
+
+---
+layout: center
+---
+
+<Ask active="own" />
+<Tag project="openfeature" label="OpenFeature" />
+
+<div class="pullquote">
+
+> The feature you wanted?
+>
+> *"Join the working group."* {v-click}
+
+</div>
+
+<!--
+The sting, and the only thing on the slide, because it is the one gap on the list that is not about data — it is about who gets to decide, which is the act's actual question.
+Ask the question and let it sit. Somebody in the room has been on one end of this exchange or the other, and the pause is what lets them work out which.
+Click: the answer. SIMON: the customer wanted a feature and that was the honest answer. "I'm a maintainer and I couldn't just *do* it for them."
 THOMAS: "That's not a failure. That's the thing becoming load-bearing. You *want* a slow spec once a thousand production systems depend on it."
 SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked like* while it was fast."
 -->
@@ -616,17 +638,17 @@ SIMON: hands-up moment — "who's migrated off something in the last year? Keep 
 
 ---
 layout: center
-clicks: 6
+clicks: 8
 ---
 
-<Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks - 4" />
+<Invoice :rows="3" bill :amounts="$clicks" :vendor-rows="$clicks - 3" :currency="$clicks - 6" />
 
 <!--
-Six clicks, and they carry the only numbers in the talk. Do not rush them.
+Eight clicks, and they carry the only numbers in the talk. Do not rush them.
 Clicks 1-3 — one amount each, read out loud. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
-Click 4 — the "from: a vendor" column arrives beside it, same three line items. THOMAS: "Both columns always had numbers in them. There was never a column marked zero."
-Click 5 — the vendor's currency. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it." THOMAS: "Guilty. Theirs: money and tool knowledge. The console, the query language. Non-convertible — worthless the day the contract ends."
-Click 6 — the community's currency lands beside it, and the charges above grey out. THOMAS: "Yours: engineering time and domain knowledge. What a span is, how a flag evaluates. Convertible — it spends at the next vendor, the next job." SIMON: "So the invoice is the same size either way." THOMAS: "The invoice is the same size. The currency is not."
+Clicks 4-6 — the "from: a vendor" column answers the same three line items, bottom up, one per click. Steering first because it is the one they win: "enterprise tier, escalation, waiting — and it is fast, if what you want is already on their roadmap." Then Keeping up. Then Migrating. Let each row sit before taking the next; the column is an argument, not a table. THOMAS, once all three are standing: "Both columns always had numbers in them. There was never a column marked zero."
+Click 7 — the vendor's currency. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it." THOMAS: "Guilty. Theirs: money and tool knowledge. The console, the query language. Non-convertible — worthless the day the contract ends."
+Click 8 — the community's currency lands beside it, and the charges above grey out. THOMAS: "Yours: engineering time and domain knowledge. What a span is, how a flag evaluates. Convertible — it spends at the next vendor, the next job." SIMON: "So the invoice is the same size either way." THOMAS: "The invoice is the same size. The currency is not."
 -->
 ---
 layout: center
