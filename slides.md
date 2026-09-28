@@ -628,10 +628,11 @@ clicks: 6
 <Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks - 4" />
 
 <!--
-Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
-Click 2 — currency stamp. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it."
-THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the invoice."
-Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
+Six clicks, and they carry the only numbers in the talk. Do not rush them.
+Clicks 1-3 — one amount each, read out loud. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
+Click 4 — the "from: a vendor" column arrives beside it, same three line items. THOMAS: "Both columns always had numbers in them. There was never a column marked zero."
+Click 5 — the vendor's currency. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it." THOMAS: "Guilty. Theirs: money and tool knowledge. The console, the query language. Non-convertible — worthless the day the contract ends."
+Click 6 — the community's currency lands beside it, and the charges above grey out. THOMAS: "Yours: engineering time and domain knowledge. What a span is, how a flag evaluates. Convertible — it spends at the next vendor, the next job." SIMON: "So the invoice is the same size either way." THOMAS: "The invoice is the same size. The currency is not."
 -->
 ---
 layout: center
@@ -660,13 +661,14 @@ layout: center
 
 <Ask active="all" />
 
-# What does it buy a vendor?
+# Who builds the door?
 
 <StandardsStack active="all" class="mt-12" />
 
 <!--
 ACT IV. The same three boxes Thomas put up twenty minutes ago under "never locked in again" — lit again, and this time it is a question.
-The bill is already on the table, and the job ad has already shown what the people keep. This act is the one seat nobody in the room occupies: the vendor's. What the standard bought a supplier is the right to exist at all — and that is the only reason the customer has anywhere to go.
+The bill is already on the table, and the job ad has already shown what the people keep. This act visits the one seat nobody in the room occupies — but it is not a favour to suppliers, and it must not sound like one. The question is who could afford to build the exit the audience has spent twenty minutes pricing. Every option on the invoice — a hundred and thirty-one distributions, any backend you like, a one-line provider swap — exists because somebody could afford to build the second implementation.
+The title pays off Simon's held thought, which is the first line of the act: somebody walks through the door. It is also the last line of the talk.
 No single standard owns this act, which is why all three are lit and the rail shows all three questions.
 THOMAS owns it. It is the only act that is not a prosecution.
 -->
@@ -710,7 +712,7 @@ The slide is deliberately generic, because act IV is about all three standards, 
 THOMAS takes the LEFT column and names OTel out loud: before it, selling observability meant writing an agent for Java, then Python, Go, Node, Ruby, .NET — and maintaining all of them forever. That is what kept the category to four companies for a decade.
 Then the OpenFeature version in one line, because it is the same shape one size down: every flag vendor shipped its own SDK per language; now a provider is an adapter, a week of work.
 Click reveals the RIGHT column whole. Name real vendors on "new names in it" — the point dies if the names are not said out loud.
-SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is where the next invoice comes from — and it sets up convertible vs non-convertible two slides later.
+SIMON gets the last line: the entry cost fell, and the moat moved up. Everyone differentiates ABOVE the standard now. That is the one charge that deliberately never reaches the invoice, because the bill was read two slides ago — convertible vs non-convertible has already landed. If it starts to feel like a missing row in rehearsal, cut the claim rather than reopening the bill.
 -->
 
 

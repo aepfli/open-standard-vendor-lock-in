@@ -18,7 +18,7 @@ each close carries a single idea.
 | **Act I** | Portability | what do you get? | Kubernetes |
 | **Act II** | Progress | how does it move? | OpenTelemetry |
 | **Act III** | Ownership | who owns it? | OpenFeature |
-| **Act IV** | Return | what does it buy a vendor? | *all three* |
+| **Act IV** | Return | who builds the door? | *all three* |
 
 **Act I — Portability · what do you get? · Kubernetes**
 - *The answer:* Deployments, Services, RBAC, Helm, CI, `kubectl` — moved in an afternoon.
@@ -91,7 +91,7 @@ three-act structure, so it lands here rather than later.
 - *The job ad* — the proof of that claim, so it sits beside it. Kubernetes and
   OpenTelemetry named as requirements; no vendor product named at all
 
-**Act IV — Return · what does it buy a vendor? · all three**
+**Act IV — Return · who builds the door? · all three**
 
 Opens on the same three boxes as the opening claim slide, lit again twenty minutes later
 and now framed as a question. It has no standard of its own — the rail shows all three.
