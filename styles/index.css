@@ -1,3 +1,8 @@
+/* The conference template's own layer: backgrounds, brand colours, and the
+   safe area its artwork leaves for content. Kept separate so the deck's own
+   styling below stays readable as the deck's own. */
+@import './kcd.css';
+
 .tag {
   position: absolute;
   top: 1.2rem;
@@ -257,8 +262,6 @@
   background: url('/logo-tsc-labs.png') no-repeat right bottom / contain;
 }
 
-/* Seriph's cover layout sets an opaque background inline; the deck's ground is
-   white anyway, so let it be see-through rather than paint a second white. */
-.slidev-layout.cover {
-  background: transparent !important;
-}
+/* Seriph's cover layout sets an opaque background inline. The deck used to
+   blank that out here; the conference template now paints its title artwork
+   over it instead, so the rule lives in kcd.css where the artwork does. */

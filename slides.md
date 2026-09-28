@@ -7,6 +7,15 @@ colorSchema: light
 info: |
   Simon Schrottner · Thomas Schuetz — 25 min debate
 class: text-center
+# Seriph ships PT Serif for both its serif and its sans. The conference
+# template's own wordmark is geometric, so headings take Poppins and body text
+# takes Inter; both are listed here so Slidev fetches them, and styles/kcd.css
+# decides which goes where.
+fonts:
+  sans: [Inter, Poppins]
+  serif: [Inter, Poppins]
+  mono: JetBrains Mono
+  weights: '300,400,500,600,700'
 highlighter: shiki
 drawings:
   persist: false
