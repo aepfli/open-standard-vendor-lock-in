@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue'
+
 // The running bill, and the argument of the talk in one object: the line items
 // are the same whoever issues them. Only the FROM field changes, which is why
 // the closing question is "to whom" rather than "whether".
@@ -7,12 +9,15 @@
 // provocation is not who sent the bill — the cells say that plainly — it is
 // that the community sends one at all. The vendor column is the reveal, and it
 // is Thomas's, at the exit test.
-defineProps({
+const props = defineProps({
   // Line items billed so far, 0–3. The last one shown is lit.
   rows: { type: Number, default: 0 },
-  // The second column. Until this is set the bill looks like a bill; after it,
-  // it looks like a choice.
-  vendor: { type: Boolean, default: false },
+  // The second column, filled in from the bottom up: 0 none, 1 Steering,
+  // 2 and Keeping up, 3 and Migrating. Until the first of them the bill looks
+  // like a bill; after it, it looks like a choice. It arrives a row at a time
+  // because each row is its own concession — Steering is the one the vendor
+  // genuinely wins, so it goes first and the argument climbs from there.
+  vendorRows: { type: Number, default: 0 },
   // Reading the currency: 0 hidden, 1 the vendor's, 2 both. The charges above
   // grey out while it lands, because the amounts are no longer the point.
   currency: { type: Number, default: 0 },
@@ -54,6 +59,13 @@ const LINES = [
   },
 ]
 
+// Everything that makes the invoice a comparison — the second column, the
+// headers, the wider plate — turns on with the first vendor row.
+const comparing = computed(() => props.vendorRows > 0)
+
+// Bottom-up: the last line is the first one answered.
+const vendorShown = i => props.vendorRows >= LINES.length - i
+
 const CURRENCY = {
   vendor: 'money + tool knowledge',
   vendorNote: 'non-convertible',
@@ -63,7 +75,7 @@ const CURRENCY = {
 </script>
 
 <template>
-  <div class="invoice" :class="{ compare: vendor, settling: currency > 0 }">
+  <div class="invoice" :class="{ compare: comparing, settling: currency > 0 }">
     <div class="head">
       <span class="claim">"Never locked in again."</span>
       <span class="doc">invoice</span>
@@ -72,7 +84,7 @@ const CURRENCY = {
     <!-- Column headers only exist once there is something to compare. -->
     <div class="grid heads">
       <div />
-      <div v-if="vendor" class="col-head">from: a vendor</div>
+      <div v-if="comparing" class="col-head">from: a vendor</div>
       <div class="col-head">from: the community</div>
     </div>
 
@@ -80,23 +92,25 @@ const CURRENCY = {
       v-for="(l, i) in LINES.slice(0, rows)"
       :key="l.item"
       class="grid line"
-      :class="{ on: bill || vendor || i === rows - 1 }"
+      :class="{ on: bill || comparing || i === rows - 1 }"
     >
       <div class="item">{{ l.item }}</div>
-      <div v-if="vendor" class="cell">
-        {{ l.vendor }}
-        <div v-if="vendor && l.vendorNote" class="note">{{ l.vendorNote }}</div>
+      <div v-if="comparing" class="cell">
+        <template v-if="vendorShown(i)">
+          {{ l.vendor }}
+          <div v-if="l.vendorNote" class="note">{{ l.vendorNote }}</div>
+        </template>
       </div>
       <div class="cell">
         {{ l.community }}
-        <div v-if="vendor && l.communityNote" class="note">{{ l.communityNote }}</div>
+        <div v-if="vendorShown(i) && l.communityNote" class="note">{{ l.communityNote }}</div>
         <div v-if="i < amounts" class="amt">{{ l.amount }}</div>
       </div>
     </div>
 
     <div v-if="currency > 0" class="grid line total">
       <div class="item">Currency</div>
-      <div v-if="vendor" class="cell">
+      <div v-if="comparing" class="cell">
         <template v-if="currency >= 1">
           {{ CURRENCY.vendor }}
           <div class="verdict">{{ CURRENCY.vendorNote }}</div>

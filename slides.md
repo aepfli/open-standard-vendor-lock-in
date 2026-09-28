@@ -616,16 +616,17 @@ SIMON: hands-up moment — "who's migrated off something in the last year? Keep 
 
 ---
 layout: center
-clicks: 6
+clicks: 8
 ---
 
-<Invoice :rows="3" bill :amounts="$clicks" :vendor="$clicks >= 4" :currency="$clicks - 4" />
+<Invoice :rows="3" bill :amounts="$clicks" :vendor-rows="$clicks - 3" :currency="$clicks - 6" />
 
 <!--
-Click 1 — amounts appear. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
-Click 2 — currency stamp. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it."
+Clicks 1-3 — the amounts, one line at a time. SIMON: "You've been reading this invoice without a currency column. Six weeks of the platform team. Two migrations for everyone who owns a dashboard. One engineer in a working group, indefinitely. Nothing on here is in euros."
+Clicks 4-6 — the vendor column answers the same three lines, bottom up, one per click. Steering first because it is the one they win: "enterprise tier, escalation, waiting — and it is fast, if what you want is already on their roadmap." Then Keeping up. Then Migrating. Let each row sit before taking the next; the column is an argument, not a table.
+Click 7 — currency stamp, vendor side. SIMON: "The currency is knowledge. What your people had to learn, and would have to learn again. Nobody budgets for it. And somebody in this room sells it."
 THOMAS: "Guilty. And I'll take that currency, because it's the best thing on the invoice."
-Click 3 — split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
+Click 8 — the split. THOMAS: "Two kinds. Convertible — what a span is, how a flag evaluates. That spends at the next vendor, the next job. Non-convertible — the console, the query language. Worthless the day the contract ends. Now price your proprietary stack. Same currency. All of it non-convertible."
 -->
 ---
 layout: center
