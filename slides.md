@@ -493,13 +493,14 @@ layout: center
 
 > The feature you wanted?
 >
-> *"Join the working group."*
+> *"Join the working group."* {v-click}
 
 </div>
 
 <!--
 The sting, and the only thing on the slide, because it is the one gap on the list that is not about data — it is about who gets to decide, which is the act's actual question.
-SIMON: the customer wanted a feature and that was the honest answer. "I'm a maintainer and I couldn't just *do* it for them."
+Ask the question and let it sit. Somebody in the room has been on one end of this exchange or the other, and the pause is what lets them work out which.
+Click: the answer. SIMON: the customer wanted a feature and that was the honest answer. "I'm a maintainer and I couldn't just *do* it for them."
 THOMAS: "That's not a failure. That's the thing becoming load-bearing. You *want* a slow spec once a thousand production systems depend on it."
 SIMON: "I know. I'm the one who slowed it down. The complaint is what it *looked like* while it was fast."
 -->
